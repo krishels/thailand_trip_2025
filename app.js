@@ -470,6 +470,9 @@ function setupNavigation() {
 
 // Render content based on current view
 function renderContent() {
+  // Stop any running carousel auto-play when switching views
+  stopAutoPlay();
+
   switch (currentView) {
     case 'itinerary':
       renderItineraryView();
@@ -603,6 +606,14 @@ function renderItineraryView() {
       </div>
     </div>
   `;
+
+  // Start auto-play for carousel if it has multiple images
+  if (day.images && day.images.length > 1) {
+    // Reset the current index for this day
+    currentImageIndex[day.day] = 0;
+    // Start auto-play after a short delay to ensure DOM is ready
+    setTimeout(() => startAutoPlay(day.day), 100);
+  }
 }
 
 // Render budget view
@@ -1178,6 +1189,33 @@ function togglePackingItem(itemId) {
 
 // Image carousel functions
 let currentImageIndex = {};
+let carouselTimer = null;
+
+function startAutoPlay(day) {
+  // Clear any existing timer
+  if (carouselTimer) {
+    clearInterval(carouselTimer);
+  }
+
+  // Get the carousel for this day
+  const carousel = document.querySelector(`#carouselImages-${day}`);
+  if (!carousel) return;
+
+  const slides = carousel.querySelectorAll('.carousel-slide');
+  if (slides.length <= 1) return; // Don't auto-play if only one image
+
+  // Start auto-advancing every 3 seconds
+  carouselTimer = setInterval(() => {
+    changeImage(day, 1);
+  }, 3000);
+}
+
+function stopAutoPlay() {
+  if (carouselTimer) {
+    clearInterval(carouselTimer);
+    carouselTimer = null;
+  }
+}
 
 function changeImage(day, direction) {
   const slides = document.querySelectorAll(`#carouselImages-${day} .carousel-slide`);
@@ -1192,6 +1230,10 @@ function changeImage(day, direction) {
 
   slides[currentImageIndex[day]].classList.add('active');
   dots[currentImageIndex[day]].classList.add('active');
+
+  // Restart auto-play timer after manual navigation
+  stopAutoPlay();
+  startAutoPlay(day);
 }
 
 function goToImage(day, index) {
@@ -1207,6 +1249,10 @@ function goToImage(day, index) {
 
   slides[currentImageIndex[day]].classList.add('active');
   dots[currentImageIndex[day]].classList.add('active');
+
+  // Restart auto-play timer after manual navigation
+  stopAutoPlay();
+  startAutoPlay(day);
 }
 
 // Initialize app when DOM is ready
