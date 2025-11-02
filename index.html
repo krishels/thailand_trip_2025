@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌴 Thailand Trip Planner 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <h1>🌴 Thailand Trip Planner 2026</h1>
+            <div class="trip-summary">
+                <span>4 people</span>
+                <span>•</span>
+                <span>Feb 6-22, 2026</span>
+                <span>•</span>
+                <span>8 Cities</span>
+                <span>•</span>
+                <span>€8,000 budget</span>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <button class="nav-btn active" data-view="itinerary">Itinerary</button>
+            <button class="nav-btn" data-view="budget">Budget</button>
+            <button class="nav-btn" data-view="packing">Packing</button>
+            <button class="nav-btn" data-view="activities">Activities</button>
+            <button class="nav-btn" data-view="tips">Tips</button>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <!-- Sidebar - Day Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>17 Days</h3>
+            </div>
+            <div class="day-list" id="dayList">
+                <!-- Days will be populated by JavaScript -->
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content" id="mainContent">
+            <!-- Content will be populated by JavaScript based on selected view -->
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
