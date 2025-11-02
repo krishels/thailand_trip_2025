@@ -505,14 +505,10 @@ function renderMainView() {
   content.innerHTML = `
     <div class="main-view">
       <div class="main-video-container">
-        <video class="main-video" controls autoplay muted loop>
+        <video class="main-video" controls>
           <source src="thailand-trip.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <div class="video-placeholder">
-          <div class="video-placeholder-icon">🎥</div>
-          <p>Add your trip video: thailand-trip.mp4</p>
-        </div>
       </div>
 
       <div class="main-summary">
