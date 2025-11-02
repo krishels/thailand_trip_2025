@@ -840,18 +840,18 @@ function initializeMap() {
       name: "Chiang Rai",
       dates: "Feb 11-13",
       days: "2 nights",
-      lat: 19.9070,
-      lng: 99.8805,
+      lat: 19.9105,
+      lng: 99.8328,
       activities: "White Temple, Blue Temple, 10km Jungle Trekking",
       icon: "⛰️"
     },
     {
       num: 4,
-      name: "Krabi (Hub)",
+      name: "Krabi (Ao Nang)",
       dates: "Feb 13-17",
       days: "4 nights",
-      lat: 8.6347,
-      lng: 98.9063,
+      lat: 8.0363,
+      lng: 98.8271,
       activities: "Railay Beach, Kayaking, Khao Sok Day Trip",
       icon: "🏖️"
     },
@@ -860,30 +860,30 @@ function initializeMap() {
       name: "Khao Sok",
       dates: "Feb 15-16",
       days: "1 night",
-      lat: 8.5125,
-      lng: 98.8469,
+      lat: 8.9154,
+      lng: 98.5311,
       activities: "Treehouse, Cheow Lan Lake, Floating Bungalows",
-      icon: "🌳"
+      icon: "🌴"
     },
     {
       num: 6,
       name: "Phi Phi",
       dates: "Feb 17-19",
       days: "2 nights",
-      lat: 7.7519,
-      lng: 98.7723,
+      lat: 7.7407,
+      lng: 98.7784,
       activities: "Maya Bay, Viking Cave, Snorkeling, Beaches",
-      icon: "🏖️"
+      icon: "🏝️"
     },
     {
       num: 7,
       name: "Koh Samui",
       dates: "Feb 19-21",
       days: "2 nights",
-      lat: 8.9625,
-      lng: 100.0925,
+      lat: 9.5385,
+      lng: 100.0632,
       activities: "Big Buddha, Beaches, Snorkeling, Relaxation",
-      icon: "🏖️"
+      icon: "🌊"
     },
     {
       num: 8,
@@ -900,6 +900,33 @@ function initializeMap() {
   // Color palette for stops
   const colors = ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#00f2fe', '#43e97b', '#fa709a', '#fee140'];
 
+  // Specific attractions to visit
+  const attractions = [
+    // Bangkok
+    { name: "Grand Palace", lat: 13.7500, lng: 100.4915, icon: "🏛️", city: "Bangkok" },
+    { name: "Wat Pho", lat: 13.7465, lng: 100.4927, icon: "🛕", city: "Bangkok" },
+    { name: "Wat Arun", lat: 13.7437, lng: 100.4887, icon: "🛕", city: "Bangkok" },
+    { name: "Floating Market", lat: 13.5186, lng: 99.9756, icon: "🛶", city: "Bangkok" },
+    // Chiang Mai
+    { name: "Doi Suthep", lat: 18.8047, lng: 98.9217, icon: "⛩️", city: "Chiang Mai" },
+    { name: "Elephant Nature Park", lat: 19.0169, lng: 98.9569, icon: "🐘", city: "Chiang Mai" },
+    // Chiang Rai
+    { name: "White Temple", lat: 19.8242, lng: 99.7628, icon: "⛩️", city: "Chiang Rai" },
+    { name: "Blue Temple", lat: 19.9106, lng: 99.8792, icon: "🔵", city: "Chiang Rai" },
+    // Krabi Area
+    { name: "Railay Beach", lat: 8.0113, lng: 98.8407, icon: "🏖️", city: "Krabi" },
+    { name: "Phra Nang Cave", lat: 8.0067, lng: 98.8435, icon: "⛰️", city: "Krabi" },
+    // Khao Sok
+    { name: "Cheow Lan Lake", lat: 8.8867, lng: 98.7450, icon: "🏞️", city: "Khao Sok" },
+    // Phi Phi
+    { name: "Maya Bay", lat: 7.6767, lng: 98.7664, icon: "🏝️", city: "Phi Phi" },
+    { name: "Pileh Lagoon", lat: 7.6828, lng: 98.7619, icon: "💎", city: "Phi Phi" },
+    { name: "Viking Cave", lat: 7.6806, lng: 98.7689, icon: "⛰️", city: "Phi Phi" },
+    // Koh Samui
+    { name: "Big Buddha", lat: 9.5378, lng: 100.0636, icon: "🗿", city: "Koh Samui" },
+    { name: "Chaweng Beach", lat: 9.5364, lng: 100.0686, icon: "🏖️", city: "Koh Samui" }
+  ];
+
   // Destroy existing map if it exists
   if (mapInstance) {
     mapInstance.remove();
@@ -909,33 +936,56 @@ function initializeMap() {
   // Initialize map
   mapInstance = L.map('map').setView([13.5, 100.5], 6);
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors',
-    maxZoom: 19
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '© OpenStreetMap contributors © CARTO',
+    subdomains: 'abcd',
+    maxZoom: 20
   }).addTo(mapInstance);
 
-  // Create custom icon function
+  // Create custom icon function for main stops
   const createIcon = (num, color) => {
     return L.divIcon({
-      html: \`<div style="background: \${color}; color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: bold; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">\${num}</div>\`,
+      html: `<div style="background: ${color}; color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: bold; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">${num}</div>`,
       iconSize: [40, 40],
       className: 'custom-icon'
     });
   };
 
-  // Add markers
+  // Create custom icon for attractions
+  const createAttractionIcon = (emoji) => {
+    return L.divIcon({
+      html: `<div style="background: white; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: 16px; border: 2px solid #667eea; box-shadow: 0 1px 4px rgba(0,0,0,0.3);">${emoji}</div>`,
+      iconSize: [28, 28],
+      className: 'attraction-icon'
+    });
+  };
+
+  // Add main stop markers
   mapMarkers = [];
   stops.forEach((stop, idx) => {
     const marker = L.marker([stop.lat, stop.lng], {
       icon: createIcon(stop.num, colors[idx])
-    }).bindPopup(\`
+    }).bindTooltip(`
       <div style="font-family: Arial; font-size: 12px; width: 200px;">
-        <h3 style="margin: 0 0 10px 0; color: #2c3e50;">\${stop.icon} \${stop.name}</h3>
-        <p style="margin: 5px 0;"><strong>When:</strong> \${stop.dates}</p>
-        <p style="margin: 5px 0;"><strong>Stay:</strong> \${stop.days}</p>
-        <p style="margin: 5px 0;"><strong>Things:</strong> \${stop.activities}</p>
+        <h3 style="margin: 0 0 10px 0; color: #2c3e50;">${stop.icon} ${stop.name}</h3>
+        <p style="margin: 5px 0;"><strong>When:</strong> ${stop.dates}</p>
+        <p style="margin: 5px 0;"><strong>Stay:</strong> ${stop.days}</p>
+        <p style="margin: 5px 0;"><strong>Things:</strong> ${stop.activities}</p>
       </div>
-    \`).addTo(mapInstance);
+    `, { permanent: false, direction: 'top' }).addTo(mapInstance);
+    mapMarkers.push(marker);
+  });
+
+  // Add attraction markers
+  attractions.forEach(attraction => {
+    const marker = L.marker([attraction.lat, attraction.lng], {
+      icon: createAttractionIcon(attraction.icon)
+    }).bindTooltip(`
+      <div style="font-family: Arial; font-size: 12px; width: 180px;">
+        <h4 style="margin: 0 0 8px 0; color: #667eea;">${attraction.icon} ${attraction.name}</h4>
+        <p style="margin: 0; color: #666; font-size: 11px;">📍 ${attraction.city}</p>
+      </div>
+    `, { permanent: false, direction: 'top' }).addTo(mapInstance);
     mapMarkers.push(marker);
   });
 
@@ -952,19 +1002,19 @@ function initializeMap() {
   const stopsList = document.getElementById('mapStopsList');
   if (stopsList) {
     stopsList.innerHTML = stops.map((stop, idx) => {
-      let html = \`
-        <div class="map-stop" data-stop-index="\${idx}">
-          <div class="map-stop-number">\${stop.num}</div>
-          <span class="map-stop-name">\${stop.icon} \${stop.name}</span>
-          <span class="badge badge-info" style="margin-left: 8px;">\${stop.days}</span>
-          <div class="map-stop-date">\${stop.dates}</div>
-          <div class="map-stop-activities">\${stop.activities}</div>
+      let html = `
+        <div class="map-stop" data-stop-index="${idx}">
+          <div class="map-stop-number">${stop.num}</div>
+          <span class="map-stop-name">${stop.icon} ${stop.name}</span>
+          <span class="badge badge-info" style="margin-left: 8px;">${stop.days}</span>
+          <div class="map-stop-date">${stop.dates}</div>
+          <div class="map-stop-activities">${stop.activities}</div>
         </div>
-      \`;
+      `;
 
       if (idx < stops.length - 1) {
         const nextStop = stops[idx + 1];
-        html += \`<div class="map-route-info">✈️ → \${nextStop.name}</div>\`;
+        html += `<div class="map-route-info">✈️ → ${nextStop.name}</div>`;
       }
 
       return html;
