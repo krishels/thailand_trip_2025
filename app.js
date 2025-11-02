@@ -966,7 +966,7 @@ function initializeMap() {
     const marker = L.marker([stop.lat, stop.lng], {
       icon: createIcon(stop.num, colors[idx])
     }).bindTooltip(`
-      <div style="font-family: Arial; font-size: 12px; width: 200px;">
+      <div style="font-family: Arial; font-size: 12px; min-width: 250px; max-width: 350px;">
         <h3 style="margin: 0 0 10px 0; color: #2c3e50;">${stop.icon} ${stop.name}</h3>
         <p style="margin: 5px 0;"><strong>When:</strong> ${stop.dates}</p>
         <p style="margin: 5px 0;"><strong>Stay:</strong> ${stop.days}</p>
@@ -981,7 +981,7 @@ function initializeMap() {
     const marker = L.marker([attraction.lat, attraction.lng], {
       icon: createAttractionIcon(attraction.icon)
     }).bindTooltip(`
-      <div style="font-family: Arial; font-size: 12px; width: 180px;">
+      <div style="font-family: Arial; font-size: 12px; min-width: 200px; max-width: 280px;">
         <h4 style="margin: 0 0 8px 0; color: #667eea;">${attraction.icon} ${attraction.name}</h4>
         <p style="margin: 0; color: #666; font-size: 11px;">📍 ${attraction.city}</p>
       </div>
