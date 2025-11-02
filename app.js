@@ -13,13 +13,13 @@ const tripData = {
   itinerary: [
     {
       day: 1, date: '2026-02-06', city: 'Bangkok',
-      morning: 'Flight Riga 08:40 → Bangkok ~21:00 (with connection)',
-      afternoon: 'Arrival late evening, check into hotel',
-      evening: 'Rest at hotel, early sleep for jet lag',
-      activities: ['Long flight', 'Hotel check-in'],
+      morning: 'Flight Riga 11:40 (Feb 5) → Bangkok 08:40 (Feb 6) morning arrival',
+      afternoon: 'Check into hotel, light breakfast, rest and recover from flight',
+      evening: 'Explore nearby area, local dinner, early sleep for jet lag',
+      activities: ['International flight', 'Hotel check-in', 'Light exploration'],
       transport: 'International flight',
       budget_eur: '500-700', accommodation_eur: '50-80',
-      tips: 'Sleep well to recover from jet lag',
+      tips: 'Morning arrival means you have a full day! But rest first to recover from jet lag',
       packing: ['Comfortable clothes', 'Toiletries']
     },
     {
@@ -193,13 +193,13 @@ const tripData = {
     {
       day: 17, date: '2026-02-22', city: 'Bangkok',
       morning: 'EARLY WAKE UP 3:30 AM for 5:50 AM flight!',
-      afternoon: 'Flight Bangkok → Riga (05:50), arrives day 2 ~13:00-15:00',
+      afternoon: 'Flight Bangkok → Riga (05:50), arrives same day 18:05',
       evening: 'Home in Latvia!',
       activities: ['Early morning flight', 'Journey home'],
       transport: 'International flight',
       budget_eur: '500-700', accommodation_eur: '0',
       tips: 'Set multiple alarms! Arrange hotel near airport (BKK has airport hotels)',
-      special_note: 'LONG FLIGHT HOME - bring entertainment!'
+      special_note: 'LONG FLIGHT HOME - bring entertainment! Arrive Riga 18:05'
     }
   ],
   
