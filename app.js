@@ -20,7 +20,10 @@ const tripData = {
       transport: 'International flight',
       budget_eur: '500-700', accommodation_eur: '50-80',
       tips: 'Morning arrival means you have a full day! But rest first to recover from jet lag',
-      packing: ['Comfortable clothes', 'Toiletries']
+      packing: ['Comfortable clothes', 'Toiletries'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxhaXJwbGFuZSUyMHRyYXZlbHxlbnwwfDB8fHwxNzYyMDkxMTk3fDA&ixlib=rb-4.1.0&q=80&w=1080', title: 'International Flight' }
+      ]
     },
     {
       day: 2, date: '2026-02-07', city: 'Bangkok',
@@ -31,7 +34,14 @@ const tripData = {
       transport: 'Local taxis/BTS',
       budget_eur: '30-40', accommodation_eur: '50-80',
       tips: 'Book Grand Palace early, dress appropriately, bring water',
-      packing: ['Light clothes', 'Sunscreen', 'Hat']
+      packing: ['Light clothes', 'Sunscreen', 'Hat'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1586098311577-520120ba3df3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxHcmFuZCUyMFBhbGFjZSUyMEJhbmdrb2slMjBUaGFpbGFuZHxlbnwwfDB8fHwxNzYyMDkxMTk3fDA&ixlib=rb-4.1.0&q=80&w=1080', title: 'Grand Palace' },
+        { url: 'https://images.unsplash.com/photo-1650021858406-3222764ea1f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxXYXQlMjBQaG8lMjBCYW5na29rJTIwcmVjbGluaW5nJTIwQnVkZGhhfGVufDB8MHx8fDE3NjIwOTE3NDl8MA&ixlib=rb-4.1.0&q=80&w=1080', title: 'Wat Pho' },
+        { url: 'https://images.unsplash.com/photo-1694824995159-2093477bc337?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxXYXQlMjBBcnVuJTIwdGVtcGxlJTIwQmFuZ2tvayUyMFRoYWlsYW5kfGVufDB8MHx8fDE3NjIwOTE3NDl8MA&ixlib=rb-4.1.0&q=80&w=1080', title: 'Wat Arun' },
+        { url: 'https://images.unsplash.com/photo-1652023409260-9595623af588?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxDaGFvJTIwUGhyYXlhJTIwcml2ZXIlMjBjcnVpc2UlMjBCYW5na29rfGVufDB8MHx8fDE3NjIwOTE3NDl8MA&ixlib=rb-4.1.0&q=80&w=1080', title: 'River Cruise' },
+        { url: 'https://images.unsplash.com/photo-1651950737998-2c69cf15460a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxCYW5na29rJTIwbmlnaHQlMjBtYXJrZXQlMjBDaGF0dWNoYWt8ZW58MHwwfHx8MTc2MjA5MTc0OXww&ixlib=rb-4.1.0&q=80&w=1080', title: 'Night Market' }
+      ]
     },
     {
       day: 3, date: '2026-02-08', city: 'Bangkok → Chiang Mai',
@@ -42,7 +52,10 @@ const tripData = {
       transport: 'Domestic flight BKK→CNX (1h 20m)',
       budget_eur: '40-50', accommodation_eur: '40-70',
       tips: 'Early morning for floating market, book flight in advance',
-      packing: ['Camera', 'Light jacket']
+      packing: ['Camera', 'Light jacket'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1714930383289-7500d1675ab6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxmbG9hdGluZyUyMG1hcmtldCUyMEJhbmdrb2slMjBUaGFpbGFuZHxlbnwwfDB8fHwxNzYyMDkxMTk3fDA&ixlib=rb-4.1.0&q=80&w=1080', title: 'Floating Market' }
+      ]
     },
     {
       day: 4, date: '2026-02-09', city: 'Chiang Mai',
@@ -53,7 +66,13 @@ const tripData = {
       transport: 'Taxis/tuk-tuks',
       budget_eur: '20-30', accommodation_eur: '40-70',
       tips: 'Wear comfortable hiking shoes for Doi Suthep, lots of stairs',
-      packing: ['Hiking shoes', 'Water bottle']
+      packing: ['Hiking shoes', 'Water bottle'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1725107227991-9e3195edf9b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxEb2klMjBTdXRoZXAlMjB0ZW1wbGUlMjBDaGlhbmclMjBNYWl8ZW58MHwwfHx8MTc2MjA5MTE5N3ww&ixlib=rb-4.1.0&q=80&w=1080', title: 'Doi Suthep' },
+        { url: 'https://images.unsplash.com/photo-1750433857121-6316c791dadb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxDaGlhbmclMjBNYWklMjBvbGQlMjBjaXR5JTIwdGVtcGxlcyUyMFRoYWlsYW5kfGVufDB8MHx8fDE3NjIwOTE3NTB8MA&ixlib=rb-4.1.0&q=80&w=1080', title: 'Old City Temples' },
+        { url: 'https://images.unsplash.com/photo-1573411857875-d299b06c4f62?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxDaGlhbmclMjBNYWklMjBuaWdodCUyMGJhemFhciUyMG1hcmtldHxlbnwwfHx8fDE3NjIwOTUwNTF8MA&ixlib=rb-4.1.0&q=85', title: 'Night Bazaar' },
+        { url: 'https://images.unsplash.com/photo-1702392158359-015e7dc60356?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxDaGlhbmclMjBNYWklMjBUaGFpJTIwc3RyZWV0JTIwZm9vZHxlbnwwfHx8fDE3NjIwOTUwNTF8MA&ixlib=rb-4.1.0&q=85', title: 'Thai Street Food' }
+      ]
     },
     {
       day: 5, date: '2026-02-10', city: 'Chiang Mai',
@@ -64,7 +83,12 @@ const tripData = {
       transport: 'Tour pickup/drop-off',
       budget_eur: '40-50', accommodation_eur: '40-70',
       tips: 'Book ethical elephant sanctuary in advance, bring change of clothes',
-      packing: ['Swimwear', 'Quick-dry clothes']
+      packing: ['Swimwear', 'Quick-dry clothes'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1680896444994-657f6904ba40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxlbGVwaGFudCUyMHNhbmN0dWFyeSUyMFRoYWlsYW5kfGVufDB8MHx8fDE3NjIwOTExOTd8MA&ixlib=rb-4.1.0&q=80&w=1080', title: 'Elephant Sanctuary' },
+        { url: 'https://images.unsplash.com/photo-1586739930541-3ae1c5fd8b13?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxlbGVwaGFudCUyMGJhdGhpbmclMjBUaGFpbGFuZCUyMHNhbmN0dWFyeXxlbnwwfHx8fDE3NjIwOTUwNTF8MA&ixlib=rb-4.1.0&q=85', title: 'Elephant Bathing' },
+        { url: 'https://images.unsplash.com/photo-1710186012479-d79e9d2a7065?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxUaGFpJTIwY29va2luZyUyMGNsYXNzJTIwZm9vZHxlbnwwfHx8fDE3NjIwOTUwNTF8MA&ixlib=rb-4.1.0&q=85', title: 'Thai Cooking Class' }
+      ]
     },
     {
       day: 6, date: '2026-02-11', city: 'Chiang Mai → Chiang Rai',
@@ -75,7 +99,12 @@ const tripData = {
       transport: 'Bus (Green Bus or local), taxis',
       budget_eur: '25-35', accommodation_eur: '40-60',
       tips: 'White Temple is very popular, arrive early to avoid crowds',
-      packing: ['Comfortable bus clothes']
+      packing: ['Comfortable bus clothes'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1697944944442-bc82e56e6e5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxXaGl0ZSUyMFRlbXBsZSUyMENoaWFuZyUyMFJhaSUyMFRoYWlsYW5kfGVufDB8MHx8fDE3NjIwOTEyMTN8MA&ixlib=rb-4.1.0&q=80&w=1080', title: 'White Temple' },
+        { url: 'https://images.unsplash.com/photo-1671188869078-c97a75ad444d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxCbHVlJTIwVGVtcGxlJTIwQ2hpYW5nJTIwUmFpfGVufDB8fHx8MTc2MjA5NTA1MXww&ixlib=rb-4.1.0&q=85', title: 'Blue Temple' },
+        { url: 'https://images.unsplash.com/photo-1718627829973-a0a3658c9d5b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxob3QlMjBzcHJpbmdzJTIwVGhhaWxhbmQlMjBuYXR1cmFsfGVufDB8fHx8MTc2MjA5NTA1MXww&ixlib=rb-4.1.0&q=85', title: 'Hot Springs' }
+      ]
     },
     {
       day: 7, date: '2026-02-12', city: 'Chiang Rai',
@@ -87,7 +116,13 @@ const tripData = {
       budget_eur: '50-60', accommodation_eur: '40-60',
       tips: 'Bring lots of water, insect repellent ESSENTIAL, wear hiking shoes',
       packing: ['Hiking boots', 'Insect repellent', 'Water', 'Snacks', 'Quick-dry shirt'],
-      difficulty: 'Medium - Long hike in tropical heat'
+      difficulty: 'Medium - Long hike in tropical heat',
+      images: [
+        { url: 'https://images.unsplash.com/photo-1671723368935-2fb950294e94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxqdW5nbGUlMjB0cmVra2luZyUyMFRoYWlsYW5kJTIwYmFtYm9vJTIwZm9yZXN0fGVufDB8MHx8fDE3NjIwOTEyMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080', title: 'Jungle Trekking' },
+        { url: 'https://images.unsplash.com/photo-1682647728951-feaf6b19b212?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxoaWxsJTIwdHJpYmUlMjB2aWxsYWdlJTIwVGhhaWxhbmR8ZW58MHx8fHwxNzYyMDk1MDUxfDA&ixlib=rb-4.1.0&q=85', title: 'Hill Tribe Village' },
+        { url: 'https://images.unsplash.com/photo-1699102604484-dfdb25ea62e4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxUaGFpbGFuZCUyMHJpY2UlMjBwYWRkaWVzJTIwdGVycmFjZXN8ZW58MHx8fHwxNzYyMDk1MDUxfDA&ixlib=rb-4.1.0&q=85', title: 'Rice Paddies' },
+        { url: 'https://images.unsplash.com/photo-1720788979123-295e71b66f0e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHx3YXRlcmZhbGwlMjBUaGFpbGFuZCUyMGp1bmdsZXxlbnwwfHx8fDE3NjIwOTUwNTF8MA&ixlib=rb-4.1.0&q=85', title: 'Waterfall' }
+      ]
     },
     {
       day: 8, date: '2026-02-13', city: 'Chiang Rai → Bangkok → Krabi',
@@ -98,7 +133,10 @@ const tripData = {
       transport: 'Domestic flights',
       budget_eur: '80-100', accommodation_eur: '60-100',
       tips: 'Check baggage allowance for connections',
-      packing: ['Light layer for flights']
+      packing: ['Light layer for flights'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1650732596327-0125c2ca2b3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxhaXJwbGFuZSUyMHdpbmclMjBjbG91ZHN8ZW58MHwwfHx8MTc2MjA5MTIxMnww&ixlib=rb-4.1.0&q=80&w=1080', title: 'Flight to South' }
+      ]
     },
     {
       day: 9, date: '2026-02-14', city: 'Krabi',
@@ -109,7 +147,12 @@ const tripData = {
       transport: 'Long-tail boats',
       budget_eur: '30-40', accommodation_eur: '60-100',
       tips: 'Railay is magical, bring underwater camera for snorkeling',
-      packing: ['Swimwear', 'Beach towel', 'Snorkel gear']
+      packing: ['Swimwear', 'Beach towel', 'Snorkel gear'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1704314929474-eda7dec5debd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxSYWlsYXklMjBCZWFjaCUyMEtyYWJpJTIwVGhhaWxhbmR8ZW58MHwwfHx8MTc2MjA5MTIxMnww&ixlib=rb-4.1.0&q=80&w=1080', title: 'Railay Beach' },
+        { url: 'https://images.unsplash.com/photo-1627376598427-6314c284226a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxLcmFiaSUyMGtheWFraW5nJTIwbGltZXN0b25lfGVufDB8fHx8MTc2MjA5NTA1MXww&ixlib=rb-4.1.0&q=85', title: 'Kayaking' },
+        { url: 'https://images.unsplash.com/photo-1672932920323-17e4a69cbf51?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxQaHJhJTIwTmFuZyUyMENhdmUlMjBLcmFiaXxlbnwwfHx8fDE3NjIwOTUwNzd8MA&ixlib=rb-4.1.0&q=85', title: 'Phra Nang Cave' }
+      ]
     },
     {
       day: 10, date: '2026-02-15', city: 'Khao Sok',
@@ -121,7 +164,11 @@ const tripData = {
       budget_eur: '60-80', accommodation_eur: '60-120',
       tips: 'This is the MUST-DO jungle experience, bring insect repellent, sleep early',
       packing: ['Light clothes', 'Flashlight', 'Insect repellent'],
-      accommodation_type: 'Treehouse - Unique experience!'
+      accommodation_type: 'Treehouse - Unique experience!',
+      images: [
+        { url: 'https://images.unsplash.com/photo-1689479095441-2a545f413b27?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxLaGFvJTIwU29rJTIwdHJlZWhvdXNlJTIwanVuZ2xlfGVufDB8fHx8MTc2MjA5NTA3N3ww&ixlib=rb-4.1.0&q=85', title: 'Treehouse Accommodation' },
+        { url: 'https://images.unsplash.com/photo-1641892193415-fe0f8a49086c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxLaGFvJTIwU29rJTIwTmF0aW9uYWwlMjBQYXJrJTIwVGhhaWxhbmQlMjBqdW5nbGV8ZW58MHwwfHx8MTc2MjA5MTIxM3ww&ixlib=rb-4.1.0&q=80&w=1080', title: 'Khao Sok Jungle' }
+      ]
     },
     {
       day: 11, date: '2026-02-16', city: 'Khao Sok',
@@ -133,7 +180,12 @@ const tripData = {
       budget_eur: '30-40', accommodation_eur: '60-100',
       tips: 'Cheow Lan Lake is one of Thailand\'s best kept secrets, bring camera',
       packing: ['Camera', 'Dry bag'],
-      special_note: 'Sleep on floating bungalows - unforgettable!'
+      special_note: 'Sleep on floating bungalows - unforgettable!',
+      images: [
+        { url: 'https://images.unsplash.com/photo-1675348081045-f3af6352c68b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxDaGVvdyUyMExhbiUyMExha2UlMjBLaGFvJTIwU29rJTIwVGhhaWxhbmR8ZW58MHwwfHx8MTc2MjA5MTIzNXww&ixlib=rb-4.1.0&q=80&w=1080', title: 'Cheow Lan Lake' },
+        { url: 'https://images.unsplash.com/photo-1587283506208-2f3bfef269a1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxmbG9hdGluZyUyMGJ1bmdhbG93cyUyMEtoYW8lMjBTb2slMjBsYWtlfGVufDB8fHx8MTc2MjA5NTA3N3ww&ixlib=rb-4.1.0&q=85', title: 'Floating Bungalows' },
+        { url: 'https://images.unsplash.com/photo-1586715953464-4a1b5f2aa9de?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxrYXlha2luZyUyMENoZW93JTIwTGFuJTIwTGFrZXxlbnwwfHx8fDE3NjIwOTUwNzd8MA&ixlib=rb-4.1.0&q=85', title: 'Kayaking on Lake' }
+      ]
     },
     {
       day: 12, date: '2026-02-17', city: 'Krabi → Phi Phi',
@@ -144,7 +196,10 @@ const tripData = {
       transport: 'Ferry from Ao Nang',
       budget_eur: '40-60', accommodation_eur: '60-100',
       tips: 'Phi Phi is touristy but beautiful, book ferry in advance',
-      packing: ['Snorkel gear', 'Underwater camera']
+      packing: ['Snorkel gear', 'Underwater camera'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1534008989723-4f9171b05272?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxQaGklMjBQaGklMjBJc2xhbmQlMjBUaGFpbGFuZCUyMGJlYWNofGVufDB8MHx8fDE3NjIwOTEyMzV8MA&ixlib=rb-4.1.0&q=80&w=1080', title: 'Phi Phi Island' }
+      ]
     },
     {
       day: 13, date: '2026-02-18', city: 'Phi Phi',
@@ -155,7 +210,13 @@ const tripData = {
       transport: 'Long-tail boat tour',
       budget_eur: '40-50', accommodation_eur: '60-100',
       tips: 'Maya Bay can be crowded, the blue lagoon is worth it, bring underwater camera',
-      packing: ['Snorkel gear', 'Rash guard', 'Sunscreen SPF 50+']
+      packing: ['Snorkel gear', 'Rash guard', 'Sunscreen SPF 50+'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1534008897995-27a23e859048?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxNYXlhJTIwQmF5JTIwUGhpJTIwUGhpJTIwVGhhaWxhbmR8ZW58MHwwfHx8MTc2MjA5MTIzNXww&ixlib=rb-4.1.0&q=80&w=1080', title: 'Maya Bay' },
+        { url: 'https://images.unsplash.com/photo-1732733567932-f03c05e89ad9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxWaWtpbmclMjBDYXZlJTIwUGhpJTIwUGhpJTIwVGhhaWxhbmR8ZW58MHx8fHwxNzYyMDk1MDc3fDA&ixlib=rb-4.1.0&q=85', title: 'Viking Cave' },
+        { url: 'https://images.unsplash.com/photo-1683641967671-196309483093?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxQaWxlaCUyMExhZ29vbiUyMGJsdWUlMjBQaGklMjBQaGl8ZW58MHx8fHwxNzYyMDk1MDc3fDA&ixlib=rb-4.1.0&q=85', title: 'Pileh Lagoon' },
+        { url: 'https://images.unsplash.com/photo-1703884293949-8677c4b34897?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxzbm9ya2VsaW5nJTIwdHJvcGljYWwlMjBmaXNoJTIwVGhhaWxhbmR8ZW58MHx8fHwxNzYyMDk1MDc3fDA&ixlib=rb-4.1.0&q=85', title: 'Snorkeling' }
+      ]
     },
     {
       day: 14, date: '2026-02-19', city: 'Phi Phi → Koh Samui',
@@ -166,7 +227,10 @@ const tripData = {
       transport: 'Ferry + Domestic flight',
       budget_eur: '80-120', accommodation_eur: '60-100',
       tips: 'Tight timing, have luggage at ready, don\'t miss flight',
-      packing: ['Small daypack']
+      packing: ['Small daypack'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1734305529432-4e81d8fd5cc6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxmZXJyeSUyMGJvYXQlMjBUaGFpbGFuZCUyMGlzbGFuZHxlbnwwfDB8fHwxNzYyMDkxMjM1fDA&ixlib=rb-4.1.0&q=80&w=1080', title: 'Ferry to Koh Samui' }
+      ]
     },
     {
       day: 15, date: '2026-02-20', city: 'Koh Samui',
@@ -177,7 +241,10 @@ const tripData = {
       transport: 'Taxis/motorbike rentals',
       budget_eur: '30-40', accommodation_eur: '60-100',
       tips: 'Silver Beach (Crystal Bay) is worth the trip for best sunset',
-      packing: ['Casual clothes']
+      packing: ['Casual clothes'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1526656608461-d9f14911f1bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxLb2glMjBTYW11aSUyMFRoYWlsYW5kJTIwYmVhY2glMjBwYWxtJTIwdHJlZXN8ZW58MHwwfHx8MTc2MjA5MTIzNXww&ixlib=rb-4.1.0&q=80&w=1080', title: 'Koh Samui Beach' }
+      ]
     },
     {
       day: 16, date: '2026-02-21', city: 'Koh Samui → Bangkok',
@@ -188,7 +255,10 @@ const tripData = {
       transport: 'Flight + Grab/taxi',
       budget_eur: '40-60', accommodation_eur: '40-60',
       tips: 'Last night in Thailand - enjoy! Hotel near airport for early flight',
-      packing: ['Casual/formal clothes for dinner']
+      packing: ['Casual/formal clothes for dinner'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1706008434257-f50d6ec7d107?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxCYW5na29rJTIwcm9vZnRvcCUyMGJhciUyMHNreWxpbmV8ZW58MHx8fHwxNzYyMDk1MDc3fDA&ixlib=rb-4.1.0&q=85', title: 'Rooftop Bar' }
+      ]
     },
     {
       day: 17, date: '2026-02-22', city: 'Bangkok',
@@ -199,12 +269,14 @@ const tripData = {
       transport: 'International flight',
       budget_eur: '500-700', accommodation_eur: '0',
       tips: 'Set multiple alarms! Arrange hotel near airport (BKK has airport hotels)',
-      special_note: 'LONG FLIGHT HOME - bring entertainment! Arrive Riga 18:05'
+      special_note: 'LONG FLIGHT HOME - bring entertainment! Arrive Riga 18:05',
+      images: [
+        { url: 'https://images.unsplash.com/photo-1724562399669-074371f5f24c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxhaXJwbGFuZSUyMGRlcGFydHVyZSUyMHN1bnNldCUyMGhvbWV8ZW58MHwwfHx8MTc2MjA5MTI0Nnww&ixlib=rb-4.1.0&q=80&w=1080', title: 'Journey Home' }
+      ]
     }
   ],
   
   budgetBreakdown: {
-    'International Flights (Roundtrip)': '€500-700',
     'Domestic Flights': '€150-250',
     'Accommodation (16 nights)': '€800-1,280',
     'Food & Dining (17 days)': '€250-340',
@@ -372,10 +444,14 @@ function renderDayList() {
   document.querySelectorAll('.day-card').forEach(card => {
     card.addEventListener('click', () => {
       selectedDay = parseInt(card.dataset.day);
+
+      // Always switch to Itinerary tab when a day is selected
+      currentView = 'itinerary';
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector('.nav-btn[data-view="itinerary"]').classList.add('active');
+
       renderDayList();
-      if (currentView === 'itinerary') {
-        renderItineraryView();
-      }
+      renderItineraryView();
     });
   });
 }
@@ -421,10 +497,53 @@ function renderItineraryView() {
   const day = tripData.itinerary.find(d => d.day === selectedDay);
   const color = getCityColor(day.city);
   const emoji = getCityEmoji(day.city);
-  
+
   const content = document.getElementById('mainContent');
+
+  // Generate image carousel HTML if images exist
+  let imageHTML = '';
+  if (day.images && day.images.length > 0) {
+    if (day.images.length === 1) {
+      const img = day.images[0];
+      const imgUrl = typeof img === 'string' ? img : img.url;
+      const imgTitle = typeof img === 'string' ? '' : img.title;
+      imageHTML = `
+        <div class="image-wrapper">
+          <img src="${imgUrl}" alt="${day.city}" class="itinerary-image" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px 8px 0 0; margin-bottom: 20px;">
+          ${imgTitle ? `<div class="image-title">${imgTitle}</div>` : ''}
+        </div>
+      `;
+    } else {
+      imageHTML = `
+        <div class="image-carousel">
+          <div class="carousel-images" id="carouselImages-${day.day}">
+            ${day.images.map((img, index) => {
+              const imgUrl = typeof img === 'string' ? img : img.url;
+              const imgTitle = typeof img === 'string' ? '' : img.title;
+              return `
+                <div class="carousel-slide ${index === 0 ? 'active' : ''}">
+                  <img src="${imgUrl}" alt="${day.city} ${index + 1}" class="carousel-image" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                  ${imgTitle ? `<div class="image-title">${imgTitle}</div>` : ''}
+                </div>
+              `;
+            }).join('')}
+          </div>
+          <button class="carousel-btn prev" onclick="changeImage(${day.day}, -1)">‹</button>
+          <button class="carousel-btn next" onclick="changeImage(${day.day}, 1)">›</button>
+          <div class="carousel-dots">
+            ${day.images.map((_, index) => `
+              <span class="dot ${index === 0 ? 'active' : ''}" onclick="goToImage(${day.day}, ${index})"></span>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+  }
+
   content.innerHTML = `
     <div class="detail-card">
+      ${imageHTML}
+
       <div class="detail-header">
         <h2 style="color: ${color};">Day ${day.day}: ${emoji} ${day.city}</h2>
         <div class="detail-meta">
@@ -434,7 +553,7 @@ function renderItineraryView() {
           ${day.accommodation_eur !== '0' ? `<span>🏨 €${day.accommodation_eur}/night</span>` : ''}
         </div>
       </div>
-      
+
       <div class="detail-section">
         <h3>☀️ Morning</h3>
         <p>${day.morning}</p>
@@ -490,10 +609,10 @@ function renderItineraryView() {
 function renderBudgetView() {
   const content = document.getElementById('mainContent');
   
-  const totalMin = 8000;
-  const totalMax = 12080;
-  const perPersonMin = 2000;
-  const perPersonMax = 3020;
+  const totalMin = 6000;
+  const totalMax = 8000;
+  const perPersonMin = 1500;
+  const perPersonMax = 2000;
   
   content.innerHTML = `
     <div class="detail-card">
@@ -1055,6 +1174,39 @@ function navigateDay(direction) {
 
 function togglePackingItem(itemId) {
   checkedItems[itemId] = !checkedItems[itemId];
+}
+
+// Image carousel functions
+let currentImageIndex = {};
+
+function changeImage(day, direction) {
+  const slides = document.querySelectorAll(`#carouselImages-${day} .carousel-slide`);
+  const dots = document.querySelectorAll('.carousel-dots .dot');
+
+  if (!currentImageIndex[day]) currentImageIndex[day] = 0;
+
+  slides[currentImageIndex[day]].classList.remove('active');
+  dots[currentImageIndex[day]].classList.remove('active');
+
+  currentImageIndex[day] = (currentImageIndex[day] + direction + slides.length) % slides.length;
+
+  slides[currentImageIndex[day]].classList.add('active');
+  dots[currentImageIndex[day]].classList.add('active');
+}
+
+function goToImage(day, index) {
+  const slides = document.querySelectorAll(`#carouselImages-${day} .carousel-slide`);
+  const dots = document.querySelectorAll('.carousel-dots .dot');
+
+  if (!currentImageIndex[day]) currentImageIndex[day] = 0;
+
+  slides[currentImageIndex[day]].classList.remove('active');
+  dots[currentImageIndex[day]].classList.remove('active');
+
+  currentImageIndex[day] = index;
+
+  slides[currentImageIndex[day]].classList.add('active');
+  dots[currentImageIndex[day]].classList.add('active');
 }
 
 // Initialize app when DOM is ready
