@@ -1633,11 +1633,21 @@ body {
   background: #000;
 }
 
-.main-video {
+/* Responsive 16:9 aspect ratio container for Google Drive iframe */
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  display: block;
-  background: #000;
+  height: 100%;
+  border: none;
 }
 
 .main-summary {

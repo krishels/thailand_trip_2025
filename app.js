@@ -502,13 +502,21 @@ function renderContent() {
 function renderMainView() {
   const content = document.getElementById('mainContent');
 
+  // Google Drive video ID
+  const googleDriveFileId = '1HOldbm6_ZUmavLTFEpHxeRs-hDocZYzP';
+
   content.innerHTML = `
     <div class="main-view">
       <div class="main-video-container">
-        <video class="main-video" controls>
-          <source src="thailand_trip_2026.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <div class="video-responsive">
+          <iframe
+            src="https://drive.google.com/file/d/${googleDriveFileId}/preview"
+            width="640"
+            height="360"
+            allow="autoplay"
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
 
       <div class="main-summary">
