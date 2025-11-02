@@ -394,7 +394,7 @@ const tripData = {
 };
 
 // State management
-let currentView = 'itinerary';
+let currentView = 'main';
 let selectedDay = 1;
 let checkedItems = {};
 
@@ -474,6 +474,9 @@ function renderContent() {
   stopAutoPlay();
 
   switch (currentView) {
+    case 'main':
+      renderMainView();
+      break;
     case 'itinerary':
       renderItineraryView();
       break;
@@ -493,6 +496,124 @@ function renderContent() {
       renderTipsView();
       break;
   }
+}
+
+// Render main view
+function renderMainView() {
+  const content = document.getElementById('mainContent');
+
+  content.innerHTML = `
+    <div class="main-view">
+      <div class="main-video-container">
+        <video class="main-video" controls autoplay muted loop>
+          <source src="thailand-trip.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-placeholder">
+          <div class="video-placeholder-icon">🎥</div>
+          <p>Add your trip video: thailand-trip.mp4</p>
+        </div>
+      </div>
+
+      <div class="main-summary">
+        <h2>🌴 Our Thailand Adventure 2026</h2>
+
+        <div class="summary-section">
+          <h3>✈️ The Journey</h3>
+          <p>
+            Join us on an unforgettable 17-day adventure through the Land of Smiles!
+            From February 5-22, 2026, we'll explore Thailand's diverse landscapes,
+            rich culture, and stunning beaches with 4 adventurous travelers.
+          </p>
+        </div>
+
+        <div class="summary-section">
+          <h3>🗺️ Where We're Going</h3>
+          <div class="destination-grid">
+            <div class="destination-card">
+              <div class="destination-emoji">🏛️</div>
+              <h4>Bangkok</h4>
+              <p>Grand Palace, temples & vibrant street life</p>
+            </div>
+            <div class="destination-card">
+              <div class="destination-emoji">🌳</div>
+              <h4>Chiang Mai</h4>
+              <p>Mountains, temples & elephant sanctuary</p>
+            </div>
+            <div class="destination-card">
+              <div class="destination-emoji">⛰️</div>
+              <h4>Chiang Rai</h4>
+              <p>White Temple, Blue Temple & jungle trekking</p>
+            </div>
+            <div class="destination-card">
+              <div class="destination-emoji">🏖️</div>
+              <h4>Krabi</h4>
+              <p>Railay Beach & stunning limestone cliffs</p>
+            </div>
+            <div class="destination-card">
+              <div class="destination-emoji">🌴</div>
+              <h4>Khao Sok</h4>
+              <p>Rainforest treehouse & floating bungalows</p>
+            </div>
+            <div class="destination-card">
+              <div class="destination-emoji">🏝️</div>
+              <h4>Phi Phi Islands</h4>
+              <p>Maya Bay, Viking Cave & snorkeling</p>
+            </div>
+            <div class="destination-card">
+              <div class="destination-emoji">🌊</div>
+              <h4>Koh Samui</h4>
+              <p>Beautiful beaches & Big Buddha</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-section">
+          <h3>🎯 What We'll Do</h3>
+          <div class="highlights-grid">
+            <div class="highlight-item">🐘 Ethical elephant sanctuary experience</div>
+            <div class="highlight-item">🥾 10km jungle trekking adventure</div>
+            <div class="highlight-item">🛶 Kayaking through limestone caves</div>
+            <div class="highlight-item">🏊 Snorkeling in crystal-clear waters</div>
+            <div class="highlight-item">🍜 Thai cooking class</div>
+            <div class="highlight-item">🏛️ Ancient temples & palaces</div>
+            <div class="highlight-item">🌅 Floating bungalows on Cheow Lan Lake</div>
+            <div class="highlight-item">🌴 Treehouse accommodation in the jungle</div>
+            <div class="highlight-item">🎨 Hill tribe village visits</div>
+            <div class="highlight-item">🍛 Night markets & street food</div>
+          </div>
+        </div>
+
+        <div class="summary-section">
+          <h3>📊 Trip Overview</h3>
+          <div class="trip-stats">
+            <div class="stat-item">
+              <div class="stat-number">17</div>
+              <div class="stat-label">Days</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">8</div>
+              <div class="stat-label">Cities</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">4</div>
+              <div class="stat-label">Travelers</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">€8,000</div>
+              <div class="stat-label">Budget</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-cta">
+          <button class="btn-primary" onclick="currentView = 'itinerary'; document.querySelector('[data-view=\\'itinerary\\']').click();">
+            View Full Itinerary →
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 // Render itinerary view
