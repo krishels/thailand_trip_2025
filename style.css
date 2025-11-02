@@ -1268,24 +1268,116 @@ body {
 }
 
 @media (max-width: 768px) {
+  /* Header improvements */
   .header {
-    padding: var(--space-16);
+    padding: 12px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
 
+  .header-content h1 {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .trip-summary {
+    font-size: 11px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .trip-summary span {
+    white-space: nowrap;
+  }
+
+  /* Navigation improvements - horizontal scroll */
+  .main-nav {
+    margin-top: 12px;
+    gap: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    padding-bottom: 8px;
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+
+  .nav-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-height: 44px; /* iOS touch target */
+  }
+
+  /* Hide sidebar on mobile */
+  .sidebar {
+    display: none;
+  }
+
+  /* Main container */
   .main-container {
-    padding: var(--space-16);
+    padding: 16px;
+    flex-direction: column;
+    gap: 16px;
   }
 
+  /* Content area takes full width */
+  .content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Detail cards */
   .detail-card {
-    padding: var(--space-20);
+    padding: 16px;
+    border-radius: 12px;
   }
 
+  /* Budget and packing grids */
   .budget-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .packing-list {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Better touch targets for checkboxes */
+  .packing-item {
+    padding: 12px;
+    min-height: 44px;
+  }
+
+  /* Navigation buttons */
+  .navigation-buttons {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .navigation-buttons button {
+    flex: 1 1 auto;
+    min-width: 120px;
+    min-height: 44px;
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+
+  /* Tips grid */
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Activity cards */
+  .activity-card {
+    margin-bottom: 16px;
   }
 }
 
@@ -1587,32 +1679,68 @@ body {
 
 /* Carousel responsive adjustments */
 @media (max-width: 768px) {
-  .carousel-images {
-    height: 200px;
+  /* Carousel mobile improvements */
+  .image-carousel {
+    margin-bottom: 16px;
+    border-radius: 12px 12px 0 0;
   }
 
+  .carousel-images {
+    height: 240px; /* Increased for better viewing */
+    border-radius: 12px 12px 0 0;
+  }
+
+  .carousel-slide {
+    height: 240px;
+  }
+
+  .carousel-slide img {
+    object-fit: cover;
+  }
+
+  /* Larger, more visible carousel buttons */
   .carousel-btn {
-    width: 35px;
-    height: 35px;
+    width: 44px; /* iOS minimum touch target */
+    height: 44px;
     font-size: 24px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
   }
 
   .carousel-btn.prev {
-    left: 10px;
+    left: 8px;
   }
 
   .carousel-btn.next {
-    right: 10px;
+    right: 8px;
+  }
+
+  /* Larger dots for easier navigation */
+  .carousel-dots {
+    bottom: 12px;
+    gap: 8px;
   }
 
   .carousel-dots .dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
   }
 
+  .carousel-dots .dot.active {
+    width: 24px; /* Elongated active dot */
+  }
+
+  /* Better image title visibility */
   .image-title {
-    font-size: 14px;
-    padding: 40px 50px 15px 50px;
+    font-size: 13px;
+    padding: 50px 16px 16px 16px;
+    line-height: 1.4;
+  }
+
+  /* Navigation dots container */
+  .navigation-dots {
+    padding: 12px 0;
   }
 }
 
@@ -1804,32 +1932,190 @@ body {
 
 /* Responsive adjustments for Main View */
 @media (max-width: 768px) {
+  /* Main page mobile improvements */
+  .main-view {
+    padding: 0;
+  }
+
+  .main-video-container {
+    margin: 0 0 20px 0;
+    border-radius: 0;
+    max-width: 100%;
+  }
+
+  .video-responsive {
+    border-radius: 0;
+  }
+
   .main-summary {
-    padding: 24px;
+    padding: 20px 16px;
+    border-radius: 0;
+    margin: 0;
   }
 
   .main-summary h2 {
-    font-size: 24px;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .summary-section {
+    margin-bottom: 32px;
   }
 
   .summary-section h3 {
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: 16px;
   }
 
+  .summary-section p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* Destination cards */
   .destination-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
+  .destination-card {
+    padding: 20px;
+  }
+
+  .destination-emoji {
+    font-size: 40px;
+    margin-bottom: 8px;
+  }
+
+  .destination-card h4 {
+    font-size: 16px;
+  }
+
+  .destination-card p {
+    font-size: 13px;
+  }
+
+  /* Highlights */
   .highlights-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 
+  .highlight-item {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  /* Trip stats */
   .trip-stats {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .stat-item {
+    padding: 20px 16px;
+  }
+
+  .stat-number {
+    font-size: 28px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+
+  /* CTA button */
+  .summary-cta {
+    margin-top: 32px;
   }
 
   .btn-primary {
-    padding: 14px 32px;
+    width: 100%;
+    padding: 16px 32px;
+    font-size: 16px;
+    min-height: 52px;
+  }
+}
+
+/* Extra small screens (phones < 480px) */
+@media (max-width: 480px) {
+  .header-content h1 {
+    font-size: 18px;
+  }
+
+  .trip-summary {
+    font-size: 10px;
+  }
+
+  .nav-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .main-summary h2 {
+    font-size: 20px;
+  }
+
+  .summary-section h3 {
     font-size: 16px;
   }
+
+  .destination-emoji {
+    font-size: 36px;
+  }
+
+  .stat-number {
+    font-size: 24px;
+  }
+
+  .btn-primary {
+    font-size: 15px;
+    padding: 14px 24px;
+  }
+}
+
+/* Touch and scroll improvements */
+@media (hover: none) and (pointer: coarse) {
+  /* Better touch targets for mobile devices */
+  button, a, .nav-btn, .day-btn, .packing-item {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Remove hover effects on touch devices */
+  .nav-btn:hover,
+  .carousel-btn:hover,
+  .destination-card:hover,
+  .highlight-item:hover {
+    transform: none;
+  }
+
+  /* Add active states instead */
+  .nav-btn:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+
+  .carousel-btn:active {
+    transform: scale(0.9);
+  }
+}
+
+/* Smooth scrolling for navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent text selection on buttons */
+button, .nav-btn, .carousel-btn {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Improve tap highlighting */
+a, button, input, textarea {
+  -webkit-tap-highlight-color: rgba(102, 126, 234, 0.2);
 }
