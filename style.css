@@ -1568,7 +1568,7 @@ body {
   right: 0;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.5), transparent);
   color: white;
-  padding: 35px 60px 15px 60px;
+  padding: 60px 70px 20px 70px;
   font-size: 18px;
   font-weight: 600;
   text-align: center;
@@ -1612,6 +1612,6 @@ body {
 
   .image-title {
     font-size: 14px;
-    padding: 25px 50px 10px 50px;
+    padding: 40px 50px 15px 50px;
   }
 }
