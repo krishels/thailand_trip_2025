@@ -506,7 +506,7 @@ function renderMainView() {
     <div class="main-view">
       <div class="main-video-container">
         <video class="main-video" controls>
-          <source src="thailand-trip.mp4" type="video/mp4">
+          <source src="thailand_trip_2026.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
