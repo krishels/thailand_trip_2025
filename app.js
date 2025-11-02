@@ -407,6 +407,9 @@ function renderContent() {
     case 'activities':
       renderActivitiesView();
       break;
+    case 'map':
+      renderMapView();
+      break;
     case 'tips':
       renderTipsView();
       break;
@@ -759,6 +762,229 @@ function renderTipsView() {
       </div>
     </div>
   `;
+}
+
+// Render map view
+let mapInstance = null;
+let mapMarkers = [];
+
+function renderMapView() {
+  const content = document.getElementById('mainContent');
+
+  content.innerHTML = `
+    <div class="detail-card">
+      <div class="detail-header">
+        <h2>🗺️ Trip Route Map</h2>
+        <p style="color: var(--color-text-secondary);">Interactive map showing all stops and the journey path</p>
+      </div>
+
+      <div id="map"></div>
+
+      <div class="detail-section">
+        <h3>Journey Stops</h3>
+        <div class="map-stops-list" id="mapStopsList"></div>
+      </div>
+
+      <div class="map-legend">
+        <h3>Trip Highlights</h3>
+        <div class="map-legend-item">
+          <span class="map-legend-icon">🏛️</span> Temples & Culture
+        </div>
+        <div class="map-legend-item">
+          <span class="map-legend-icon">🌳</span> Jungle & Nature
+        </div>
+        <div class="map-legend-item">
+          <span class="map-legend-icon">🏖️</span> Beaches & Islands
+        </div>
+        <div class="map-legend-item">
+          <span class="map-legend-icon">🥾</span> Hiking & Adventure
+        </div>
+        <div class="map-legend-item">
+          <span class="map-legend-icon">🍜</span> Local Cuisine
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Wait for DOM to be ready
+  setTimeout(() => {
+    initializeMap();
+  }, 100);
+}
+
+function initializeMap() {
+  // Define stops with coordinates
+  const stops = [
+    {
+      num: 1,
+      name: "Bangkok",
+      dates: "Feb 6-8",
+      days: "2 nights",
+      lat: 13.7563,
+      lng: 100.5018,
+      activities: "Grand Palace, Wat Pho, Floating Market, River Cruise",
+      icon: "🏛️"
+    },
+    {
+      num: 2,
+      name: "Chiang Mai",
+      dates: "Feb 8-11",
+      days: "3 nights",
+      lat: 18.7883,
+      lng: 98.9853,
+      activities: "Doi Suthep, Elephant Sanctuary, Night Bazaar",
+      icon: "🌳"
+    },
+    {
+      num: 3,
+      name: "Chiang Rai",
+      dates: "Feb 11-13",
+      days: "2 nights",
+      lat: 19.9070,
+      lng: 99.8805,
+      activities: "White Temple, Blue Temple, 10km Jungle Trekking",
+      icon: "⛰️"
+    },
+    {
+      num: 4,
+      name: "Krabi (Hub)",
+      dates: "Feb 13-17",
+      days: "4 nights",
+      lat: 8.6347,
+      lng: 98.9063,
+      activities: "Railay Beach, Kayaking, Khao Sok Day Trip",
+      icon: "🏖️"
+    },
+    {
+      num: 5,
+      name: "Khao Sok",
+      dates: "Feb 15-16",
+      days: "1 night",
+      lat: 8.5125,
+      lng: 98.8469,
+      activities: "Treehouse, Cheow Lan Lake, Floating Bungalows",
+      icon: "🌳"
+    },
+    {
+      num: 6,
+      name: "Phi Phi",
+      dates: "Feb 17-19",
+      days: "2 nights",
+      lat: 7.7519,
+      lng: 98.7723,
+      activities: "Maya Bay, Viking Cave, Snorkeling, Beaches",
+      icon: "🏖️"
+    },
+    {
+      num: 7,
+      name: "Koh Samui",
+      dates: "Feb 19-21",
+      days: "2 nights",
+      lat: 8.9625,
+      lng: 100.0925,
+      activities: "Big Buddha, Beaches, Snorkeling, Relaxation",
+      icon: "🏖️"
+    },
+    {
+      num: 8,
+      name: "Bangkok",
+      dates: "Feb 21-22",
+      days: "1 night",
+      lat: 13.7563,
+      lng: 100.5018,
+      activities: "Last-minute shopping, Roof-top bars",
+      icon: "🏛️"
+    }
+  ];
+
+  // Color palette for stops
+  const colors = ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#00f2fe', '#43e97b', '#fa709a', '#fee140'];
+
+  // Destroy existing map if it exists
+  if (mapInstance) {
+    mapInstance.remove();
+    mapInstance = null;
+  }
+
+  // Initialize map
+  mapInstance = L.map('map').setView([13.5, 100.5], 6);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors',
+    maxZoom: 19
+  }).addTo(mapInstance);
+
+  // Create custom icon function
+  const createIcon = (num, color) => {
+    return L.divIcon({
+      html: \`<div style="background: \${color}; color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: bold; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">\${num}</div>\`,
+      iconSize: [40, 40],
+      className: 'custom-icon'
+    });
+  };
+
+  // Add markers
+  mapMarkers = [];
+  stops.forEach((stop, idx) => {
+    const marker = L.marker([stop.lat, stop.lng], {
+      icon: createIcon(stop.num, colors[idx])
+    }).bindPopup(\`
+      <div style="font-family: Arial; font-size: 12px; width: 200px;">
+        <h3 style="margin: 0 0 10px 0; color: #2c3e50;">\${stop.icon} \${stop.name}</h3>
+        <p style="margin: 5px 0;"><strong>When:</strong> \${stop.dates}</p>
+        <p style="margin: 5px 0;"><strong>Stay:</strong> \${stop.days}</p>
+        <p style="margin: 5px 0;"><strong>Things:</strong> \${stop.activities}</p>
+      </div>
+    \`).addTo(mapInstance);
+    mapMarkers.push(marker);
+  });
+
+  // Draw route lines
+  const routeCoordinates = stops.map(s => [s.lat, s.lng]);
+  L.polyline(routeCoordinates, {
+    color: '#667eea',
+    weight: 3,
+    opacity: 0.6,
+    dashArray: '10, 5'
+  }).addTo(mapInstance);
+
+  // Create stops list
+  const stopsList = document.getElementById('mapStopsList');
+  if (stopsList) {
+    stopsList.innerHTML = stops.map((stop, idx) => {
+      let html = \`
+        <div class="map-stop" data-stop-index="\${idx}">
+          <div class="map-stop-number">\${stop.num}</div>
+          <span class="map-stop-name">\${stop.icon} \${stop.name}</span>
+          <span class="badge badge-info" style="margin-left: 8px;">\${stop.days}</span>
+          <div class="map-stop-date">\${stop.dates}</div>
+          <div class="map-stop-activities">\${stop.activities}</div>
+        </div>
+      \`;
+
+      if (idx < stops.length - 1) {
+        const nextStop = stops[idx + 1];
+        html += \`<div class="map-route-info">✈️ → \${nextStop.name}</div>\`;
+      }
+
+      return html;
+    }).join('');
+
+    // Add click handlers to stops
+    document.querySelectorAll('.map-stop').forEach((stopEl, idx) => {
+      stopEl.addEventListener('click', () => {
+        mapInstance.setView([stops[idx].lat, stops[idx].lng], 9);
+        mapMarkers[idx].openPopup();
+
+        document.querySelectorAll('.map-stop').forEach(s => s.classList.remove('active'));
+        stopEl.classList.add('active');
+      });
+    });
+  }
+
+  // Fit map to show all markers
+  const group = new L.featureGroup(mapMarkers);
+  mapInstance.fitBounds(group.getBounds().pad(0.1));
 }
 
 // Helper functions
