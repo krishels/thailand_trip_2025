@@ -721,6 +721,25 @@ function renderItineraryView() {
         ${day.accommodation_type ? `<p><span class="badge badge-success">${day.accommodation_type}</span></p>` : ''}
       </div>
       
+      <!-- Mobile Day Selector (horizontal scroll) -->
+      <div class="mobile-day-selector">
+        <div class="mobile-day-scroll">
+          ${tripData.itinerary.map(d => {
+            const dayEmoji = getCityEmoji(d.city);
+            return `
+              <button
+                class="mobile-day-btn ${d.day === selectedDay ? 'active' : ''}"
+                onclick="selectDay(${d.day})"
+                data-day="${d.day}">
+                <div class="mobile-day-number">Day ${d.day}</div>
+                <div class="mobile-day-city">${dayEmoji} ${d.city}</div>
+                <div class="mobile-day-date">${formatDate(d.date)}</div>
+              </button>
+            `;
+          }).join('')}
+        </div>
+      </div>
+
       <div class="navigation-buttons">
         <button class="btn" onclick="navigateDay(-1)" ${selectedDay === 1 ? 'disabled' : ''}>
           ← Previous Day
@@ -1306,6 +1325,28 @@ function navigateDay(direction) {
     renderItineraryView();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+}
+
+// Mobile day selector function
+function selectDay(day) {
+  selectedDay = parseInt(day);
+  renderDayList();
+  renderItineraryView();
+
+  // Scroll to top of page
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Scroll the selected day button into view (center it)
+  setTimeout(() => {
+    const activeBtn = document.querySelector('.mobile-day-btn.active');
+    if (activeBtn) {
+      activeBtn.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
+    }
+  }, 100);
 }
 
 function togglePackingItem(itemId) {
