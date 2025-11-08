@@ -1,5 +1,5 @@
-// Optimized Trip Data - Thailand Feb 5-22, 2026
-// ONLY 3 DOMESTIC FLIGHTS - Much better route!
+// Thailand Trip Data - Feb 5-22, 2026
+// Only 3 domestic flights
 const tripData = {
   cities: [
     { name: 'Bangkok', emoji: '🏛️', color: '#667eea', nights: 2, region: 'Central' },
@@ -648,12 +648,12 @@ function renderMainView() {
       </div>
 
       <div class="main-summary">
-        <h2>🌴 Our Optimized Thailand Adventure 2026</h2>
+        <h2>🌴 Thailand Adventure 2026</h2>
 
         <div class="summary-section">
           <h3>✈️ Smart Route - Only 3 Domestic Flights!</h3>
           <p>
-            Optimized 18-day adventure (Feb 5-22, 2026) with minimal flights and maximum boat exploration!
+            18-day adventure (Feb 5-22, 2026) with minimal flights and maximum boat exploration!
             Bangkok → Chiang Rai (flight) → Chiang Mai (bus) → Krabi (direct flight) → Bangkok (flight home)
           </p>
         </div>
@@ -975,8 +975,8 @@ function renderBudgetView() {
   content.innerHTML = `
     <div class="detail-card">
       <div class="detail-header">
-        <h2>💰 Optimized Budget Breakdown</h2>
-        <p style="color: var(--color-text-secondary);">Only 3 domestic flights - much cheaper!</p>
+        <h2>💰 Budget Breakdown</h2>
+        <p style="color: var(--color-text-secondary);">Complete cost overview for 2 people</p>
       </div>
 
       <div class="budget-grid">
@@ -1028,11 +1028,8 @@ function renderBudgetView() {
 
       <div class="detail-section">
         <h3>✈️ Flight Cost Savings</h3>
-        <p><strong>Original Plan:</strong> 5 domestic flights (€250-350/person)</p>
-        <p><strong>Optimized Plan:</strong> 3 domestic flights (€150-200/person)</p>
-        <p style="color: var(--color-success); font-weight: var(--font-weight-semibold);">
-          💰 SAVINGS: €100-150 per person!
-        </p>
+        <p><strong>Our Route:</strong> 3 domestic flights (€150-200/person)</p>
+        <p>Direct flights minimize travel time and maximize exploration time at each destination.</p>
       </div>
 
       <div class="detail-section">

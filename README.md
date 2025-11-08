@@ -1,6 +1,6 @@
 # Thailand Trip 2026 - Interactive Trip Planner
 
-A beautiful, interactive website to plan and share our optimized Thailand adventure!
+A beautiful, interactive website to plan and share our Thailand adventure!
 
 ## Live Website
 
@@ -41,7 +41,7 @@ A beautiful, interactive website to plan and share our optimized Thailand advent
 - Complete cost breakdown by category
 - Flight, accommodation, transport, and activity costs
 - Visual budget overview
-- Optimized with ONLY 3 domestic flights
+- Only 3 domestic flights for efficient travel
 
 ### 🎒 Packing List
 - Interactive checklist with categories
@@ -171,7 +171,7 @@ thailand_trip_2025/
 All trip data is stored in the `tripData` object in `app.js`. To update itinerary, budget, or activities, simply modify the JavaScript object.
 
 ### Key Features Added
-- ✅ Optimized route (only 3 flights!)
+- ✅ Efficient route with only 3 flights
 - ✅ 60+ high-quality Unsplash images
 - ✅ 50% larger image displays (450px)
 - ✅ Google-verified coordinates for all attractions
