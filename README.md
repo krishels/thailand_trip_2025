@@ -15,7 +15,7 @@ A beautiful, interactive website to plan and share our optimized Thailand advent
 - **Responsive Design**: Works perfectly on mobile, tablet, and desktop
 - **Horizontal Day Selector**: Smooth scrolling day navigation
 
-### 📅 Itinerary (19 Days)
+### 📅 Itinerary (18 Days)
 - Complete day-by-day trip plan with detailed schedules
 - **High-Quality Image Carousel**: 60+ professional photos from Unsplash
 - **Larger Image Blocks**: 50% bigger images (450px) for immersive viewing
@@ -31,7 +31,7 @@ A beautiful, interactive website to plan and share our optimized Thailand advent
 - Complete photographer attribution
 
 ### 🎥 Gemini Veo Video Prompts
-- **19 cinematic 4K video prompts** (8 seconds each)
+- **18 cinematic 4K video prompts** (8 seconds each)
 - Tailored to each day's activities and emotions
 - **Audio specifications**: No speech - only nature sounds and Thai traditional music
 - Ready to generate with Gemini Veo 2
@@ -111,17 +111,17 @@ The 4K video is hosted on Google Drive and will load automatically when you open
 
 ## Trip Overview
 
-- **Dates**: February 5-23, 2026
-- **Duration**: 19 days (18 nights)
+- **Dates**: February 5-22, 2026
+- **Duration**: 18 days (16 nights)
 - **Travelers**: 2 people
 - **Regions**: North, Central, and South Thailand
 - **Cities/Areas**: 6 main destinations
   - **Bangkok** (2 nights) - Temples & culture
   - **Chiang Rai** (3 nights) - White Temple, Golden Triangle
   - **Chiang Mai** (4 nights) - Old City, Doi Suthep, Elephants
-  - **Klong Muang Beach** (5 nights) - Phi Phi Islands, Hong Islands
-  - **Nopparat Thara/Railay** (4 nights) - 4 Islands Tour, Railay Beach
-  - **Bangkok** (1 night) - Final night before departure
+  - **Klong Muang Beach** (3 nights) - Phi Phi Islands, Hong Islands
+  - **Nopparat Thara/Railay** (3 nights) - 4 Islands Tour, Railay Beach
+  - **Bangkok Airport** (1 night) - Last night before 05:50 AM departure
 - **Attractions**: 45 verified locations
 - **Flights**: Only 3 domestic flights (optimized route!)
   - Bangkok → Chiang Rai
@@ -139,7 +139,7 @@ thailand_trip_2025/
 ├── README.md                        # This file
 ├── .gitignore                       # Git ignore rules
 │
-├── gemini_veo_prompts.txt          # 19 AI video prompts (4K, 8 sec each)
+├── gemini_veo_prompts.txt          # 18 AI video prompts (4K, 8 sec each)
 ├── IMAGE_LIBRARY_README.md         # Image library documentation
 ├── OPTIMIZED_TRIP_EXPORT.md        # Full trip export
 │
@@ -158,7 +158,7 @@ thailand_trip_2025/
 
 ### Video Prompts
 - **gemini_veo_prompts.txt**: Ready-to-use prompts for Gemini Veo 2
-  - 19 days of 4K cinematic prompts
+  - 18 days of 4K cinematic prompts
   - 8 seconds each
   - Audio: Nature sounds + Thai traditional music only
 
@@ -175,7 +175,7 @@ All trip data is stored in the `tripData` object in `app.js`. To update itinerar
 - ✅ 60+ high-quality Unsplash images
 - ✅ 50% larger image displays (450px)
 - ✅ Google-verified coordinates for all attractions
-- ✅ 19 Gemini Veo 4K video prompts
+- ✅ 18 Gemini Veo 4K video prompts
 - ✅ Mobile-friendly horizontal day selector
 - ✅ Photographer attribution for all images
 

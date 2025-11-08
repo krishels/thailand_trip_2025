@@ -1,14 +1,100 @@
-// Optimized Trip Data - Thailand Feb 5-23, 2026
+// Optimized Trip Data - Thailand Feb 5-22, 2026
 // ONLY 3 DOMESTIC FLIGHTS - Much better route!
 const tripData = {
   cities: [
     { name: 'Bangkok', emoji: '🏛️', color: '#667eea', nights: 2, region: 'Central' },
     { name: 'Chiang Rai', emoji: '⛰️', color: '#f093fb', nights: 3, region: 'North' },
     { name: 'Chiang Mai', emoji: '🌳', color: '#764ba2', nights: 4, region: 'North' },
-    { name: 'Klong Muang', emoji: '🏖️', color: '#4facfe', nights: 5, region: 'South' },
-    { name: 'Nopparat Thara', emoji: '🏝️', color: '#43e97b', nights: 4, region: 'South' },
-    { name: 'Bangkok', emoji: '🛍️', color: '#667eea', nights: 1, region: 'Central' }
+    { name: 'Klong Muang', emoji: '🏖️', color: '#4facfe', nights: 3, region: 'South' },
+    { name: 'Nopparat Thara', emoji: '🏝️', color: '#43e97b', nights: 3, region: 'South' },
+    { name: 'Bangkok Airport', emoji: '✈️', color: '#667eea', nights: 1, region: 'Central' }
   ],
+
+  accommodations: {
+    bangkok1: {
+      name: 'Baiyoke Sky Hotel',
+      location: 'Bangkok (Pratunam)',
+      nights: 2,
+      checkIn: '2026-02-06',
+      checkOut: '2026-02-08',
+      totalCost: 283,
+      costPerNight: 141.50,
+      status: 'Reserved (Free Cancellation)',
+      bookingUrl: 'https://www.booking.com/hotel/th/baiyoke-sky.lv.html',
+      features: ['88-story tower', 'Rooftop revolving restaurant', 'City views', 'Multiple dining options'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1568321385520-b9252021b491?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Bangkok Skyline View', credit: 'Daniel Cox' },
+        { url: 'https://images.unsplash.com/photo-1613572571659-84e1e49a5e5c?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Bangkok Hotel Room', credit: 'Daniel Bradley' }
+      ]
+    },
+    chiangRai: {
+      name: 'Katiliya Mountain Resort and Spa',
+      location: 'Chiang Rai',
+      nights: 3,
+      checkIn: '2026-02-08',
+      checkOut: '2026-02-11',
+      totalCost: 0, // USER TO PROVIDE
+      costPerNight: 0,
+      status: 'To be booked',
+      bookingUrl: 'https://www.booking.com/hotel/th/katiliya-mountain-resort-and-spa.lv.html',
+      features: ['Mountain views', 'Spa', 'Resort setting', 'Pool'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Mountain Resort', credit: 'Amir Hosseini' }
+      ]
+    },
+    chiangMai: {
+      name: 'TBD', // USER TO PROVIDE
+      location: 'Chiang Mai',
+      nights: 4,
+      checkIn: '2026-02-11',
+      checkOut: '2026-02-15',
+      totalCost: 0,
+      costPerNight: 0,
+      status: 'Not yet booked',
+      bookingUrl: '',
+      features: [],
+      images: []
+    },
+    klongMuang: {
+      name: 'TBD', // USER TO PROVIDE
+      location: 'Klong Muang Beach',
+      nights: 3,
+      checkIn: '2026-02-15',
+      checkOut: '2026-02-18',
+      totalCost: 0,
+      costPerNight: 0,
+      status: 'Not yet booked',
+      bookingUrl: '',
+      features: [],
+      images: []
+    },
+    nopparatThara: {
+      name: 'TBD', // USER TO PROVIDE
+      location: 'Nopparat Thara / Railay',
+      nights: 3,
+      checkIn: '2026-02-18',
+      checkOut: '2026-02-21',
+      totalCost: 0,
+      costPerNight: 0,
+      status: 'Not yet booked',
+      bookingUrl: '',
+      features: [],
+      images: []
+    },
+    bangkok2: {
+      name: 'TBD (Airport Hotel)', // USER TO PROVIDE - suggest Novotel Suvarnabhumi
+      location: 'Bangkok Suvarnabhumi Airport',
+      nights: 1,
+      checkIn: '2026-02-21',
+      checkOut: '2026-02-22',
+      totalCost: 0,
+      costPerNight: 0,
+      status: 'Not yet booked',
+      bookingUrl: '',
+      features: ['Airport shuttle', 'Early check-out', '24h reception'],
+      images: []
+    }
+  },
 
   itinerary: [
     {
@@ -27,12 +113,13 @@ const tripData = {
     },
     {
       day: 2, date: '2026-02-06', city: 'Bangkok',
+      accommodation_id: 'bangkok1',
       morning: 'Arrive Bangkok 08:40, immigration, currency exchange, Airport Rail Link to city',
-      afternoon: 'Check into hotel (Sukhumvit/Riverside), rest, light exploration of area',
+      afternoon: 'Check into Baiyoke Sky Hotel, rest, light exploration of area',
       evening: 'Dinner at Thip Samai (famous Pad Thai) or river walk, early sleep for jet lag',
       activities: ['Airport arrival', 'Hotel check-in', 'Light exploration', 'Local dinner'],
       transport: 'Airport Rail Link + taxi',
-      budget_eur: '50', accommodation_eur: '60-90',
+      budget_eur: '50', accommodation_eur: '142',
       tips: 'Download Grab app, buy SIM card at airport (TrueMove), exchange some money',
       packing: ['Comfortable clothes', 'Sunscreen', 'Hat', 'Reusable water bottle'],
       images: [
@@ -256,45 +343,30 @@ const tripData = {
       ]
     },
     {
-      day: 17, date: '2026-02-21', city: 'Nopparat Thara',
+      day: 17, date: '2026-02-21', city: 'Nopparat Thara → Bangkok',
+      accommodation_id: 'bangkok2',
       morning: 'Private longtail to hidden beaches: Koh Poda back side, Koh Ya Wa Sam',
-      afternoon: 'Beach relaxation, Thai massage, souvenir shopping',
-      evening: 'Final sunset, special dinner, reflect on island adventures',
-      activities: ['Private boat tour', 'Hidden beaches', 'Massage', 'Shopping', 'Farewell dinner'],
-      transport: 'Private longtail (2500 THB/boat)',
-      budget_eur: '30', accommodation_eur: '70-110',
-      tips: 'Private boat lets you set schedule, avoid crowds at favorite spots',
-      packing: ['Last beach day essentials', 'Cash for shopping'],
+      afternoon: 'Check out, airport transfer, FLIGHT 3: KBV→BKK (afternoon)',
+      evening: 'Arrive Bangkok, check into airport hotel, pack for early departure',
+      activities: ['Private boat tour', 'Flight to Bangkok', 'Airport hotel check-in'],
+      transport: 'Private longtail + airport taxi + domestic flight',
+      budget_eur: '50', accommodation_eur: '40',
+      tips: 'Book hotel VERY close to airport for 05:50 flight - suggest Novotel Suvarnabhumi',
+      packing: ['Pack all luggage', 'Keep travel docs accessible', 'Set multiple alarms'],
       images: [
         { url: 'https://images.unsplash.com/photo-1631344197649-894f6101185e?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Koh Poda Backside', credit: 'Mariola Grobelska' },
-        { url: 'https://images.unsplash.com/photo-1593202232466-79ee2d501d9b?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Koh Ya Wa Sam', credit: 'Smit Shah' },
-        { url: 'https://images.unsplash.com/photo-1664543219977-ad362c2ec439?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Private Longtail Boat', credit: 'Steven Watson' }
+        { url: 'https://images.unsplash.com/photo-1568321385520-b9252021b491?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Bangkok Airport Area', credit: 'Daniel Cox' }
       ]
     },
     {
-      day: 18, date: '2026-02-22', city: 'Krabi → Bangkok',
-      morning: 'Check out, airport transfer, FLIGHT 3: KBV→BKK (9-11 AM)',
-      afternoon: 'Arrive Bangkok, check into airport hotel or city center',
-      evening: 'Last shopping, rooftop bar, final Thai dinner, pack for home',
-      activities: ['Flight to Bangkok', 'Shopping', 'Rooftop bar', 'Thai massage'],
-      transport: 'Airport taxi + domestic flight',
-      budget_eur: '40', accommodation_eur: '40-60',
-      tips: 'Stay near airport if early morning international flight tomorrow',
-      packing: ['Pack purchases in check-in luggage', 'Leave room for souvenirs'],
-      images: [
-        { url: 'https://images.unsplash.com/photo-1568321385520-b9252021b491?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Bangkok Skyline at Night', credit: 'Daniel Cox' },
-        { url: 'https://images.unsplash.com/photo-1569288063643-baf2b7b4f3b2?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Bangkok Rooftop Bar', credit: 'Posawee Suwannaphati' }
-      ]
-    },
-    {
-      day: 19, date: '2026-02-23', city: 'Bangkok → Home',
-      morning: 'Early departure to airport for international flight home',
+      day: 18, date: '2026-02-22', city: 'Bangkok → Home',
+      morning: 'EARLY DEPARTURE 05:50 - International flight BKK→RIX',
       afternoon: 'In flight, crossing time zones',
       evening: 'Arrive home with amazing memories!',
       activities: ['Airport departure', 'International flight', 'Arrival home'],
       transport: 'International flight BKK→RIX',
       budget_eur: '20', accommodation_eur: '0',
-      tips: 'Arrive airport 3h early for international, save some THB for next trip!',
+      tips: 'Wake up at 02:30, airport shuttle at 03:00, arrive 3h before flight!',
       packing: ['Travel documents', 'House keys', 'Downloaded entertainment'],
       images: [
         { url: 'https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Journey Home', credit: 'Anugrah Lohiya' }
@@ -304,8 +376,8 @@ const tripData = {
 
   budgetBreakdown: {
     'Domestic Flights (Only 3!)': '€150-200',
-    'Accommodation (18 nights)': '€900-1,400',
-    'Food & Dining (19 days)': '€300-380',
+    'Accommodation (16 nights)': '€900-1,400',
+    'Food & Dining (18 days)': '€300-380',
     'Activities & Tours': '€250-350',
     'Local Transport (Bus/Boats/Taxis)': '€120-160',
     'Miscellaneous': '€100-150'
@@ -548,7 +620,7 @@ function renderMainView() {
         <div class="summary-section">
           <h3>✈️ Smart Route - Only 3 Domestic Flights!</h3>
           <p>
-            Optimized 19-day adventure (Feb 5-23, 2026) with minimal flights and maximum boat exploration!
+            Optimized 18-day adventure (Feb 5-22, 2026) with minimal flights and maximum boat exploration!
             Bangkok → Chiang Rai (flight) → Chiang Mai (bus) → Krabi (direct flight) → Bangkok (flight home)
           </p>
         </div>
@@ -604,7 +676,7 @@ function renderMainView() {
           <h3>📊 Trip Overview</h3>
           <div class="trip-stats">
             <div class="stat-item">
-              <div class="stat-number">19</div>
+              <div class="stat-number">18</div>
               <div class="stat-label">Days</div>
             </div>
             <div class="stat-item">
@@ -616,7 +688,7 @@ function renderMainView() {
               <div class="stat-label">Flights</div>
             </div>
             <div class="stat-item">
-              <div class="stat-number">€1,420-1,640</div>
+              <div class="stat-number">€1,690-2,400</div>
               <div class="stat-label">Budget/Person</div>
             </div>
           </div>
@@ -1028,7 +1100,7 @@ function renderTipsView() {
         <p><strong>Book NOW:</strong></p>
         <ul>
           <li>All 3 domestic flights (high season!)</li>
-          <li>All accommodation (18 nights)</li>
+          <li>All accommodation (16 nights)</li>
           <li>Travel insurance</li>
         </ul>
         <p><strong>Book 2-3 weeks before:</strong></p>
@@ -1133,17 +1205,17 @@ function initializeMap() {
       num: 4,
       name: "Klong Muang Beach",
       dates: "Feb 15-18",
-      days: "5 nights",
+      days: "3 nights",
       lat: 8.0501,
       lng: 98.7593,
-      activities: "Phi Phi tour, Hong Islands, Mangrove kayaking",
+      activities: "Phi Phi tour, Hong Islands",
       icon: "🏖️"
     },
     {
       num: 5,
       name: "Nopparat Thara",
-      dates: "Feb 18-22",
-      days: "4 nights",
+      dates: "Feb 18-21",
+      days: "3 nights",
       lat: 8.0437,
       lng: 98.7968,
       activities: "Railay Beach, 4 Islands, Cave kayaking",
@@ -1151,13 +1223,13 @@ function initializeMap() {
     },
     {
       num: 6,
-      name: "Bangkok",
-      dates: "Feb 22-23",
+      name: "Bangkok Airport",
+      dates: "Feb 21-22",
       days: "1 night",
-      lat: 13.7563,
-      lng: 100.5018,
-      activities: "Last shopping, Rooftop bars",
-      icon: "🛍️"
+      lat: 13.6900,
+      lng: 100.7501,
+      activities: "Airport hotel, Early 05:50 departure",
+      icon: "✈️"
     }
   ];
 
