@@ -512,8 +512,8 @@ const tripData = {
       content: 'Buy AIS or TrueMove SIM card (€7-10/week). 4G coverage excellent. WhatsApp/Viber/Telegram work great. Google Maps works offline.'
     },
     {
-      title: '✈️ Flight Optimization',
-      content: 'ONLY 3 domestic flights! Bangkok→Chiang Rai, Chiang Mai→Krabi DIRECT, Krabi→Bangkok. No more island hopping - use BOATS instead!'
+      title: '✈️ Domestic Flights',
+      content: '3 domestic flights total: Bangkok→Chiang Rai, Chiang Mai→Krabi (direct), Krabi→Bangkok. Island exploration via boat tours from Krabi base.'
     }
   ]
 };
@@ -651,9 +651,9 @@ function renderMainView() {
         <h2>🌴 Thailand Adventure 2026</h2>
 
         <div class="summary-section">
-          <h3>✈️ Smart Route - Only 3 Domestic Flights!</h3>
+          <h3>✈️ Our Route</h3>
           <p>
-            18-day adventure (Feb 5-22, 2026) with minimal flights and maximum boat exploration!
+            18-day adventure (Feb 5-22, 2026) exploring temples, mountains, and tropical islands.
             Bangkok → Chiang Rai (flight) → Chiang Mai (bus) → Krabi (direct flight) → Bangkok (flight home)
           </p>
         </div>
@@ -1027,8 +1027,8 @@ function renderBudgetView() {
       </div>
 
       <div class="detail-section">
-        <h3>✈️ Flight Cost Savings</h3>
-        <p><strong>Our Route:</strong> 3 domestic flights (€150-200/person)</p>
+        <h3>✈️ Domestic Flights</h3>
+        <p><strong>Total:</strong> 3 domestic flights (€150-200/person)</p>
         <p>Direct flights minimize travel time and maximize exploration time at each destination.</p>
       </div>
 
