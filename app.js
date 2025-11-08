@@ -630,8 +630,8 @@ function renderContent() {
 function renderMainView() {
   const content = document.getElementById('mainContent');
 
-  // Google Drive video ID
-  const googleDriveFileId = '1HOldbm6_ZUmavLTFEpHxeRs-hDocZYzP';
+  // Google Drive video ID - Thailand_v2_2026.mp4
+  const googleDriveFileId = '1cQXlwcG4qRJ2wUpXoulZxWj65EympSQt';
 
   content.innerHTML = `
     <div class="main-view">
@@ -798,7 +798,6 @@ function renderItineraryView() {
         accomImageHTML = `
           <div class="accommodation-image-single">
             <img src="${img.url}" alt="${accom.name}">
-            ${img.title ? `<div class="image-caption">${img.title}</div>` : ''}
           </div>
         `;
       } else {
@@ -808,12 +807,11 @@ function renderItineraryView() {
               ${accom.images.map((img, index) => `
                 <div class="carousel-slide ${index === 0 ? 'active' : ''}">
                   <img src="${img.url}" alt="${accom.name} ${index + 1}" class="carousel-image">
-                  ${img.title ? `<div class="image-caption">${img.title}</div>` : ''}
                 </div>
               `).join('')}
             </div>
-            <button class="carousel-btn prev" onclick="changeAccomImage(${day.day}, -1)">‹</button>
-            <button class="carousel-btn next" onclick="changeAccomImage(${day.day}, 1)">›</button>
+            <button class="carousel-btn accom-carousel-btn prev" onclick="changeAccomImage(${day.day}, -1)">‹</button>
+            <button class="carousel-btn accom-carousel-btn next" onclick="changeAccomImage(${day.day}, 1)">›</button>
             <div class="carousel-dots">
               ${accom.images.map((_, index) => `
                 <span class="dot ${index === 0 ? 'active' : ''}" onclick="goToAccomImage(${day.day}, ${index})"></span>
@@ -1106,7 +1104,6 @@ function renderAccommodationsView() {
             accomImageHTML = `
               <div class="accommodation-image-single">
                 <img src="${img.url}" alt="${accom.name}">
-                ${img.title ? `<div class="image-caption">${img.title}</div>` : ''}
               </div>
             `;
           } else {
@@ -1117,12 +1114,11 @@ function renderAccommodationsView() {
                   ${accom.images.map((img, index) => `
                     <div class="carousel-slide ${index === 0 ? 'active' : ''}">
                       <img src="${img.url}" alt="${accom.name} ${index + 1}" class="carousel-image">
-                      ${img.title ? `<div class="image-caption">${img.title}</div>` : ''}
                     </div>
                   `).join('')}
                 </div>
-                <button class="carousel-btn prev" onclick="changeOverviewAccomImage('${key}', -1)">‹</button>
-                <button class="carousel-btn next" onclick="changeOverviewAccomImage('${key}', 1)">›</button>
+                <button class="carousel-btn accom-carousel-btn prev" onclick="changeOverviewAccomImage('${key}', -1)">‹</button>
+                <button class="carousel-btn accom-carousel-btn next" onclick="changeOverviewAccomImage('${key}', 1)">›</button>
                 <div class="carousel-dots">
                   ${accom.images.map((_, index) => `
                     <span class="dot ${index === 0 ? 'active' : ''}" onclick="goToOverviewAccomImage('${key}', ${index})"></span>

@@ -2286,7 +2286,7 @@ a, button, input, textarea {
 .accommodation-carousel .carousel-images {
   position: relative;
   width: 100%;
-  height: 450px;
+  height: 400px;
 }
 
 .accommodation-carousel .carousel-slide {
@@ -2309,19 +2309,22 @@ a, button, input, textarea {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
-.accommodation-carousel .carousel-btn {
-  top: 35% !important;
-  transform: translateY(-50%) !important;
+/* Accommodation carousel buttons - centered since no caption */
+button.accom-carousel-btn {
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.accommodation-carousel .carousel-btn.prev {
-  left: 15px !important;
+button.accom-carousel-btn.prev {
+  left: 15px;
 }
 
-.accommodation-carousel .carousel-btn.next {
-  right: 15px !important;
+button.accom-carousel-btn.next {
+  right: 15px;
 }
 
 .accommodation-image-single {
@@ -2333,8 +2336,10 @@ a, button, input, textarea {
 
 .accommodation-image-single img {
   width: 100%;
-  height: 450px;
+  height: 400px;
   object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .accommodation-details h4 {
@@ -2494,9 +2499,5 @@ a, button, input, textarea {
 
   .accommodation-image-single img {
     height: 300px;
-  }
-
-  .accommodation-carousel .carousel-btn {
-    top: 35% !important;
   }
 }
