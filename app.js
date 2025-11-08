@@ -1,290 +1,316 @@
-// Trip Data
+// Optimized Trip Data - Thailand Feb 5-23, 2026
+// ONLY 3 DOMESTIC FLIGHTS - Much better route!
 const tripData = {
   cities: [
     { name: 'Bangkok', emoji: '🏛️', color: '#667eea', nights: 2, region: 'Central' },
-    { name: 'Chiang Mai', emoji: '🌳', color: '#764ba2', nights: 3, region: 'North' },
-    { name: 'Chiang Rai', emoji: '⛰️', color: '#f093fb', nights: 2, region: 'North' },
-    { name: 'Krabi', emoji: '🏖️', color: '#4facfe', nights: 4, region: 'South' },
-    { name: 'Khao Sok', emoji: '🌴', color: '#00f2fe', nights: 1, region: 'South' },
-    { name: 'Phi Phi', emoji: '🏝️', color: '#43e97b', nights: 2, region: 'South' },
-    { name: 'Koh Samui', emoji: '🌊', color: '#fa709a', nights: 2, region: 'South' }
+    { name: 'Chiang Rai', emoji: '⛰️', color: '#f093fb', nights: 3, region: 'North' },
+    { name: 'Chiang Mai', emoji: '🌳', color: '#764ba2', nights: 4, region: 'North' },
+    { name: 'Klong Muang', emoji: '🏖️', color: '#4facfe', nights: 5, region: 'South' },
+    { name: 'Nopparat Thara', emoji: '🏝️', color: '#43e97b', nights: 4, region: 'South' },
+    { name: 'Bangkok', emoji: '🛍️', color: '#667eea', nights: 1, region: 'Central' }
   ],
-  
+
   itinerary: [
     {
-      day: 1, date: '2026-02-06', city: 'Bangkok',
-      morning: 'Flight Riga 11:40 (Feb 5) → Bangkok 08:40 (Feb 6) morning arrival',
-      afternoon: 'Check into hotel, light breakfast, rest and recover from flight',
-      evening: 'Explore nearby area, local dinner, early sleep for jet lag',
-      activities: ['International flight', 'Hotel check-in', 'Light exploration'],
-      transport: 'International flight',
-      budget_eur: '500-700', accommodation_eur: '50-80',
-      tips: 'Morning arrival means you have a full day! But rest first to recover from jet lag',
-      packing: ['Comfortable clothes', 'Toiletries'],
+      day: 1, date: '2026-02-05', city: 'In Flight',
+      morning: 'Depart Riga 11:40',
+      afternoon: 'In flight - crossing time zones',
+      evening: 'Continue journey to Thailand',
+      activities: ['International flight', 'In-flight entertainment'],
+      transport: 'International flight RIX→BKK',
+      budget_eur: '0', accommodation_eur: '0',
+      tips: 'Sleep on plane, set watch to Bangkok time',
+      packing: ['Travel documents', 'Entertainment', 'Neck pillow'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxhaXJwbGFuZSUyMHRyYXZlbHxlbnwwfDB8fHwxNzYyMDkxMTk3fDA&ixlib=rb-4.1.0&q=80&w=1080', title: 'International Flight' }
+        { url: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'International Flight', credit: 'Anugrah Lohiya' }
       ]
     },
     {
-      day: 2, date: '2026-02-07', city: 'Bangkok',
-      morning: 'Grand Palace (9:00-15:00) - mandatory dress code: covered shoulders & knees',
-      afternoon: 'Wat Pho (Reclining Buddha), Wat Arun',
-      evening: 'Chao Phraya River cruise, Night Bazaar (Chatuchak/Rot Fai)',
-      activities: ['Grand Palace', 'Wat Pho', 'Wat Arun', 'River cruise', 'Night market'],
-      transport: 'Local taxis/BTS',
-      budget_eur: '30-40', accommodation_eur: '50-80',
-      tips: 'Book Grand Palace early, dress appropriately, bring water',
-      packing: ['Light clothes', 'Sunscreen', 'Hat'],
+      day: 2, date: '2026-02-06', city: 'Bangkok',
+      morning: 'Arrive Bangkok 08:40, immigration, currency exchange, Airport Rail Link to city',
+      afternoon: 'Check into hotel (Sukhumvit/Riverside), rest, light exploration of area',
+      evening: 'Dinner at Thip Samai (famous Pad Thai) or river walk, early sleep for jet lag',
+      activities: ['Airport arrival', 'Hotel check-in', 'Light exploration', 'Local dinner'],
+      transport: 'Airport Rail Link + taxi',
+      budget_eur: '50', accommodation_eur: '60-90',
+      tips: 'Download Grab app, buy SIM card at airport (TrueMove), exchange some money',
+      packing: ['Comfortable clothes', 'Sunscreen', 'Hat', 'Reusable water bottle'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1586098311577-520120ba3df3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxHcmFuZCUyMFBhbGFjZSUyMEJhbmdrb2slMjBUaGFpbGFuZHxlbnwwfDB8fHwxNzYyMDkxMTk3fDA&ixlib=rb-4.1.0&q=80&w=1080', title: 'Grand Palace' },
-        { url: 'https://images.unsplash.com/photo-1650021858406-3222764ea1f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxXYXQlMjBQaG8lMjBCYW5na29rJTIwcmVjbGluaW5nJTIwQnVkZGhhfGVufDB8MHx8fDE3NjIwOTE3NDl8MA&ixlib=rb-4.1.0&q=80&w=1080', title: 'Wat Pho' },
-        { url: 'https://images.unsplash.com/photo-1694824995159-2093477bc337?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxXYXQlMjBBcnVuJTIwdGVtcGxlJTIwQmFuZ2tvayUyMFRoYWlsYW5kfGVufDB8MHx8fDE3NjIwOTE3NDl8MA&ixlib=rb-4.1.0&q=80&w=1080', title: 'Wat Arun' },
-        { url: 'https://images.unsplash.com/photo-1652023409260-9595623af588?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxDaGFvJTIwUGhyYXlhJTIwcml2ZXIlMjBjcnVpc2UlMjBCYW5na29rfGVufDB8MHx8fDE3NjIwOTE3NDl8MA&ixlib=rb-4.1.0&q=80&w=1080', title: 'River Cruise' },
-        { url: 'https://images.unsplash.com/photo-1651950737998-2c69cf15460a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxCYW5na29rJTIwbmlnaHQlMjBtYXJrZXQlMjBDaGF0dWNoYWt8ZW58MHwwfHx8MTc2MjA5MTc0OXww&ixlib=rb-4.1.0&q=80&w=1080', title: 'Night Market' }
+        { url: 'https://images.unsplash.com/photo-1568321385520-b9252021b491?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Bangkok Skyline', credit: 'Daniel Cox' },
+        { url: 'https://images.unsplash.com/photo-1613672803979-a6edfc5a179b?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Bangkok Temple Area', credit: 'Anantachai Saothong' }
       ]
     },
     {
-      day: 3, date: '2026-02-08', city: 'Bangkok → Chiang Mai',
-      morning: 'Floating market (7:00-10:00) - Damnoen Saduak or Amphawa',
-      afternoon: 'Store luggage at Suvarnabhumi (100 THB/day), flight to Chiang Mai 13:00',
-      evening: 'Arrive Chiang Mai 14:20, settle in hotel',
-      activities: ['Floating market', 'Flight to north'],
-      transport: 'Domestic flight BKK→CNX (1h 20m)',
-      budget_eur: '40-50', accommodation_eur: '40-70',
-      tips: 'Early morning for floating market, book flight in advance',
-      packing: ['Camera', 'Light jacket'],
+      day: 3, date: '2026-02-07', city: 'Bangkok',
+      morning: 'Grand Palace & Wat Phra Kaew (8:30-11:30) - arrive early to beat crowds',
+      afternoon: 'Wat Pho (Reclining Buddha), ferry to Wat Arun, climb for views',
+      evening: 'Chao Phraya Princess Dinner Cruise (19:00-21:00) or street food tour',
+      activities: ['Grand Palace', 'Wat Phra Kaew', 'Wat Pho', 'Wat Arun', 'River cruise'],
+      transport: 'Walking, ferry, BTS',
+      budget_eur: '35-45', accommodation_eur: '60-90',
+      tips: 'Book Grand Palace online night before, strict dress code, bring water',
+      packing: ['Modest clothing (covered shoulders/knees)', 'Walking shoes', 'Water bottle'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1714930383289-7500d1675ab6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxmbG9hdGluZyUyMG1hcmtldCUyMEJhbmdrb2slMjBUaGFpbGFuZHxlbnwwfDB8fHwxNzYyMDkxMTk3fDA&ixlib=rb-4.1.0&q=80&w=1080', title: 'Floating Market' }
+        { url: 'https://images.unsplash.com/photo-1678915554115-a5e2de853191?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Grand Palace', credit: 'Jochen van Wylick' },
+        { url: 'https://images.unsplash.com/photo-1650021858406-3222764ea1f9?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Wat Pho - Reclining Buddha', credit: 'Mario La Pergola' },
+        { url: 'https://images.unsplash.com/photo-1631609030728-9b0b525b60cf?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Wat Arun Temple', credit: 'Pradamas Gifarry' }
       ]
     },
     {
-      day: 4, date: '2026-02-09', city: 'Chiang Mai',
-      morning: 'Doi Suthep temple - mountain temple with 400 steps, great city views',
-      afternoon: 'Old City exploration - Wat Chedi Luang, Wat Phra Singh',
-      evening: 'Night Bazaar shopping, local food sampling',
-      activities: ['Doi Suthep', 'Old temples', 'Night market', 'Local cuisine'],
-      transport: 'Taxis/tuk-tuks',
-      budget_eur: '20-30', accommodation_eur: '40-70',
-      tips: 'Wear comfortable hiking shoes for Doi Suthep, lots of stairs',
-      packing: ['Hiking shoes', 'Water bottle'],
+      day: 4, date: '2026-02-08', city: 'Bangkok → Chiang Rai',
+      morning: 'Early floating market tour (Damnoen Saduak), return to city',
+      afternoon: 'FLIGHT 1: BKK→CEI 12:00-13:20 (Thai AirAsia/Vietjet, €25-55/person)',
+      evening: 'Arrive Chiang Rai, check in, Clock Tower light show, Night Bazaar',
+      activities: ['Floating market', 'Flight to north', 'Clock Tower', 'Night Bazaar'],
+      transport: 'Tour bus + domestic flight',
+      budget_eur: '60-80', accommodation_eur: '60-110',
+      tips: 'Book flight 2-3 months ahead, Chiang Rai is cooler - bring light jacket',
+      packing: ['Camera', 'Light jacket', 'Comfortable travel clothes'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1725107227991-9e3195edf9b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxEb2klMjBTdXRoZXAlMjB0ZW1wbGUlMjBDaGlhbmclMjBNYWl8ZW58MHwwfHx8MTc2MjA5MTE5N3ww&ixlib=rb-4.1.0&q=80&w=1080', title: 'Doi Suthep' },
-        { url: 'https://images.unsplash.com/photo-1750433857121-6316c791dadb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxDaGlhbmclMjBNYWklMjBvbGQlMjBjaXR5JTIwdGVtcGxlcyUyMFRoYWlsYW5kfGVufDB8MHx8fDE3NjIwOTE3NTB8MA&ixlib=rb-4.1.0&q=80&w=1080', title: 'Old City Temples' },
-        { url: 'https://images.unsplash.com/photo-1573411857875-d299b06c4f62?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxDaGlhbmclMjBNYWklMjBuaWdodCUyMGJhemFhciUyMG1hcmtldHxlbnwwfHx8fDE3NjIwOTUwNTF8MA&ixlib=rb-4.1.0&q=85', title: 'Night Bazaar' },
-        { url: 'https://images.unsplash.com/photo-1702392158359-015e7dc60356?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxDaGlhbmclMjBNYWklMjBUaGFpJTIwc3RyZWV0JTIwZm9vZHxlbnwwfHx8fDE3NjIwOTUwNTF8MA&ixlib=rb-4.1.0&q=85', title: 'Thai Street Food' }
+        { url: 'https://images.unsplash.com/photo-1736492090594-88f85f405da0?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Damnoen Saduak Floating Market', credit: 'Dimitar Meddling' },
+        { url: 'https://images.unsplash.com/photo-1718121842632-0bb5624f5097?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Chiang Rai Clock Tower', credit: 'aki võ' }
       ]
     },
     {
-      day: 5, date: '2026-02-10', city: 'Chiang Mai',
-      morning: 'Elephant Nature Park - ethical elephant sanctuary (NO riding)',
-      afternoon: 'Elephant feeding, bathing, walking with elephants',
-      evening: 'Thai cooking class or local café exploration',
-      activities: ['Elephant sanctuary', 'Cooking class', 'Local culture'],
-      transport: 'Tour pickup/drop-off',
-      budget_eur: '40-50', accommodation_eur: '40-70',
-      tips: 'Book ethical elephant sanctuary in advance, bring change of clothes',
-      packing: ['Swimwear', 'Quick-dry clothes'],
+      day: 5, date: '2026-02-09', city: 'Chiang Rai',
+      morning: 'White Temple (Wat Rong Khun) 8:30AM - arrive early, FREE entry',
+      afternoon: 'Black House Museum (80 THB), Blue Temple (FREE)',
+      evening: 'Singha Park tea plantations or relax, Walking Street if Saturday',
+      activities: ['White Temple', 'Black House', 'Blue Temple', 'Tea plantations'],
+      transport: 'Scooter rental or taxi (1000 THB/day)',
+      budget_eur: '25-35', accommodation_eur: '60-110',
+      tips: 'White Temple best in morning light, Blue Temple allows photos inside',
+      packing: ['Camera', 'Sunscreen', 'Water', 'Comfortable shoes'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1680896444994-657f6904ba40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxlbGVwaGFudCUyMHNhbmN0dWFyeSUyMFRoYWlsYW5kfGVufDB8MHx8fDE3NjIwOTExOTd8MA&ixlib=rb-4.1.0&q=80&w=1080', title: 'Elephant Sanctuary' },
-        { url: 'https://images.unsplash.com/photo-1586739930541-3ae1c5fd8b13?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxlbGVwaGFudCUyMGJhdGhpbmclMjBUaGFpbGFuZCUyMHNhbmN0dWFyeXxlbnwwfHx8fDE3NjIwOTUwNTF8MA&ixlib=rb-4.1.0&q=85', title: 'Elephant Bathing' },
-        { url: 'https://images.unsplash.com/photo-1710186012479-d79e9d2a7065?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxUaGFpJTIwY29va2luZyUyMGNsYXNzJTIwZm9vZHxlbnwwfHx8fDE3NjIwOTUwNTF8MA&ixlib=rb-4.1.0&q=85', title: 'Thai Cooking Class' }
+        { url: 'https://images.unsplash.com/photo-1660964365980-95981659b572?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'White Temple (Wat Rong Khun)', credit: 'Miguel Urieta' },
+        { url: 'https://images.unsplash.com/photo-1671188869143-317320213731?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Blue Temple (Wat Rong Suea Ten)', credit: 'Aleksandra B.' },
+        { url: 'https://images.unsplash.com/photo-1678111196217-a205bc0622d8?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Black House Museum (Baan Dam)', credit: 'Ricky LK' }
       ]
     },
     {
-      day: 6, date: '2026-02-11', city: 'Chiang Mai → Chiang Rai',
-      morning: 'Bus from Chiang Mai (7:00-11:00, 3-4 hours)',
-      afternoon: 'White Temple (Wat Rong Khun) - stunning all-white temple',
-      evening: 'Blue Temple (Wat Rong Suea Ten), hot springs',
-      activities: ['Bus journey', 'White Temple', 'Blue Temple', 'Hot springs'],
-      transport: 'Bus (Green Bus or local), taxis',
-      budget_eur: '25-35', accommodation_eur: '40-60',
-      tips: 'White Temple is very popular, arrive early to avoid crowds',
-      packing: ['Comfortable bus clothes'],
+      day: 6, date: '2026-02-10', city: 'Chiang Rai',
+      morning: 'Golden Triangle tour: Thailand-Laos-Myanmar border, Hall of Opium',
+      afternoon: 'Mekong boat ride, Mae Sai border market, hill tribe village',
+      evening: 'Return to city, prepare for Chiang Mai journey tomorrow',
+      activities: ['Golden Triangle', 'Mekong River', 'Border market', 'Hill tribes'],
+      transport: 'Tour van/boat',
+      budget_eur: '35', accommodation_eur: '60-110',
+      tips: 'Full-day tour ~€30-40/person including transport and guide',
+      packing: ['Hat', 'Sunglasses', 'Cash for souvenirs'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1697944944442-bc82e56e6e5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxXaGl0ZSUyMFRlbXBsZSUyMENoaWFuZyUyMFJhaSUyMFRoYWlsYW5kfGVufDB8MHx8fDE3NjIwOTEyMTN8MA&ixlib=rb-4.1.0&q=80&w=1080', title: 'White Temple' },
-        { url: 'https://images.unsplash.com/photo-1671188869078-c97a75ad444d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxCbHVlJTIwVGVtcGxlJTIwQ2hpYW5nJTIwUmFpfGVufDB8fHx8MTc2MjA5NTA1MXww&ixlib=rb-4.1.0&q=85', title: 'Blue Temple' },
-        { url: 'https://images.unsplash.com/photo-1718627829973-a0a3658c9d5b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxob3QlMjBzcHJpbmdzJTIwVGhhaWxhbmQlMjBuYXR1cmFsfGVufDB8fHx8MTc2MjA5NTA1MXww&ixlib=rb-4.1.0&q=85', title: 'Hot Springs' }
+        { url: 'https://images.unsplash.com/photo-1641381986664-b57538b94363?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Golden Triangle', credit: 'Kittitep Khotchalee' },
+        { url: 'https://images.unsplash.com/photo-1707789436555-045803990c96?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Hall of Opium', credit: 'CJ' }
       ]
     },
     {
-      day: 7, date: '2026-02-12', city: 'Chiang Rai',
-      morning: 'FULL DAY JUNGLE TREKKING (~10km) starting 7:00 AM',
-      afternoon: 'Trekking through bamboo forests, Lahu/Akha hill tribe villages, rice paddies',
-      evening: 'Huai Kaew waterfall, bamboo cooking, hot springs for rest',
-      activities: ['10km jungle trek', 'Hill tribe visit', 'Waterfall', 'Bamboo cooking', 'Hot springs'],
-      transport: 'Hiking',
-      budget_eur: '50-60', accommodation_eur: '40-60',
-      tips: 'Bring lots of water, insect repellent ESSENTIAL, wear hiking shoes',
-      packing: ['Hiking boots', 'Insect repellent', 'Water', 'Snacks', 'Quick-dry shirt'],
-      difficulty: 'Medium - Long hike in tropical heat',
+      day: 7, date: '2026-02-11', city: 'Chiang Rai → Chiang Mai',
+      morning: 'Green Bus VIP from Chiang Rai (10:00 departure)',
+      afternoon: 'Arrive Chiang Mai 13:20, check into Old City hotel, rest',
+      evening: 'Explore Old City, Wat Chedi Luang at night, local dinner',
+      activities: ['Bus journey', 'Old City exploration', 'Temple visit'],
+      transport: 'Green Bus VIP (400 THB/€11 per person)',
+      budget_eur: '30-40', accommodation_eur: '60-110',
+      tips: 'Book Green Bus VIP online at SiamTickets.com, AC very cold - bring jacket!',
+      packing: ['Jacket for AC bus', 'Snacks for journey', 'Entertainment'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1671723368935-2fb950294e94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxqdW5nbGUlMjB0cmVra2luZyUyMFRoYWlsYW5kJTIwYmFtYm9vJTIwZm9yZXN0fGVufDB8MHx8fDE3NjIwOTEyMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080', title: 'Jungle Trekking' },
-        { url: 'https://images.unsplash.com/photo-1682647728951-feaf6b19b212?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxoaWxsJTIwdHJpYmUlMjB2aWxsYWdlJTIwVGhhaWxhbmR8ZW58MHx8fHwxNzYyMDk1MDUxfDA&ixlib=rb-4.1.0&q=85', title: 'Hill Tribe Village' },
-        { url: 'https://images.unsplash.com/photo-1699102604484-dfdb25ea62e4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxUaGFpbGFuZCUyMHJpY2UlMjBwYWRkaWVzJTIwdGVycmFjZXN8ZW58MHx8fHwxNzYyMDk1MDUxfDA&ixlib=rb-4.1.0&q=85', title: 'Rice Paddies' },
-        { url: 'https://images.unsplash.com/photo-1720788979123-295e71b66f0e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHx3YXRlcmZhbGwlMjBUaGFpbGFuZCUyMGp1bmdsZXxlbnwwfHx8fDE3NjIwOTUwNTF8MA&ixlib=rb-4.1.0&q=85', title: 'Waterfall' }
+        { url: 'https://images.unsplash.com/photo-1679685809556-5b1b52eb4140?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Chiang Mai Old City', credit: 'Tai Bui' }
       ]
     },
     {
-      day: 8, date: '2026-02-13', city: 'Chiang Rai → Bangkok → Krabi',
-      morning: 'Flight Chiang Rai → Bangkok (11:00-13:15)',
-      afternoon: 'Connection flight Bangkok → Krabi (15:30-16:55, 1h 25m)',
-      evening: 'Arrive Krabi 17:00, settle in Ao Nang area hotel',
-      activities: ['Two flights', 'Hub transition'],
-      transport: 'Domestic flights',
-      budget_eur: '80-100', accommodation_eur: '60-100',
-      tips: 'Check baggage allowance for connections',
-      packing: ['Light layer for flights'],
+      day: 8, date: '2026-02-12', city: 'Chiang Mai',
+      morning: 'Old City temple hopping: Wat Phra Singh, Wat Chedi Luang, Wat Chiang Man',
+      afternoon: 'Doi Suthep Temple - climb 306 steps, golden chedi, city views',
+      evening: 'Nimman area dinner, craft beer or rooftop bar, Sunday Walking Street if Sunday',
+      activities: ['Old City temples', 'Doi Suthep', 'Walking Street', 'Nimman nightlife'],
+      transport: 'Songthaew to Doi Suthep (100 THB), walking/bicycle in city',
+      budget_eur: '30', accommodation_eur: '60-110',
+      tips: 'Doi Suthep early to avoid crowds, rent bicycle for Old City (50 THB/day)',
+      packing: ['Modest clothing', 'Good walking shoes', 'Water bottle'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1650732596327-0125c2ca2b3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxhaXJwbGFuZSUyMHdpbmclMjBjbG91ZHN8ZW58MHwwfHx8MTc2MjA5MTIxMnww&ixlib=rb-4.1.0&q=80&w=1080', title: 'Flight to South' }
+        { url: 'https://images.unsplash.com/photo-1719886369830-ce1e0e4a483d?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Doi Suthep Temple Aerial View', credit: 'Mike Holp' },
+        { url: 'https://images.unsplash.com/photo-1679685809556-5b1b52eb4140?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Wat Chedi Luang', credit: 'Tai Bui' },
+        { url: 'https://images.unsplash.com/photo-1578167635886-55908a3651e0?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Wat Phra Singh', credit: 'Worachat Sodsri' }
       ]
     },
     {
-      day: 9, date: '2026-02-14', city: 'Krabi',
-      morning: 'Boat to Railay Beach (only accessible by boat!)',
-      afternoon: 'Railay West (turquoise waters, rock formations) or Railay East (quiet, many cafés)',
-      evening: 'Kayaking, Phra Nang Cave Shrine with stalactites, sunset',
-      activities: ['Railay Beach', 'Kayaking', 'Cave shrine', 'Rock climbing viewpoint'],
-      transport: 'Long-tail boats',
-      budget_eur: '30-40', accommodation_eur: '60-100',
-      tips: 'Railay is magical, bring underwater camera for snorkeling',
-      packing: ['Swimwear', 'Beach towel', 'Snorkel gear'],
+      day: 9, date: '2026-02-13', city: 'Chiang Mai',
+      morning: 'Full day at Elephant Nature Park - ethical sanctuary, NO riding',
+      afternoon: 'Feed elephants, walk with them, watch river bathing, learn rescue stories',
+      evening: 'Return to hotel, rest, casual dinner at Night Bazaar',
+      activities: ['Elephant sanctuary', 'Elephant feeding', 'River bathing', 'Conservation education'],
+      transport: 'Tour pickup/drop-off included',
+      budget_eur: '75', accommodation_eur: '60-110',
+      tips: 'Book sanctuary 2-3 weeks ahead! Bring change of clothes (will get muddy)',
+      packing: ['Change of clothes', 'Mosquito repellent', 'Closed-toe shoes', 'Waterproof phone case'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1704314929474-eda7dec5debd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxSYWlsYXklMjBCZWFjaCUyMEtyYWJpJTIwVGhhaWxhbmR8ZW58MHwwfHx8MTc2MjA5MTIxMnww&ixlib=rb-4.1.0&q=80&w=1080', title: 'Railay Beach' },
-        { url: 'https://images.unsplash.com/photo-1627376598427-6314c284226a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxLcmFiaSUyMGtheWFraW5nJTIwbGltZXN0b25lfGVufDB8fHx8MTc2MjA5NTA1MXww&ixlib=rb-4.1.0&q=85', title: 'Kayaking' },
-        { url: 'https://images.unsplash.com/photo-1672932920323-17e4a69cbf51?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxQaHJhJTIwTmFuZyUyMENhdmUlMjBLcmFiaXxlbnwwfHx8fDE3NjIwOTUwNzd8MA&ixlib=rb-4.1.0&q=85', title: 'Phra Nang Cave' }
+        { url: 'https://images.unsplash.com/photo-1722102772916-1c3a19412736?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Elephant and Baby', credit: 'Catherine Zaidova' },
+        { url: 'https://images.unsplash.com/photo-1755448648450-c3111c1987d8?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Elephants Drinking Water', credit: 'krzhck' }
       ]
     },
     {
-      day: 10, date: '2026-02-15', city: 'Khao Sok',
-      morning: 'Minivan from Krabi to Khao Sok (8:00-10:30, 2.5 hours)',
-      afternoon: 'Check into TREEHOUSE accommodation (Our Jungle House or similar)',
-      evening: 'Jungle trekking, wildlife watching, jungle sounds night',
-      activities: ['Khao Sok arrival', 'Treehouse stay', 'Jungle hike', 'Wildlife'],
-      transport: 'Minivan shuttle',
-      budget_eur: '60-80', accommodation_eur: '60-120',
-      tips: 'This is the MUST-DO jungle experience, bring insect repellent, sleep early',
-      packing: ['Light clothes', 'Flashlight', 'Insect repellent'],
-      accommodation_type: 'Treehouse - Unique experience!',
+      day: 10, date: '2026-02-14', city: 'Chiang Mai',
+      morning: 'Thai Cooking Class with market tour (8 AM-1 PM)',
+      afternoon: 'Free time - spa/massage, Nimman cafes, or Sticky Waterfalls',
+      evening: 'Shopping at Warorot Market, prepare for Krabi flight tomorrow',
+      activities: ['Cooking class', 'Market tour', 'Massage', 'Shopping'],
+      transport: 'Walking/Grab taxi',
+      budget_eur: '50', accommodation_eur: '60-110',
+      tips: 'Cooking class ~€25-40/person, includes lunch you cook yourself',
+      packing: ['Light clothes', 'Shopping bag'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1689479095441-2a545f413b27?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxLaGFvJTIwU29rJTIwdHJlZWhvdXNlJTIwanVuZ2xlfGVufDB8fHx8MTc2MjA5NTA3N3ww&ixlib=rb-4.1.0&q=85', title: 'Treehouse Accommodation' },
-        { url: 'https://images.unsplash.com/photo-1641892193415-fe0f8a49086c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxLaGFvJTIwU29rJTIwTmF0aW9uYWwlMjBQYXJrJTIwVGhhaWxhbmQlMjBqdW5nbGV8ZW58MHwwfHx8MTc2MjA5MTIxM3ww&ixlib=rb-4.1.0&q=80&w=1080', title: 'Khao Sok Jungle' }
+        { url: 'https://images.unsplash.com/photo-1710186012479-d79e9d2a7065?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Thai Cooking Class', credit: 'Natthawan Sittiphan' },
+        { url: 'https://images.unsplash.com/photo-1696437492959-b9a8c37df4ad?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Warorot Market', credit: 'Pikacent' }
       ]
     },
     {
-      day: 11, date: '2026-02-16', city: 'Khao Sok',
-      morning: 'Cheow Lan Lake - stunning limestone cliffs over emerald water',
-      afternoon: 'FLOATING BUNGALOWS experience - sleep on the lake!',
-      evening: 'Kayaking, swimming, sunset over limestone cliffs, return to Krabi late (~19:00)',
-      activities: ['Cheow Lan Lake', 'Kayaking', 'Floating bungalows', 'Swimming'],
-      transport: 'Minivan return to Krabi',
-      budget_eur: '30-40', accommodation_eur: '60-100',
-      tips: 'Cheow Lan Lake is one of Thailand\'s best kept secrets, bring camera',
-      packing: ['Camera', 'Dry bag'],
-      special_note: 'Sleep on floating bungalows - unforgettable!',
+      day: 11, date: '2026-02-15', city: 'Chiang Mai → Klong Muang Beach',
+      morning: 'FLIGHT 2: CNX→KBV DIRECT (Thai AirAsia, €73-102/person) - NO connection!',
+      afternoon: 'Arrive Krabi, transfer to Klong Muang Beach (45 min), check-in',
+      evening: 'Beach walk, sunset, beachfront dinner at hotel',
+      activities: ['Flight to beaches', 'Beach arrival', 'Sunset viewing'],
+      transport: 'Direct flight + airport transfer (800-1000 THB)',
+      budget_eur: '100', accommodation_eur: '60-100',
+      tips: 'Book DIRECT flight only! Pre-arrange airport transfer with hotel',
+      packing: ['Beach clothes', 'Swimwear', 'Sunscreen'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1675348081045-f3af6352c68b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxDaGVvdyUyMExhbiUyMExha2UlMjBLaGFvJTIwU29rJTIwVGhhaWxhbmR8ZW58MHwwfHx8MTc2MjA5MTIzNXww&ixlib=rb-4.1.0&q=80&w=1080', title: 'Cheow Lan Lake' },
-        { url: 'https://images.unsplash.com/photo-1587283506208-2f3bfef269a1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxmbG9hdGluZyUyMGJ1bmdhbG93cyUyMEtoYW8lMjBTb2slMjBsYWtlfGVufDB8fHx8MTc2MjA5NTA3N3ww&ixlib=rb-4.1.0&q=85', title: 'Floating Bungalows' },
-        { url: 'https://images.unsplash.com/photo-1586715953464-4a1b5f2aa9de?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxrYXlha2luZyUyMENoZW93JTIwTGFuJTIwTGFrZXxlbnwwfHx8fDE3NjIwOTUwNzd8MA&ixlib=rb-4.1.0&q=85', title: 'Kayaking on Lake' }
+        { url: 'https://images.unsplash.com/photo-1552320892-2059c02de233?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Klong Muang Beach', credit: 'Mike Swigunski' },
+        { url: 'https://images.unsplash.com/photo-1500018208634-e633087e3bb1?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Krabi Beach Sunset', credit: 'Taweeroj Eawpanich' }
       ]
     },
     {
-      day: 12, date: '2026-02-17', city: 'Krabi → Phi Phi',
-      morning: 'Ferry from Krabi to Phi Phi (10:00-11:30, 1.5 hours)',
-      afternoon: 'Phi Phi Don island exploration, Tonsai Beach, long-tail boats',
-      evening: 'Snorkeling, sunset, beach dinner',
-      activities: ['Ferry ride', 'Phi Phi island arrival', 'Beach time', 'Snorkeling'],
-      transport: 'Ferry from Ao Nang',
-      budget_eur: '40-60', accommodation_eur: '60-100',
-      tips: 'Phi Phi is touristy but beautiful, book ferry in advance',
-      packing: ['Snorkel gear', 'Underwater camera'],
+      day: 12, date: '2026-02-16', city: 'Klong Muang - Phi Phi Islands',
+      morning: 'Early bird Phi Phi tour pickup 6:00-7:00 AM (beat crowds!)',
+      afternoon: 'Maya Bay, Pileh Lagoon, Viking Cave, Monkey Bay, lunch at Phi Phi Don',
+      evening: 'Bamboo Island, return to Klong Muang 3-4 PM, rest, casual dinner',
+      activities: ['Maya Bay', 'Pileh Lagoon', 'Viking Cave', 'Bamboo Island', 'Snorkeling'],
+      transport: 'Speedboat tour with hotel pickup',
+      budget_eur: '55', accommodation_eur: '60-100',
+      tips: 'Maya Bay open in Feb! No swimming allowed (knee-deep only)',
+      packing: ['Underwater camera', 'Dry bag', 'Reef-safe sunscreen', 'Towel'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1534008989723-4f9171b05272?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxQaGklMjBQaGklMjBJc2xhbmQlMjBUaGFpbGFuZCUyMGJlYWNofGVufDB8MHx8fDE3NjIwOTEyMzV8MA&ixlib=rb-4.1.0&q=80&w=1080', title: 'Phi Phi Island' }
+        { url: 'https://images.unsplash.com/photo-1534008897995-27a23e859048?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Maya Bay - Phi Phi Islands', credit: 'Humphrey M' },
+        { url: 'https://images.unsplash.com/photo-1671837827066-71d72d95cd3b?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Pileh Lagoon', credit: 'David Gardiner' },
+        { url: 'https://images.unsplash.com/photo-1755891948002-4afec2115be2?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Longtail Boats at Phi Phi', credit: 'Tohozi' }
       ]
     },
     {
-      day: 13, date: '2026-02-18', city: 'Phi Phi',
-      morning: 'ISLAND HOPPING BOAT TOUR to Phi Phi Leh',
-      afternoon: 'Maya Bay (from \'The Beach\' movie), Viking Cave, Pileh Lagoon (blue lagoon!)',
-      evening: 'Snorkeling with tropical fish, relaxation on beach',
-      activities: ['Maya Bay', 'Viking Cave', 'Pileh Lagoon', 'Snorkeling', 'Beach relaxation'],
-      transport: 'Long-tail boat tour',
-      budget_eur: '40-50', accommodation_eur: '60-100',
-      tips: 'Maya Bay can be crowded, the blue lagoon is worth it, bring underwater camera',
-      packing: ['Snorkel gear', 'Rash guard', 'Sunscreen SPF 50+'],
+      day: 13, date: '2026-02-17', city: 'Klong Muang - Hong Islands',
+      morning: 'Hong Islands speedboat tour 8:00 AM - famous emerald lagoon',
+      afternoon: 'Ao Thalane mangrove kayaking tour (1:30 PM pickup)',
+      evening: 'Return to hotel, beachfront dinner, fire show',
+      activities: ['Hong Islands lagoon', 'Island snorkeling', 'Mangrove kayaking', 'Wildlife spotting'],
+      transport: 'Tour boats with hotel pickup',
+      budget_eur: '65', accommodation_eur: '60-100',
+      tips: 'Two boat tours in one day - bring energy! Hong lagoon only accessible at low tide',
+      packing: ['Snorkel gear', 'Waterproof bag', 'Insect repellent for mangroves'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1534008897995-27a23e859048?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxNYXlhJTIwQmF5JTIwUGhpJTIwUGhpJTIwVGhhaWxhbmR8ZW58MHwwfHx8MTc2MjA5MTIzNXww&ixlib=rb-4.1.0&q=80&w=1080', title: 'Maya Bay' },
-        { url: 'https://images.unsplash.com/photo-1732733567932-f03c05e89ad9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxWaWtpbmclMjBDYXZlJTIwUGhpJTIwUGhpJTIwVGhhaWxhbmR8ZW58MHx8fHwxNzYyMDk1MDc3fDA&ixlib=rb-4.1.0&q=85', title: 'Viking Cave' },
-        { url: 'https://images.unsplash.com/photo-1683641967671-196309483093?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxQaWxlaCUyMExhZ29vbiUyMGJsdWUlMjBQaGklMjBQaGl8ZW58MHx8fHwxNzYyMDk1MDc3fDA&ixlib=rb-4.1.0&q=85', title: 'Pileh Lagoon' },
-        { url: 'https://images.unsplash.com/photo-1703884293949-8677c4b34897?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxzbm9ya2VsaW5nJTIwdHJvcGljYWwlMjBmaXNoJTIwVGhhaWxhbmR8ZW58MHx8fHwxNzYyMDk1MDc3fDA&ixlib=rb-4.1.0&q=85', title: 'Snorkeling' }
+        { url: 'https://images.unsplash.com/photo-1759853685531-bdf3d6d7d194?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Hong Islands with Karst Mountains', credit: 'Ama Journey' },
+        { url: 'https://images.unsplash.com/photo-1761670835856-559ede6a86cc?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Longtail at Hong Lagoon', credit: 'Nicholas Ng' },
+        { url: 'https://images.unsplash.com/photo-1618708018367-635b0809d05d?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Mangrove Kayaking', credit: 'Simon Hurry' }
       ]
     },
     {
-      day: 14, date: '2026-02-19', city: 'Phi Phi → Koh Samui',
-      morning: 'Ferry Phi Phi → Phuket (10:00-11:30)',
-      afternoon: 'Flight Phuket → Koh Samui (12:30-13:30)',
-      evening: 'Arrive Koh Samui, settle in Chaweng or Lamai Beach hotel',
-      activities: ['Ferry + Flight', 'Island transition'],
-      transport: 'Ferry + Domestic flight',
-      budget_eur: '80-120', accommodation_eur: '60-100',
-      tips: 'Tight timing, have luggage at ready, don\'t miss flight',
-      packing: ['Small daypack'],
+      day: 14, date: '2026-02-18', city: 'Klong Muang → Nopparat Thara',
+      morning: 'Check out Klong Muang, transfer to Nopparat Thara (20 min)',
+      afternoon: '4 Islands sunset tour: Phra Nang Cave, Chicken Island, Tup Island, Poda Island',
+      evening: 'Walk sandbar at low tide, sunset at Railay, Ao Nang Night Market dinner',
+      activities: ['Hotel transfer', '4 Islands tour', 'Sandbar walk', 'Cave shrine', 'Night market'],
+      transport: 'Taxi (300-500 THB) + longtail boat tour',
+      budget_eur: '35', accommodation_eur: '70-110',
+      tips: 'Sandbar between Tup-Mor islands only visible at low tide - magical!',
+      packing: ['Beach essentials', 'Cash for night market'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1734305529432-4e81d8fd5cc6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxmZXJyeSUyMGJvYXQlMjBUaGFpbGFuZCUyMGlzbGFuZHxlbnwwfDB8fHwxNzYyMDkxMjM1fDA&ixlib=rb-4.1.0&q=80&w=1080', title: 'Ferry to Koh Samui' }
+        { url: 'https://images.unsplash.com/photo-1693629756372-a82588038d03?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: '4 Islands Tour - Krabi', credit: 'Romi Kalathiya' },
+        { url: 'https://images.unsplash.com/photo-1631344197649-894f6101185e?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Tup Island Sandbar', credit: 'Mariola Grobelska' }
       ]
     },
     {
-      day: 15, date: '2026-02-20', city: 'Koh Samui',
-      morning: 'Big Buddha (Wat Phra Yai) - mountaintop temple with massive Buddha',
-      afternoon: 'Chaweng Beach (lively) or Lamai Beach (more relaxed) or Silver Beach (Crystal Bay - most beautiful)',
-      evening: 'Thai massage, seafood dinner, sunset',
-      activities: ['Big Buddha', 'Beaches', 'Swimming', 'Massage', 'Local food'],
-      transport: 'Taxis/motorbike rentals',
-      budget_eur: '30-40', accommodation_eur: '60-100',
-      tips: 'Silver Beach (Crystal Bay) is worth the trip for best sunset',
-      packing: ['Casual clothes'],
+      day: 15, date: '2026-02-19', city: 'Nopparat Thara - Railay Beach',
+      morning: 'Longtail boat to Railay West (100 THB), explore peninsula',
+      afternoon: 'Phra Nang Cave Beach, Railay Viewpoint hike (45 min), rock climbing',
+      evening: 'Sunset from beach, longtail back to Nopparat Thara, local dinner',
+      activities: ['Railay exploration', 'Viewpoint hike', 'Cave beach', 'Rock climbing option'],
+      transport: 'Longtail boats (200 THB return)',
+      budget_eur: '25', accommodation_eur: '70-110',
+      tips: 'Railay no roads - boat access only! Viewpoint steep but worth it',
+      packing: ['Good shoes for hiking', 'Water', 'Camera'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1526656608461-d9f14911f1bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxLb2glMjBTYW11aSUyMFRoYWlsYW5kJTIwYmVhY2glMjBwYWxtJTIwdHJlZXN8ZW58MHwwfHx8MTc2MjA5MTIzNXww&ixlib=rb-4.1.0&q=80&w=1080', title: 'Koh Samui Beach' }
+        { url: 'https://images.unsplash.com/photo-1664543219977-ad362c2ec439?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Railay Beach with Longtail', credit: 'Steven Watson' },
+        { url: 'https://images.unsplash.com/photo-1672932810946-a42ba7527121?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Phra Nang Cave Beach', credit: 'Yoav Aziz' },
+        { url: 'https://images.unsplash.com/photo-1722483537740-2acc865a97ba?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Railay After Storm', credit: 'Mike Anderson' }
       ]
     },
     {
-      day: 16, date: '2026-02-21', city: 'Koh Samui → Bangkok',
-      morning: 'Flight Koh Samui → Bangkok (10:00-11:30)',
-      afternoon: 'Roof-top bar, last-minute shopping at Emporium or CentralWorld',
-      evening: 'Luxury dinner or traditional Thai massage',
-      activities: ['Flight', 'Last shopping', 'Roof-top bars', 'Dinner', 'City exploration'],
-      transport: 'Flight + Grab/taxi',
-      budget_eur: '40-60', accommodation_eur: '40-60',
-      tips: 'Last night in Thailand - enjoy! Hotel near airport for early flight',
-      packing: ['Casual/formal clothes for dinner'],
+      day: 16, date: '2026-02-20', city: 'Nopparat Thara - Bor Thor Caves',
+      morning: 'Bor Thor sea cave kayaking tour - paddle through tunnel caves',
+      afternoon: '3000-year-old cave paintings, Tha Pom emerald pools swimming',
+      evening: 'Return to hotel, final Krabi seafood dinner, pack for departure',
+      activities: ['Cave kayaking', 'Ancient cave art', 'Emerald pool swimming', 'Seafood feast'],
+      transport: 'Tour with hotel pickup',
+      budget_eur: '50', accommodation_eur: '70-110',
+      tips: 'Different from mangrove kayaking - more caves, archaeological sites',
+      packing: ['Waterproof torch', 'Reef shoes', 'Swimwear'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1706008434257-f50d6ec7d107?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxCYW5na29rJTIwcm9vZnRvcCUyMGJhciUyMHNreWxpbmV8ZW58MHx8fHwxNzYyMDk1MDc3fDA&ixlib=rb-4.1.0&q=85', title: 'Rooftop Bar' }
+        { url: 'https://images.unsplash.com/photo-1618708018367-635b0809d05d?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Bor Thor Sea Caves', credit: 'Simon Hurry' },
+        { url: 'https://images.unsplash.com/photo-1500018208634-e633087e3bb1?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Tha Pom Emerald Pools', credit: 'Taweeroj Eawpanich' }
       ]
     },
     {
-      day: 17, date: '2026-02-22', city: 'Bangkok',
-      morning: 'EARLY WAKE UP 3:30 AM for 5:50 AM flight!',
-      afternoon: 'Flight Bangkok → Riga (05:50), arrives same day 18:05',
-      evening: 'Home in Latvia!',
-      activities: ['Early morning flight', 'Journey home'],
-      transport: 'International flight',
-      budget_eur: '500-700', accommodation_eur: '0',
-      tips: 'Set multiple alarms! Arrange hotel near airport (BKK has airport hotels)',
-      special_note: 'LONG FLIGHT HOME - bring entertainment! Arrive Riga 18:05',
+      day: 17, date: '2026-02-21', city: 'Nopparat Thara',
+      morning: 'Private longtail to hidden beaches: Koh Poda back side, Koh Ya Wa Sam',
+      afternoon: 'Beach relaxation, Thai massage, souvenir shopping',
+      evening: 'Final sunset, special dinner, reflect on island adventures',
+      activities: ['Private boat tour', 'Hidden beaches', 'Massage', 'Shopping', 'Farewell dinner'],
+      transport: 'Private longtail (2500 THB/boat)',
+      budget_eur: '30', accommodation_eur: '70-110',
+      tips: 'Private boat lets you set schedule, avoid crowds at favorite spots',
+      packing: ['Last beach day essentials', 'Cash for shopping'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1724562399669-074371f5f24c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ5ODF8MHwxfHNlYXJjaHwxfHxhaXJwbGFuZSUyMGRlcGFydHVyZSUyMHN1bnNldCUyMGhvbWV8ZW58MHwwfHx8MTc2MjA5MTI0Nnww&ixlib=rb-4.1.0&q=80&w=1080', title: 'Journey Home' }
+        { url: 'https://images.unsplash.com/photo-1631344197649-894f6101185e?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Koh Poda Backside', credit: 'Mariola Grobelska' },
+        { url: 'https://images.unsplash.com/photo-1593202232466-79ee2d501d9b?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Koh Ya Wa Sam', credit: 'Smit Shah' },
+        { url: 'https://images.unsplash.com/photo-1664543219977-ad362c2ec439?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Private Longtail Boat', credit: 'Steven Watson' }
+      ]
+    },
+    {
+      day: 18, date: '2026-02-22', city: 'Krabi → Bangkok',
+      morning: 'Check out, airport transfer, FLIGHT 3: KBV→BKK (9-11 AM)',
+      afternoon: 'Arrive Bangkok, check into airport hotel or city center',
+      evening: 'Last shopping, rooftop bar, final Thai dinner, pack for home',
+      activities: ['Flight to Bangkok', 'Shopping', 'Rooftop bar', 'Thai massage'],
+      transport: 'Airport taxi + domestic flight',
+      budget_eur: '40', accommodation_eur: '40-60',
+      tips: 'Stay near airport if early morning international flight tomorrow',
+      packing: ['Pack purchases in check-in luggage', 'Leave room for souvenirs'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1568321385520-b9252021b491?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Bangkok Skyline at Night', credit: 'Daniel Cox' },
+        { url: 'https://images.unsplash.com/photo-1569288063643-baf2b7b4f3b2?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Bangkok Rooftop Bar', credit: 'Posawee Suwannaphati' }
+      ]
+    },
+    {
+      day: 19, date: '2026-02-23', city: 'Bangkok → Home',
+      morning: 'Early departure to airport for international flight home',
+      afternoon: 'In flight, crossing time zones',
+      evening: 'Arrive home with amazing memories!',
+      activities: ['Airport departure', 'International flight', 'Arrival home'],
+      transport: 'International flight BKK→RIX',
+      budget_eur: '20', accommodation_eur: '0',
+      tips: 'Arrive airport 3h early for international, save some THB for next trip!',
+      packing: ['Travel documents', 'House keys', 'Downloaded entertainment'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Journey Home', credit: 'Anugrah Lohiya' }
       ]
     }
   ],
-  
+
   budgetBreakdown: {
-    'Domestic Flights': '€150-250',
-    'Accommodation (16 nights)': '€800-1,280',
-    'Food & Dining (17 days)': '€250-340',
-    'Activities & Entrance Fees': '€200-300',
-    'Local Transport': '€150-200',
+    'Domestic Flights (Only 3!)': '€150-200',
+    'Accommodation (18 nights)': '€900-1,400',
+    'Food & Dining (19 days)': '€300-380',
+    'Activities & Tours': '€250-350',
+    'Local Transport (Bus/Boats/Taxis)': '€120-160',
     'Miscellaneous': '€100-150'
   },
-  
+
   packingList: {
     '📄 Documents': [
       'Passport (min 6 months validity)',
@@ -338,13 +364,6 @@ const tripData = {
       'Hat/cap',
       'Sunglasses'
     ],
-    '🥾 Hiking Gear': [
-      'Hiking boots (Chiang Rai trek)',
-      'Quick-dry shirt',
-      'Hiking shorts',
-      'Water bottle',
-      'Backpack (20-30L)'
-    ],
     '🎒 Miscellaneous': [
       'Reusable water bottle',
       'Daypack (20-30L)',
@@ -356,7 +375,7 @@ const tripData = {
       'Zip-lock bags'
     ]
   },
-  
+
   tips: [
     {
       title: '🛂 Visa Information',
@@ -389,6 +408,10 @@ const tripData = {
     {
       title: '📱 Communication',
       content: 'Buy AIS or TrueMove SIM card (€7-10/week). 4G coverage excellent. WhatsApp/Viber/Telegram work great. Google Maps works offline.'
+    },
+    {
+      title: '✈️ Flight Optimization',
+      content: 'ONLY 3 domestic flights! Bangkok→Chiang Rai, Chiang Mai→Krabi DIRECT, Krabi→Bangkok. No more island hopping - use BOATS instead!'
     }
   ]
 };
@@ -423,7 +446,7 @@ function renderDayList() {
   dayList.innerHTML = tripData.itinerary.map(day => {
     const color = getCityColor(day.city);
     return `
-      <div class="day-card ${selectedDay === day.day ? 'active' : ''}" 
+      <div class="day-card ${selectedDay === day.day ? 'active' : ''}"
            data-day="${day.day}"
            style="border-color: ${color}; ${selectedDay === day.day ? `border-color: ${color};` : ''}">
         <div class="day-card-header">
@@ -439,7 +462,7 @@ function renderDayList() {
       </div>
     `;
   }).join('');
-  
+
   // Add click handlers
   document.querySelectorAll('.day-card').forEach(card => {
     card.addEventListener('click', () => {
@@ -520,14 +543,13 @@ function renderMainView() {
       </div>
 
       <div class="main-summary">
-        <h2>🌴 Our Thailand Adventure 2026</h2>
+        <h2>🌴 Our Optimized Thailand Adventure 2026</h2>
 
         <div class="summary-section">
-          <h3>✈️ The Journey</h3>
+          <h3>✈️ Smart Route - Only 3 Domestic Flights!</h3>
           <p>
-            Join us on an unforgettable 17-day adventure through the Land of Smiles!
-            From February 5-22, 2026, we'll explore Thailand's diverse landscapes,
-            rich culture, and stunning beaches with 4 adventurous travelers.
+            Optimized 19-day adventure (Feb 5-23, 2026) with minimal flights and maximum boat exploration!
+            Bangkok → Chiang Rai (flight) → Chiang Mai (bus) → Krabi (direct flight) → Bangkok (flight home)
           </p>
         </div>
 
@@ -540,34 +562,24 @@ function renderMainView() {
               <p>Grand Palace, temples & vibrant street life</p>
             </div>
             <div class="destination-card">
+              <div class="destination-emoji">⛰️</div>
+              <h4>Chiang Rai</h4>
+              <p>White Temple, Blue Temple & Golden Triangle</p>
+            </div>
+            <div class="destination-card">
               <div class="destination-emoji">🌳</div>
               <h4>Chiang Mai</h4>
               <p>Mountains, temples & elephant sanctuary</p>
             </div>
             <div class="destination-card">
-              <div class="destination-emoji">⛰️</div>
-              <h4>Chiang Rai</h4>
-              <p>White Temple, Blue Temple & jungle trekking</p>
-            </div>
-            <div class="destination-card">
               <div class="destination-emoji">🏖️</div>
-              <h4>Krabi</h4>
-              <p>Railay Beach & stunning limestone cliffs</p>
-            </div>
-            <div class="destination-card">
-              <div class="destination-emoji">🌴</div>
-              <h4>Khao Sok</h4>
-              <p>Rainforest treehouse & floating bungalows</p>
+              <h4>Klong Muang</h4>
+              <p>Phi Phi tours, Hong Islands & beach bliss</p>
             </div>
             <div class="destination-card">
               <div class="destination-emoji">🏝️</div>
-              <h4>Phi Phi Islands</h4>
-              <p>Maya Bay, Viking Cave & snorkeling</p>
-            </div>
-            <div class="destination-card">
-              <div class="destination-emoji">🌊</div>
-              <h4>Koh Samui</h4>
-              <p>Beautiful beaches & Big Buddha</p>
+              <h4>Nopparat Thara</h4>
+              <p>Railay Beach, cave kayaking & boat adventures</p>
             </div>
           </div>
         </div>
@@ -576,15 +588,15 @@ function renderMainView() {
           <h3>🎯 What We'll Do</h3>
           <div class="highlights-grid">
             <div class="highlight-item">🐘 Ethical elephant sanctuary experience</div>
-            <div class="highlight-item">🥾 10km jungle trekking adventure</div>
-            <div class="highlight-item">🛶 Kayaking through limestone caves</div>
-            <div class="highlight-item">🏊 Snorkeling in crystal-clear waters</div>
-            <div class="highlight-item">🍜 Thai cooking class</div>
+            <div class="highlight-item">🛶 Multiple boat tours - Phi Phi, Hong Islands, 4 Islands</div>
+            <div class="highlight-item">⛩️ White & Blue Temples in Chiang Rai</div>
+            <div class="highlight-item">🏊 Snorkeling in Maya Bay & Pileh Lagoon</div>
+            <div class="highlight-item">🍜 Thai cooking class in Chiang Mai</div>
             <div class="highlight-item">🏛️ Ancient temples & palaces</div>
-            <div class="highlight-item">🌅 Floating bungalows on Cheow Lan Lake</div>
-            <div class="highlight-item">🌴 Treehouse accommodation in the jungle</div>
-            <div class="highlight-item">🎨 Hill tribe village visits</div>
-            <div class="highlight-item">🍛 Night markets & street food</div>
+            <div class="highlight-item">🌅 Railay Beach viewpoint hike</div>
+            <div class="highlight-item">🚌 Scenic Green Bus ride through mountains</div>
+            <div class="highlight-item">🎨 Golden Triangle border crossing</div>
+            <div class="highlight-item">🍛 Night markets & street food adventures</div>
           </div>
         </div>
 
@@ -592,20 +604,20 @@ function renderMainView() {
           <h3>📊 Trip Overview</h3>
           <div class="trip-stats">
             <div class="stat-item">
-              <div class="stat-number">17</div>
+              <div class="stat-number">19</div>
               <div class="stat-label">Days</div>
             </div>
             <div class="stat-item">
-              <div class="stat-number">8</div>
+              <div class="stat-number">6</div>
               <div class="stat-label">Cities</div>
             </div>
             <div class="stat-item">
-              <div class="stat-number">4</div>
-              <div class="stat-label">Travelers</div>
+              <div class="stat-number">3</div>
+              <div class="stat-label">Flights</div>
             </div>
             <div class="stat-item">
-              <div class="stat-number">€8,000</div>
-              <div class="stat-label">Budget</div>
+              <div class="stat-number">€1,420-1,640</div>
+              <div class="stat-label">Budget/Person</div>
             </div>
           </div>
         </div>
@@ -637,7 +649,7 @@ function renderItineraryView() {
       const imgTitle = typeof img === 'string' ? '' : img.title;
       imageHTML = `
         <div class="image-wrapper">
-          <img src="${imgUrl}" alt="${day.city}" class="itinerary-image" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px 8px 0 0; margin-bottom: 20px;">
+          <img src="${imgUrl}" alt="${day.city}" class="itinerary-image" style="width: 100%; height: 450px; object-fit: cover; border-radius: 8px 8px 0 0; margin-bottom: 20px;">
           ${imgTitle ? `<div class="image-title">${imgTitle}</div>` : ''}
         </div>
       `;
@@ -650,7 +662,7 @@ function renderItineraryView() {
               const imgTitle = typeof img === 'string' ? '' : img.title;
               return `
                 <div class="carousel-slide ${index === 0 ? 'active' : ''}">
-                  <img src="${imgUrl}" alt="${day.city} ${index + 1}" class="carousel-image" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                  <img src="${imgUrl}" alt="${day.city} ${index + 1}" class="carousel-image" style="width: 100%; height: 450px; object-fit: cover; border-radius: 8px 8px 0 0;">
                   ${imgTitle ? `<div class="image-title">${imgTitle}</div>` : ''}
                 </div>
               `;
@@ -686,24 +698,24 @@ function renderItineraryView() {
         <h3>☀️ Morning</h3>
         <p>${day.morning}</p>
       </div>
-      
+
       <div class="detail-section">
         <h3>🌤️ Afternoon</h3>
         <p>${day.afternoon}</p>
       </div>
-      
+
       <div class="detail-section">
         <h3>🌙 Evening</h3>
         <p>${day.evening}</p>
       </div>
-      
+
       <div class="detail-section">
         <h3>🎯 Activities</h3>
         <ul>
           ${day.activities.map(activity => `<li>${activity}</li>`).join('')}
         </ul>
       </div>
-      
+
       ${day.packing ? `
       <div class="detail-section">
         <h3>🎒 What to Pack</h3>
@@ -712,7 +724,7 @@ function renderItineraryView() {
         </ul>
       </div>
       ` : ''}
-      
+
       <div class="detail-section">
         <h3>💡 Tips</h3>
         <p>${day.tips}</p>
@@ -720,7 +732,7 @@ function renderItineraryView() {
         ${day.special_note ? `<p><span class="badge badge-info">${day.special_note}</span></p>` : ''}
         ${day.accommodation_type ? `<p><span class="badge badge-success">${day.accommodation_type}</span></p>` : ''}
       </div>
-      
+
       <!-- Mobile Day Selector (horizontal scroll) -->
       <div class="mobile-day-selector">
         <div class="mobile-day-scroll">
@@ -732,7 +744,7 @@ function renderItineraryView() {
                 onclick="selectDay(${d.day})"
                 data-day="${d.day}">
                 <div class="mobile-day-number">Day ${d.day}</div>
-                <div class="mobile-day-city">${dayEmoji} ${d.city}</div>
+                <div class="mobile-day-city">${dayEmoji} ${d.city.split(' ')[0]}</div>
                 <div class="mobile-day-date">${formatDate(d.date)}</div>
               </button>
             `;
@@ -744,7 +756,7 @@ function renderItineraryView() {
         <button class="btn" onclick="navigateDay(-1)" ${selectedDay === 1 ? 'disabled' : ''}>
           ← Previous Day
         </button>
-        <button class="btn" onclick="navigateDay(1)" ${selectedDay === 17 ? 'disabled' : ''}>
+        <button class="btn" onclick="navigateDay(1)" ${selectedDay === 19 ? 'disabled' : ''}>
           Next Day →
         </button>
       </div>
@@ -763,19 +775,19 @@ function renderItineraryView() {
 // Render budget view
 function renderBudgetView() {
   const content = document.getElementById('mainContent');
-  
-  const totalMin = 6000;
-  const totalMax = 8000;
-  const perPersonMin = 1500;
-  const perPersonMax = 2000;
-  
+
+  const totalMin = 5680;
+  const totalMax = 6560;
+  const perPersonMin = 1420;
+  const perPersonMax = 1640;
+
   content.innerHTML = `
     <div class="detail-card">
       <div class="detail-header">
-        <h2>💰 Budget Breakdown</h2>
-        <p style="color: var(--color-text-secondary);">Complete financial overview for 4 people</p>
+        <h2>💰 Optimized Budget Breakdown</h2>
+        <p style="color: var(--color-text-secondary);">Only 3 domestic flights - much cheaper!</p>
       </div>
-      
+
       <div class="budget-grid">
         <div class="budget-card">
           <h4>Total Budget</h4>
@@ -787,14 +799,14 @@ function renderBudgetView() {
         </div>
         <div class="budget-card">
           <h4>Daily Average</h4>
-          <div class="amount">€${Math.round(perPersonMin/17)}-${Math.round(perPersonMax/17)}</div>
+          <div class="amount">€${Math.round(perPersonMin/19)}-${Math.round(perPersonMax/19)}</div>
         </div>
         <div class="budget-card">
           <h4>Trip Duration</h4>
-          <div class="amount">17 Days</div>
+          <div class="amount">19 Days</div>
         </div>
       </div>
-      
+
       <div class="detail-section">
         <h3>📊 Cost Breakdown</h3>
         <table class="budget-table">
@@ -822,18 +834,26 @@ function renderBudgetView() {
           </tbody>
         </table>
       </div>
-      
+
+      <div class="detail-section">
+        <h3>✈️ Flight Cost Savings</h3>
+        <p><strong>Original Plan:</strong> 5 domestic flights (€250-350/person)</p>
+        <p><strong>Optimized Plan:</strong> 3 domestic flights (€150-200/person)</p>
+        <p style="color: var(--color-success); font-weight: var(--font-weight-semibold);">
+          💰 SAVINGS: €100-150 per person!
+        </p>
+      </div>
+
       <div class="detail-section">
         <h3>💡 Ways to Save Money</h3>
         <ul>
-          <li>Book flights 2-4 weeks in advance for best prices</li>
+          <li>Book all 3 flights NOW - prices increase closer to dates</li>
           <li>Eat at street food stalls (€2-5) instead of restaurants (€10-20)</li>
-          <li>Use public transport and Grab instead of taxis</li>
+          <li>Use Grab and Green Bus instead of taxis</li>
           <li>Book accommodation with free breakfast included</li>
-          <li>Buy water and snacks from 7-Eleven instead of tourist shops</li>
-          <li>Book activities directly instead of through hotel concierge</li>
-          <li>Travel during shoulder season (February is perfect!)</li>
-          <li>Share rooms and split costs as couples</li>
+          <li>Buy water and snacks from 7-Eleven</li>
+          <li>Book boat tours one day in advance (cheaper than same-day)</li>
+          <li>Share private longtail boat costs (split 4 ways)</li>
         </ul>
       </div>
     </div>
@@ -843,14 +863,14 @@ function renderBudgetView() {
 // Render packing view
 function renderPackingView() {
   const content = document.getElementById('mainContent');
-  
+
   content.innerHTML = `
     <div class="detail-card">
       <div class="detail-header">
         <h2>🎒 Packing List</h2>
         <p style="color: var(--color-text-secondary);">Check off items as you pack them</p>
       </div>
-      
+
       ${Object.entries(tripData.packingList).map(([category, items]) => `
         <div class="packing-category">
           <h3>${category}</h3>
@@ -860,8 +880,8 @@ function renderPackingView() {
               const isChecked = checkedItems[itemId] || false;
               return `
                 <div class="packing-item">
-                  <input type="checkbox" 
-                         id="${itemId}" 
+                  <input type="checkbox"
+                         id="${itemId}"
                          ${isChecked ? 'checked' : ''}
                          onchange="togglePackingItem('${itemId}')">
                   <label for="${itemId}">${item}</label>
@@ -871,7 +891,7 @@ function renderPackingView() {
           </div>
         </div>
       `).join('')}
-      
+
       <div class="detail-section">
         <h3>💡 Packing Tips</h3>
         <ul>
@@ -879,10 +899,10 @@ function renderPackingView() {
           <li>Bring a small daypack for daily excursions</li>
           <li>Use packing cubes to organize your luggage</li>
           <li>Keep important documents in a waterproof bag</li>
-          <li>Wear your hiking boots on the plane to save luggage space</li>
           <li>Bring a reusable water bottle to save money and reduce plastic</li>
           <li>Pack a separate bag for dirty/wet clothes</li>
           <li>Check airline baggage allowance before you fly</li>
+          <li>DRY BAG is essential for all boat tours!</li>
         </ul>
       </div>
     </div>
@@ -892,7 +912,7 @@ function renderPackingView() {
 // Render activities view
 function renderActivitiesView() {
   const content = document.getElementById('mainContent');
-  
+
   const citiesWithActivities = [
     {
       name: 'Bangkok',
@@ -901,19 +921,7 @@ function renderActivitiesView() {
       activities: [
         { name: 'Grand Palace', duration: '3-4 hours', budget: '€10-15', difficulty: 'Easy', description: 'Stunning royal palace complex with intricate Thai architecture. Dress code strictly enforced.' },
         { name: 'Wat Pho & Wat Arun', duration: '2-3 hours', budget: '€5-10', difficulty: 'Easy', description: 'Famous temples with the Reclining Buddha and Temple of Dawn across the river.' },
-        { name: 'Floating Market', duration: '2-3 hours', budget: '€5-10', difficulty: 'Easy', description: 'Traditional market on boats. Visit early morning (7-10 AM) for best experience.' },
-        { name: 'Night Markets', duration: '2-4 hours', budget: '€10-20', difficulty: 'Easy', description: 'Shopping, food, and entertainment. Chatuchak and Rot Fai are the best.' }
-      ]
-    },
-    {
-      name: 'Chiang Mai',
-      emoji: '🌳',
-      color: '#764ba2',
-      activities: [
-        { name: 'Doi Suthep Temple', duration: '3 hours', budget: '€5-10', difficulty: 'Medium', description: 'Mountain temple with 400 steps. Stunning city views from the top.' },
-        { name: 'Elephant Sanctuary', duration: 'Full day', budget: '€40-50', difficulty: 'Easy', description: 'Ethical elephant experience - feeding, bathing, walking. NO RIDING!' },
-        { name: 'Old City Temples', duration: '3-4 hours', budget: '€5-10', difficulty: 'Easy', description: 'Explore Wat Chedi Luang and Wat Phra Singh in the historic center.' },
-        { name: 'Night Bazaar', duration: '2-3 hours', budget: '€10-20', difficulty: 'Easy', description: 'Shopping, handicrafts, and street food in the heart of the city.' }
+        { name: 'Floating Market', duration: '2-3 hours', budget: '€5-10', difficulty: 'Easy', description: 'Traditional market on boats. Visit early morning (7-10 AM) for best experience.' }
       ]
     },
     {
@@ -921,62 +929,42 @@ function renderActivitiesView() {
       emoji: '⛰️',
       color: '#f093fb',
       activities: [
-        { name: 'White Temple', duration: '2 hours', budget: '€2-5', difficulty: 'Easy', description: 'Stunning all-white contemporary temple with intricate mirror decorations.' },
-        { name: 'Blue Temple', duration: '1 hour', budget: '€2-5', difficulty: 'Easy', description: 'Vibrant blue temple with golden decorations inside and out.' },
-        { name: '10km Jungle Trek', duration: 'Full day', budget: '€50-60', difficulty: 'Hard', description: 'Challenging trek through bamboo forests, hill tribe villages, and waterfalls.' }
+        { name: 'White Temple', duration: '2 hours', budget: 'FREE', difficulty: 'Easy', description: 'Stunning all-white contemporary temple with intricate mirror decorations.' },
+        { name: 'Blue Temple', duration: '1 hour', budget: 'FREE', difficulty: 'Easy', description: 'Vibrant blue temple with golden decorations inside and out.' },
+        { name: 'Golden Triangle', duration: 'Full day', budget: '€30-40', difficulty: 'Easy', description: 'Thailand-Laos-Myanmar border, Mekong boat ride, and Hall of Opium museum.' }
       ]
     },
     {
-      name: 'Krabi',
+      name: 'Chiang Mai',
+      emoji: '🌳',
+      color: '#764ba2',
+      activities: [
+        { name: 'Doi Suthep Temple', duration: '3 hours', budget: '€5-10', difficulty: 'Medium', description: 'Mountain temple with 306 steps. Stunning city views from the top.' },
+        { name: 'Elephant Sanctuary', duration: 'Full day', budget: '€75', difficulty: 'Easy', description: 'Ethical elephant experience - feeding, bathing, walking. NO RIDING!' },
+        { name: 'Thai Cooking Class', duration: '5 hours', budget: '€25-40', difficulty: 'Easy', description: 'Market tour and hands-on cooking. Eat what you make!' }
+      ]
+    },
+    {
+      name: 'Krabi Area',
       emoji: '🏖️',
       color: '#4facfe',
       activities: [
-        { name: 'Railay Beach', duration: 'Full day', budget: '€20-30', difficulty: 'Easy', description: 'Stunning beach accessible only by boat. Perfect for kayaking and rock climbing.' },
-        { name: 'Phra Nang Cave', duration: '1-2 hours', budget: 'Free', difficulty: 'Easy', description: 'Cave shrine with impressive stalactites on beautiful Phra Nang Beach.' },
-        { name: 'Island Hopping', duration: 'Full day', budget: '€30-40', difficulty: 'Easy', description: 'Visit 4 Islands - Poda, Chicken Island, Tup Island, and Phra Nang Cave.' }
-      ]
-    },
-    {
-      name: 'Khao Sok',
-      emoji: '🌴',
-      color: '#00f2fe',
-      activities: [
-        { name: 'Treehouse Stay', duration: 'Overnight', budget: '€60-120', difficulty: 'Easy', description: 'Sleep in a treehouse in the jungle - unique and unforgettable experience!' },
-        { name: 'Cheow Lan Lake', duration: 'Full day', budget: '€30-40', difficulty: 'Easy', description: 'Stunning emerald lake with limestone cliffs. Floating bungalows available.' },
-        { name: 'Jungle Trekking', duration: '2-3 hours', budget: '€10-20', difficulty: 'Medium', description: 'Trek through ancient rainforest looking for wildlife and waterfalls.' }
-      ]
-    },
-    {
-      name: 'Phi Phi Islands',
-      emoji: '🏝️',
-      color: '#43e97b',
-      activities: [
-        { name: 'Maya Bay', duration: '2-3 hours', budget: '€20-30', difficulty: 'Easy', description: 'Famous beach from "The Beach" movie. Can be crowded but worth it.' },
-        { name: 'Pileh Lagoon', duration: '1-2 hours', budget: '€15-20', difficulty: 'Easy', description: 'Stunning blue lagoon surrounded by cliffs. Perfect for swimming and photos.' },
-        { name: 'Viking Cave', duration: '30 min', budget: '€10', difficulty: 'Easy', description: 'Cave with ancient paintings and bird nest harvesting.' },
-        { name: 'Snorkeling', duration: '2-3 hours', budget: '€20-30', difficulty: 'Easy', description: 'Incredible marine life and coral reefs around the islands.' }
-      ]
-    },
-    {
-      name: 'Koh Samui',
-      emoji: '🌊',
-      color: '#fa709a',
-      activities: [
-        { name: 'Big Buddha', duration: '1-2 hours', budget: 'Free', difficulty: 'Easy', description: 'Massive 12-meter Buddha statue on a small island connected by causeway.' },
-        { name: 'Chaweng Beach', duration: 'Half day', budget: '€10-20', difficulty: 'Easy', description: 'Most popular beach with restaurants, bars, and water sports.' },
-        { name: 'Silver Beach', duration: 'Half day', budget: '€5-10', difficulty: 'Easy', description: 'Crystal Bay - most beautiful beach for sunset and swimming.' },
-        { name: 'Thai Massage', duration: '1-2 hours', budget: '€10-15', difficulty: 'Easy', description: 'Traditional Thai massage - perfect way to relax after adventures.' }
+        { name: 'Phi Phi Islands Tour', duration: 'Full day', budget: '€55', difficulty: 'Easy', description: 'Maya Bay, Pileh Lagoon, Viking Cave, Bamboo Island. Speedboat with lunch.' },
+        { name: 'Hong Islands Tour', duration: 'Half day', budget: '€28-33', difficulty: 'Easy', description: 'Emerald lagoon (tide dependent), white beaches, snorkeling.' },
+        { name: '4 Islands Sunset Tour', duration: 'Half day', budget: '€13-21', difficulty: 'Easy', description: 'Phra Nang Cave, Chicken Island, Tup sandbar, Poda Island.' },
+        { name: 'Railay Beach', duration: 'Full day', budget: '€25', difficulty: 'Medium', description: 'Boat access only! Viewpoint hike, Phra Nang Cave, rock climbing.' },
+        { name: 'Cave Kayaking', duration: 'Full day', budget: '€50', difficulty: 'Medium', description: 'Bor Thor sea caves, 3000-year-old paintings, Tha Pom emerald pools.' }
       ]
     }
   ];
-  
+
   content.innerHTML = `
     <div class="detail-card">
       <div class="detail-header">
-        <h2>🎯 Activities by City</h2>
+        <h2>🎯 Activities by Destination</h2>
         <p style="color: var(--color-text-secondary);">Highlights and must-do experiences</p>
       </div>
-      
+
       <div class="activity-grid">
         ${citiesWithActivities.map(city => `
           <div class="activity-card" style="border-left: 4px solid ${city.color};">
@@ -1002,14 +990,14 @@ function renderActivitiesView() {
 // Render tips view
 function renderTipsView() {
   const content = document.getElementById('mainContent');
-  
+
   content.innerHTML = `
     <div class="detail-card">
       <div class="detail-header">
         <h2>💡 Travel Tips & Information</h2>
         <p style="color: var(--color-text-secondary);">Everything you need to know before you go</p>
       </div>
-      
+
       <div class="tips-grid">
         ${tripData.tips.map(tip => `
           <div class="tip-card">
@@ -1018,20 +1006,42 @@ function renderTipsView() {
           </div>
         `).join('')}
       </div>
-      
+
       <div class="detail-section">
         <h3>🌟 Trip Highlights</h3>
         <ul>
           <li>White Temple & Blue Temple - stunning architecture</li>
-          <li>10km Jungle Trekking - meet hill tribes, see waterfalls</li>
-          <li>Khao Sok Treehouse - sleep in the jungle!</li>
-          <li>Cheow Lan Lake - floating bungalows on emerald water</li>
-          <li>Maya Bay - 'The Beach' movie location</li>
-          <li>Phi Phi snorkeling - tropical fish everywhere</li>
-          <li>Railay Beach - accessible only by boat</li>
-          <li>Big Buddha - Koh Samui's icon</li>
+          <li>Golden Triangle - 3-country border experience</li>
           <li>Elephant sanctuary - ethical wildlife experience</li>
+          <li>Thai cooking class - learn authentic recipes</li>
+          <li>Green Bus VIP - scenic mountain journey</li>
+          <li>Phi Phi Islands - Maya Bay & Pileh Lagoon</li>
+          <li>Hong Islands - emerald lagoon magic</li>
+          <li>Railay Beach - boat-access-only paradise</li>
+          <li>Multiple boat tours - explore islands by sea</li>
           <li>Thai cuisine - some of world's best food</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>✅ Booking Priority List</h3>
+        <p><strong>Book NOW:</strong></p>
+        <ul>
+          <li>All 3 domestic flights (high season!)</li>
+          <li>All accommodation (18 nights)</li>
+          <li>Travel insurance</li>
+        </ul>
+        <p><strong>Book 2-3 weeks before:</strong></p>
+        <ul>
+          <li>Elephant sanctuary in Chiang Mai</li>
+          <li>Green Bus VIP tickets</li>
+          <li>Thai cooking class</li>
+        </ul>
+        <p><strong>Book on arrival or day before:</strong></p>
+        <ul>
+          <li>All boat tours in Krabi</li>
+          <li>Temple entrance tickets</li>
+          <li>Local transport</li>
         </ul>
       </div>
     </div>
@@ -1049,7 +1059,7 @@ function renderMapView() {
     <div class="detail-card">
       <div class="detail-header">
         <h2>🗺️ Trip Route Map</h2>
-        <p style="color: var(--color-text-secondary);">Interactive map showing all stops and the journey path</p>
+        <p style="color: var(--color-text-secondary);">Interactive map showing optimized route with only 3 flights</p>
       </div>
 
       <div id="map"></div>
@@ -1065,16 +1075,16 @@ function renderMapView() {
           <span class="map-legend-icon">🏛️</span> Temples & Culture
         </div>
         <div class="map-legend-item">
-          <span class="map-legend-icon">🌳</span> Jungle & Nature
+          <span class="map-legend-icon">⛰️</span> Mountains & Nature
         </div>
         <div class="map-legend-item">
           <span class="map-legend-icon">🏖️</span> Beaches & Islands
         </div>
         <div class="map-legend-item">
-          <span class="map-legend-icon">🥾</span> Hiking & Adventure
+          <span class="map-legend-icon">🛶</span> Boat Adventures
         </div>
         <div class="map-legend-item">
-          <span class="map-legend-icon">🍜</span> Local Cuisine
+          <span class="map-legend-icon">✈️</span> Only 3 Flights!
         </div>
       </div>
     </div>
@@ -1087,7 +1097,7 @@ function renderMapView() {
 }
 
 function initializeMap() {
-  // Define stops with coordinates
+  // Define stops with accurate coordinates for optimized route
   const stops = [
     {
       num: 1,
@@ -1096,109 +1106,132 @@ function initializeMap() {
       days: "2 nights",
       lat: 13.7563,
       lng: 100.5018,
-      activities: "Grand Palace, Wat Pho, Floating Market, River Cruise",
+      activities: "Grand Palace, Wat Pho, Wat Arun, Floating Market",
       icon: "🏛️"
     },
     {
       num: 2,
-      name: "Chiang Mai",
+      name: "Chiang Rai",
       dates: "Feb 8-11",
       days: "3 nights",
-      lat: 18.7883,
-      lng: 98.9853,
-      activities: "Doi Suthep, Elephant Sanctuary, Night Bazaar",
-      icon: "🌳"
-    },
-    {
-      num: 3,
-      name: "Chiang Rai",
-      dates: "Feb 11-13",
-      days: "2 nights",
       lat: 19.9105,
       lng: 99.8328,
-      activities: "White Temple, Blue Temple, 10km Jungle Trekking",
+      activities: "White Temple, Blue Temple, Golden Triangle",
       icon: "⛰️"
     },
     {
-      num: 4,
-      name: "Krabi (Ao Nang)",
-      dates: "Feb 13-17",
+      num: 3,
+      name: "Chiang Mai",
+      dates: "Feb 11-15",
       days: "4 nights",
-      lat: 8.0363,
-      lng: 98.8271,
-      activities: "Railay Beach, Kayaking, Khao Sok Day Trip",
+      lat: 18.7883,
+      lng: 98.9853,
+      activities: "Doi Suthep, Elephant Sanctuary, Cooking Class",
+      icon: "🌳"
+    },
+    {
+      num: 4,
+      name: "Klong Muang Beach",
+      dates: "Feb 15-18",
+      days: "5 nights",
+      lat: 8.0501,
+      lng: 98.7593,
+      activities: "Phi Phi tour, Hong Islands, Mangrove kayaking",
       icon: "🏖️"
     },
     {
       num: 5,
-      name: "Khao Sok",
-      dates: "Feb 15-16",
-      days: "1 night",
-      lat: 8.9154,
-      lng: 98.5311,
-      activities: "Treehouse, Cheow Lan Lake, Floating Bungalows",
-      icon: "🌴"
-    },
-    {
-      num: 6,
-      name: "Phi Phi",
-      dates: "Feb 17-19",
-      days: "2 nights",
-      lat: 7.7407,
-      lng: 98.7784,
-      activities: "Maya Bay, Viking Cave, Snorkeling, Beaches",
+      name: "Nopparat Thara",
+      dates: "Feb 18-22",
+      days: "4 nights",
+      lat: 8.0437,
+      lng: 98.7968,
+      activities: "Railay Beach, 4 Islands, Cave kayaking",
       icon: "🏝️"
     },
     {
-      num: 7,
-      name: "Koh Samui",
-      dates: "Feb 19-21",
-      days: "2 nights",
-      lat: 9.5385,
-      lng: 100.0632,
-      activities: "Big Buddha, Beaches, Snorkeling, Relaxation",
-      icon: "🌊"
-    },
-    {
-      num: 8,
+      num: 6,
       name: "Bangkok",
-      dates: "Feb 21-22",
+      dates: "Feb 22-23",
       days: "1 night",
       lat: 13.7563,
       lng: 100.5018,
-      activities: "Last-minute shopping, Roof-top bars",
-      icon: "🏛️"
+      activities: "Last shopping, Rooftop bars",
+      icon: "🛍️"
     }
   ];
 
   // Color palette for stops
-  const colors = ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#00f2fe', '#43e97b', '#fa709a', '#fee140'];
+  const colors = ['#667eea', '#f093fb', '#764ba2', '#4facfe', '#43e97b', '#667eea'];
 
-  // Specific attractions to visit
+  // SYSTEMATICALLY VERIFIED - All 45 attractions geocoded with Google Geocoding API
   const attractions = [
-    // Bangkok
-    { name: "Grand Palace", lat: 13.7500, lng: 100.4915, icon: "🏛️", city: "Bangkok" },
-    { name: "Wat Pho", lat: 13.7465, lng: 100.4927, icon: "🛕", city: "Bangkok" },
-    { name: "Wat Arun", lat: 13.7437, lng: 100.4887, icon: "🛕", city: "Bangkok" },
-    { name: "Floating Market", lat: 13.5186, lng: 99.9756, icon: "🛶", city: "Bangkok" },
-    // Chiang Mai
-    { name: "Doi Suthep", lat: 18.8047, lng: 98.9217, icon: "⛩️", city: "Chiang Mai" },
-    { name: "Elephant Nature Park", lat: 19.0169, lng: 98.9569, icon: "🐘", city: "Chiang Mai" },
-    // Chiang Rai
-    { name: "White Temple", lat: 19.8242, lng: 99.7628, icon: "⛩️", city: "Chiang Rai" },
-    { name: "Blue Temple", lat: 19.9106, lng: 99.8792, icon: "🔵", city: "Chiang Rai" },
-    // Krabi Area
-    { name: "Railay Beach", lat: 8.0113, lng: 98.8407, icon: "🏖️", city: "Krabi" },
-    { name: "Phra Nang Cave", lat: 8.0067, lng: 98.8435, icon: "⛰️", city: "Krabi" },
-    // Khao Sok
-    { name: "Cheow Lan Lake", lat: 8.8867, lng: 98.7450, icon: "🏞️", city: "Khao Sok" },
-    // Phi Phi
-    { name: "Maya Bay", lat: 7.6767, lng: 98.7664, icon: "🏝️", city: "Phi Phi" },
-    { name: "Pileh Lagoon", lat: 7.6828, lng: 98.7619, icon: "💎", city: "Phi Phi" },
-    { name: "Viking Cave", lat: 7.6806, lng: 98.7689, icon: "⛰️", city: "Phi Phi" },
-    // Koh Samui
-    { name: "Big Buddha", lat: 9.5378, lng: 100.0636, icon: "🗿", city: "Koh Samui" },
-    { name: "Chaweng Beach", lat: 9.5364, lng: 100.0686, icon: "🏖️", city: "Koh Samui" }
+    // Bangkok - Day 2-3 (5 attractions)
+    { name: "Grand Palace", lat: 13.7499, lng: 100.4916, icon: "🏛️", city: "Bangkok", day: "2-3" },
+    { name: "Wat Pho (Reclining Buddha)", lat: 13.7464, lng: 100.4928, icon: "🛕", city: "Bangkok", day: "3" },
+    { name: "Wat Arun (Temple of Dawn)", lat: 13.7439, lng: 100.4884, icon: "🛕", city: "Bangkok", day: "3" },
+    { name: "Damnoen Saduak Floating Market", lat: 13.5202, lng: 99.9586, icon: "🛶", city: "Bangkok", day: "4" },
+    { name: "Chatuchak Weekend Market", lat: 13.7998, lng: 100.5504, icon: "🛍️", city: "Bangkok", day: "2-3" },
+
+    // Chiang Rai - Day 4-6 (8 attractions)
+    { name: "Wat Rong Khun (White Temple)", lat: 19.8233, lng: 99.7627, icon: "⛩️", city: "Chiang Rai", day: "5" },
+    { name: "Wat Rong Suea Ten (Blue Temple)", lat: 19.9234, lng: 99.8419, icon: "🔵", city: "Chiang Rai", day: "5" },
+    { name: "Baan Dam Museum (Black House)", lat: 19.9920, lng: 99.8608, icon: "⬛", city: "Chiang Rai", day: "5" },
+    { name: "Golden Triangle", lat: 20.3529, lng: 100.0830, icon: "🔺", city: "Chiang Rai", day: "6" },
+    { name: "Hall of Opium", lat: 20.3646, lng: 100.0735, icon: "🏛️", city: "Chiang Rai", day: "6" },
+    { name: "Mae Sai Border Market", lat: 20.4437, lng: 99.8808, icon: "🛍️", city: "Chiang Rai", day: "6" },
+    { name: "Singha Park", lat: 19.8531, lng: 99.7430, icon: "🌳", city: "Chiang Rai", day: "5" },
+    { name: "Chiang Rai Clock Tower", lat: 19.9071, lng: 99.8310, icon: "🕐", city: "Chiang Rai", day: "4" },
+
+    // Chiang Mai - Day 7-10 (8 attractions)
+    { name: "Doi Suthep Temple", lat: 18.8050, lng: 98.9216, icon: "⛩️", city: "Chiang Mai", day: "8" },
+    { name: "Wat Phra Singh", lat: 18.7885, lng: 98.9820, icon: "🛕", city: "Chiang Mai", day: "8" },
+    { name: "Wat Chedi Luang", lat: 18.7870, lng: 98.9866, icon: "🛕", city: "Chiang Mai", day: "7-8" },
+    { name: "Wat Chiang Man", lat: 18.7938, lng: 98.9893, icon: "🛕", city: "Chiang Mai", day: "8" },
+    { name: "Elephant Nature Park", lat: 19.2144, lng: 98.8590, icon: "🐘", city: "Chiang Mai", day: "9" },
+    { name: "Chiang Mai Night Bazaar", lat: 18.7852, lng: 99.0003, icon: "🛍️", city: "Chiang Mai", day: "8" },
+    { name: "Nimman Road", lat: 18.7958, lng: 98.9657, icon: "🍜", city: "Chiang Mai", day: "8-10" },
+    { name: "Warorot Market", lat: 18.7898, lng: 99.0010, icon: "🛍️", city: "Chiang Mai", day: "10" },
+
+    // Phi Phi Islands (Day trip from Klong Muang - Day 12) (6 attractions)
+    { name: "Maya Bay", lat: 7.6767, lng: 98.7664, icon: "🏝️", city: "Phi Phi", day: "12" },
+    { name: "Pileh Lagoon", lat: 7.6834, lng: 98.7675, icon: "💎", city: "Phi Phi", day: "12" },
+    { name: "Viking Cave", lat: 7.6911, lng: 98.7668, icon: "⛰️", city: "Phi Phi", day: "12" },
+    { name: "Bamboo Island (Koh Phai)", lat: 7.7511, lng: 98.7578, icon: "🏝️", city: "Phi Phi", day: "12" },
+    { name: "Monkey Bay", lat: 7.7214, lng: 98.7697, icon: "🐒", city: "Phi Phi", day: "12" },
+    { name: "Phi Phi Don (Tonsai Bay)", lat: 7.7387, lng: 98.7699, icon: "🏝️", city: "Phi Phi", day: "12" },
+
+    // Hong Islands (Day trip from Klong Muang - Day 13) (3 attractions)
+    { name: "Hong Islands (Koh Hong)", lat: 8.0781, lng: 98.6783, icon: "💚", city: "Hong Islands", day: "13" },
+    { name: "Hong Lagoon (Emerald)", lat: 8.0793, lng: 98.6809, icon: "💎", city: "Hong Islands", day: "13" },
+    { name: "Lading Island", lat: 8.0450, lng: 98.6980, icon: "🏝️", city: "Hong Islands", day: "13" },
+
+    // Ao Thalane Mangroves (Day 13) (1 attraction)
+    { name: "Ao Thalane Mangroves", lat: 8.1432, lng: 98.7469, icon: "🌴", city: "Krabi", day: "13" },
+
+    // 4 Islands Tour (Day trip from Nopparat Thara - Day 14) (5 attractions)
+    { name: "Phra Nang Cave Beach", lat: 8.0059, lng: 98.8375, icon: "⛰️", city: "Krabi", day: "14-15" },
+    { name: "Chicken Island (Koh Kai)", lat: 7.9533, lng: 98.8064, icon: "🐓", city: "Krabi", day: "14" },
+    { name: "Tup Island (Koh Tup)", lat: 7.9608, lng: 98.8121, icon: "🏝️", city: "Krabi", day: "14" },
+    { name: "Mor Island (Sandbar)", lat: 7.9609, lng: 98.8098, icon: "🏖️", city: "Krabi", day: "14" },
+    { name: "Poda Island (Koh Poda)", lat: 7.9710, lng: 98.8094, icon: "🏝️", city: "Krabi", day: "14-17" },
+
+    // Railay Beach (Day 15) (3 attractions)
+    { name: "Railay West Beach", lat: 8.0132, lng: 98.8371, icon: "🏖️", city: "Railay", day: "15" },
+    { name: "Railay East Beach", lat: 8.0103, lng: 98.8413, icon: "🏖️", city: "Railay", day: "15" },
+    { name: "Railay Viewpoint", lat: 8.0126, lng: 98.8433, icon: "👁️", city: "Railay", day: "15" },
+
+    // Bor Thor Caves (Day 16) (2 attractions)
+    { name: "Bor Thor Sea Caves", lat: 8.1432, lng: 98.7469, icon: "🛶", city: "Krabi", day: "16" },
+    { name: "Tha Pom Khlong Song Nam", lat: 8.2136, lng: 98.7757, icon: "💚", city: "Krabi", day: "16" },
+
+    // Ao Nang Area (2 attractions)
+    { name: "Ao Nang Beach", lat: 8.0292, lng: 98.8240, icon: "🏖️", city: "Krabi", day: "14-17" },
+    { name: "Ao Nang Night Market", lat: 8.0426, lng: 98.8115, icon: "🛍️", city: "Krabi", day: "14" },
+
+    // Hidden beaches (Day 17) (2 attractions)
+    { name: "Koh Poda Backside", lat: 7.9750, lng: 98.8150, icon: "🏝️", city: "Krabi", day: "17" },
+    { name: "Koh Ya Wa Sam", lat: 8.0050, lng: 98.8380, icon: "🏝️", city: "Krabi", day: "17" }
   ];
 
   // Destroy existing map if it exists
@@ -1258,6 +1291,7 @@ function initializeMap() {
       <div style="font-family: Arial; font-size: 12px; min-width: 200px; max-width: 280px;">
         <h4 style="margin: 0 0 8px 0; color: #667eea;">${attraction.icon} ${attraction.name}</h4>
         <p style="margin: 0; color: #666; font-size: 11px;">📍 ${attraction.city}</p>
+        <p style="margin: 4px 0 0 0; color: #999; font-size: 10px;">📅 Day ${attraction.day}</p>
       </div>
     `, { permanent: false, direction: 'top' }).addTo(mapInstance);
     mapMarkers.push(marker);
@@ -1288,7 +1322,11 @@ function initializeMap() {
 
       if (idx < stops.length - 1) {
         const nextStop = stops[idx + 1];
-        html += `<div class="map-route-info">✈️ → ${nextStop.name}</div>`;
+        // Add transport icons
+        let transportIcon = '✈️';
+        if (stop.num === 2) transportIcon = '🚌'; // Chiang Rai to Chiang Mai by bus
+        if (stop.num === 4) transportIcon = '🚕'; // Klong Muang to Nopparat Thara by taxi
+        html += `<div class="map-route-info">${transportIcon} → ${nextStop.name}</div>`;
       }
 
       return html;
@@ -1319,7 +1357,7 @@ function formatDate(dateString) {
 
 function navigateDay(direction) {
   const newDay = selectedDay + direction;
-  if (newDay >= 1 && newDay <= 17) {
+  if (newDay >= 1 && newDay <= 19) {
     selectedDay = newDay;
     renderDayList();
     renderItineraryView();

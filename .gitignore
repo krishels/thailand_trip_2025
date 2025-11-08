@@ -7,6 +7,12 @@
 .settings/
 .classpath
 
+# IDE - PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
 # Claude Code
 .claude/
 
@@ -61,5 +67,14 @@ logs/
 *.backup
 *~
 
+# Old/backup files
+*_old.*
+*.old
+*_backup.*
+
 # CSV files (per your request to ignore CSV)
 *.csv
+
+# JSON data files with API responses
+attractions_images.json
+attractions_to_geocode.csv
