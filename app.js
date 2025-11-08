@@ -14,6 +14,7 @@ const tripData = {
     bangkok1: {
       name: 'Baiyoke Sky Hotel',
       location: 'Bangkok (Pratunam)',
+      address: '222 Rajprarop Road, Rajthevi, Ratchathewi, 10400 Bangkok, Thailand',
       nights: 2,
       checkIn: '2026-02-06',
       checkOut: '2026-02-08',
@@ -23,41 +24,50 @@ const tripData = {
       bookingUrl: 'https://www.booking.com/hotel/th/baiyoke-sky.lv.html',
       features: ['88-story tower', 'Rooftop revolving restaurant', 'City views', 'Multiple dining options'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1568321385520-b9252021b491?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Bangkok Skyline View', credit: 'Daniel Cox' },
-        { url: 'https://images.unsplash.com/photo-1613572571659-84e1e49a5e5c?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Bangkok Hotel Room', credit: 'Daniel Bradley' }
+        { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/216005808.jpg?k=3365faed5ee94e38470f90a7d63c29eb69aaa4285d8c58b9bb6e8527055bf766&o=', title: 'Baiyoke Sky Hotel Exterior', credit: 'Booking.com' },
+        { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/216004769.jpg?k=067dd48118c5e11619cbdea272310e3abd3c2a5c91975a6dfd3ce48c234774a4&o=', title: 'Baiyoke Sky Hotel Room', credit: 'Booking.com' }
       ]
     },
     chiangRai: {
       name: 'Katiliya Mountain Resort and Spa',
-      location: 'Chiang Rai',
+      location: 'Chiang Rai (Mae Salong)',
+      address: '388/1 Moo. 4, Ban Mea Slong Nai, Tambol Pha Sang, Mae Chan, Chiang Rai, Thailand',
       nights: 3,
       checkIn: '2026-02-08',
       checkOut: '2026-02-11',
-      totalCost: 0, // USER TO PROVIDE
-      costPerNight: 0,
-      status: 'To be booked',
+      totalCost: 584,
+      costPerNight: 194.67,
+      status: 'Not Reserved (No Cancellation)',
       bookingUrl: 'https://www.booking.com/hotel/th/katiliya-mountain-resort-and-spa.lv.html',
-      features: ['Mountain views', 'Spa', 'Resort setting', 'Pool'],
+      features: ['Mountain views', 'Spa', 'Resort setting', 'Pool', 'Tea plantations'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Mountain Resort', credit: 'Amir Hosseini' }
+        { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/589474553.jpg?k=9ba89e3e792066a4c2d6f8cc8152fe09c3ef19feea8947e24a851b1101da9efd&o=', title: 'Katiliya Mountain Resort', credit: 'Booking.com' },
+        { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/472354469.jpg?k=98029f1a5f8271ee8233899f343ee79d697fea6095f4d7b43453a9fecaf621be&o=', title: 'Katiliya Resort Pool', credit: 'Booking.com' },
+        { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/589474539.jpg?k=f43d71d632d71271f15dedb3b42fa75685edd48a1435b12147c73cf0ea5f4377&o=', title: 'Katiliya Resort View', credit: 'Booking.com' }
       ]
     },
     chiangMai: {
-      name: 'TBD', // USER TO PROVIDE
+      name: 'Prince Khum Phaya Resort & Spa',
       location: 'Chiang Mai',
+      address: '137 Moo.5, T. Nong Pa Klang, A.Muang, Nong Pa Khrang, 50000 Chiang Mai, Thailand',
       nights: 4,
       checkIn: '2026-02-11',
       checkOut: '2026-02-15',
-      totalCost: 0,
-      costPerNight: 0,
-      status: 'Not yet booked',
-      bookingUrl: '',
-      features: [],
-      images: []
+      totalCost: 792,
+      costPerNight: 198,
+      status: 'Reserved (Free Cancellation)',
+      bookingUrl: 'https://www.booking.com/hotel/th/prince-khum-phaya-resort-spa.lv.html',
+      features: ['Spa', 'Pool', 'Thai-style resort', 'Peaceful setting'],
+      images: [
+        { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/271276279.jpg?k=3becd0076b906219c6d09d0da7b8eadac6871c668ad1f210ac12caa0eecb33f8&o=', title: 'Prince Khum Phaya Resort', credit: 'Booking.com' },
+        { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/271276373.jpg?k=ef40a696e0163998c9c9fc616e30b836c2c9a4afd65f6121cdb5efd264235fe8&o=', title: 'Prince Khum Phaya Pool', credit: 'Booking.com' },
+        { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/271276375.jpg?k=f573f06f1bd5d10a72c6880619593eb05938634c6bef29740a65ad1a405d1751&o=', title: 'Prince Khum Phaya Gardens', credit: 'Booking.com' }
+      ]
     },
     klongMuang: {
       name: 'TBD', // USER TO PROVIDE
       location: 'Klong Muang Beach',
+      address: '',
       nights: 3,
       checkIn: '2026-02-15',
       checkOut: '2026-02-18',
@@ -69,21 +79,27 @@ const tripData = {
       images: []
     },
     nopparatThara: {
-      name: 'TBD', // USER TO PROVIDE
-      location: 'Nopparat Thara / Railay',
+      name: 'Aonang Fiore Resort',
+      location: 'Ao Nang Beach (Nopparat Thara)',
+      address: '764 Moo 2, T. Aonang A. Muang Krabi, 81180 Ao Nang Beach, Thailand',
       nights: 3,
       checkIn: '2026-02-18',
       checkOut: '2026-02-21',
-      totalCost: 0,
-      costPerNight: 0,
-      status: 'Not yet booked',
-      bookingUrl: '',
-      features: [],
-      images: []
+      totalCost: 1225,
+      costPerNight: 408.33,
+      status: 'Reserved (Free Cancellation)',
+      bookingUrl: 'https://www.booking.com/hotel/th/aonang-fiore-resort.en-us.html',
+      features: ['Beach access', 'Pool', 'Ao Nang location', 'Close to Railay'],
+      images: [
+        { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/221574504.jpg?k=a195e497c586c1cad26cf1b181a962da9bb2a9e5a406d03711d87289141d58b7&o=', title: 'Aonang Fiore Resort Pool', credit: 'Booking.com' },
+        { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/342649872.jpg?k=98419c37524d9a16947324d2ffd590795bf1698cf1931912ba9a183de40cbb24&o=', title: 'Aonang Fiore Resort Room', credit: 'Booking.com' },
+        { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/157363676.jpg?k=03a53f9e7ae84422c0f408ee64f0048c051827cb5166a78f667c61d35295550d&o=', title: 'Aonang Fiore Resort Exterior', credit: 'Booking.com' }
+      ]
     },
     bangkok2: {
       name: 'TBD (Airport Hotel)', // USER TO PROVIDE - suggest Novotel Suvarnabhumi
       location: 'Bangkok Suvarnabhumi Airport',
+      address: '',
       nights: 1,
       checkIn: '2026-02-21',
       checkOut: '2026-02-22',
@@ -129,6 +145,7 @@ const tripData = {
     },
     {
       day: 3, date: '2026-02-07', city: 'Bangkok',
+      accommodation_id: 'bangkok1',
       morning: 'Grand Palace & Wat Phra Kaew (8:30-11:30) - arrive early to beat crowds',
       afternoon: 'Wat Pho (Reclining Buddha), ferry to Wat Arun, climb for views',
       evening: 'Chao Phraya Princess Dinner Cruise (19:00-21:00) or street food tour',
@@ -145,6 +162,7 @@ const tripData = {
     },
     {
       day: 4, date: '2026-02-08', city: 'Bangkok → Chiang Rai',
+      accommodation_id: 'chiangRai',
       morning: 'Early floating market tour (Damnoen Saduak), return to city',
       afternoon: 'FLIGHT 1: BKK→CEI 12:00-13:20 (Thai AirAsia/Vietjet, €25-55/person)',
       evening: 'Arrive Chiang Rai, check in, Clock Tower light show, Night Bazaar',
@@ -160,6 +178,7 @@ const tripData = {
     },
     {
       day: 5, date: '2026-02-09', city: 'Chiang Rai',
+      accommodation_id: 'chiangRai',
       morning: 'White Temple (Wat Rong Khun) 8:30AM - arrive early, FREE entry',
       afternoon: 'Black House Museum (80 THB), Blue Temple (FREE)',
       evening: 'Singha Park tea plantations or relax, Walking Street if Saturday',
@@ -176,6 +195,7 @@ const tripData = {
     },
     {
       day: 6, date: '2026-02-10', city: 'Chiang Rai',
+      accommodation_id: 'chiangRai',
       morning: 'Golden Triangle tour: Thailand-Laos-Myanmar border, Hall of Opium',
       afternoon: 'Mekong boat ride, Mae Sai border market, hill tribe village',
       evening: 'Return to city, prepare for Chiang Mai journey tomorrow',
@@ -191,6 +211,7 @@ const tripData = {
     },
     {
       day: 7, date: '2026-02-11', city: 'Chiang Rai → Chiang Mai',
+      accommodation_id: 'chiangMai',
       morning: 'Green Bus VIP from Chiang Rai (10:00 departure)',
       afternoon: 'Arrive Chiang Mai 13:20, check into Old City hotel, rest',
       evening: 'Explore Old City, Wat Chedi Luang at night, local dinner',
@@ -205,6 +226,7 @@ const tripData = {
     },
     {
       day: 8, date: '2026-02-12', city: 'Chiang Mai',
+      accommodation_id: 'chiangMai',
       morning: 'Old City temple hopping: Wat Phra Singh, Wat Chedi Luang, Wat Chiang Man',
       afternoon: 'Doi Suthep Temple - climb 306 steps, golden chedi, city views',
       evening: 'Nimman area dinner, craft beer or rooftop bar, Sunday Walking Street if Sunday',
@@ -221,6 +243,7 @@ const tripData = {
     },
     {
       day: 9, date: '2026-02-13', city: 'Chiang Mai',
+      accommodation_id: 'chiangMai',
       morning: 'Full day at Elephant Nature Park - ethical sanctuary, NO riding',
       afternoon: 'Feed elephants, walk with them, watch river bathing, learn rescue stories',
       evening: 'Return to hotel, rest, casual dinner at Night Bazaar',
@@ -236,6 +259,7 @@ const tripData = {
     },
     {
       day: 10, date: '2026-02-14', city: 'Chiang Mai',
+      accommodation_id: 'chiangMai',
       morning: 'Thai Cooking Class with market tour (8 AM-1 PM)',
       afternoon: 'Free time - spa/massage, Nimman cafes, or Sticky Waterfalls',
       evening: 'Shopping at Warorot Market, prepare for Krabi flight tomorrow',
@@ -251,6 +275,7 @@ const tripData = {
     },
     {
       day: 11, date: '2026-02-15', city: 'Chiang Mai → Klong Muang Beach',
+      accommodation_id: 'klongMuang',
       morning: 'FLIGHT 2: CNX→KBV DIRECT (Thai AirAsia, €73-102/person) - NO connection!',
       afternoon: 'Arrive Krabi, transfer to Klong Muang Beach (45 min), check-in',
       evening: 'Beach walk, sunset, beachfront dinner at hotel',
@@ -266,6 +291,7 @@ const tripData = {
     },
     {
       day: 12, date: '2026-02-16', city: 'Klong Muang - Phi Phi Islands',
+      accommodation_id: 'klongMuang',
       morning: 'Early bird Phi Phi tour pickup 6:00-7:00 AM (beat crowds!)',
       afternoon: 'Maya Bay, Pileh Lagoon, Viking Cave, Monkey Bay, lunch at Phi Phi Don',
       evening: 'Bamboo Island, return to Klong Muang 3-4 PM, rest, casual dinner',
@@ -282,6 +308,7 @@ const tripData = {
     },
     {
       day: 13, date: '2026-02-17', city: 'Klong Muang - Hong Islands',
+      accommodation_id: 'klongMuang',
       morning: 'Hong Islands speedboat tour 8:00 AM - famous emerald lagoon',
       afternoon: 'Ao Thalane mangrove kayaking tour (1:30 PM pickup)',
       evening: 'Return to hotel, beachfront dinner, fire show',
@@ -298,6 +325,7 @@ const tripData = {
     },
     {
       day: 14, date: '2026-02-18', city: 'Klong Muang → Nopparat Thara',
+      accommodation_id: 'nopparatThara',
       morning: 'Check out Klong Muang, transfer to Nopparat Thara (20 min)',
       afternoon: '4 Islands sunset tour: Phra Nang Cave, Chicken Island, Tup Island, Poda Island',
       evening: 'Walk sandbar at low tide, sunset at Railay, Ao Nang Night Market dinner',
@@ -313,6 +341,7 @@ const tripData = {
     },
     {
       day: 15, date: '2026-02-19', city: 'Nopparat Thara - Railay Beach',
+      accommodation_id: 'nopparatThara',
       morning: 'Longtail boat to Railay West (100 THB), explore peninsula',
       afternoon: 'Phra Nang Cave Beach, Railay Viewpoint hike (45 min), rock climbing',
       evening: 'Sunset from beach, longtail back to Nopparat Thara, local dinner',
@@ -329,6 +358,7 @@ const tripData = {
     },
     {
       day: 16, date: '2026-02-20', city: 'Nopparat Thara - Bor Thor Caves',
+      accommodation_id: 'nopparatThara',
       morning: 'Bor Thor sea cave kayaking tour - paddle through tunnel caves',
       afternoon: '3000-year-old cave paintings, Tha Pom emerald pools swimming',
       evening: 'Return to hotel, final Krabi seafood dinner, pack for departure',
@@ -578,6 +608,9 @@ function renderContent() {
     case 'budget':
       renderBudgetView();
       break;
+    case 'accommodations':
+      renderAccommodationsView();
+      break;
     case 'packing':
       renderPackingView();
       break;
@@ -752,9 +785,97 @@ function renderItineraryView() {
     }
   }
 
+  // Generate accommodation HTML if this day has accommodation
+  let accommodationHTML = '';
+  if (day.accommodation_id && tripData.accommodations[day.accommodation_id]) {
+    const accom = tripData.accommodations[day.accommodation_id];
+
+    // Generate accommodation image carousel
+    let accomImageHTML = '';
+    if (accom.images && accom.images.length > 0) {
+      if (accom.images.length === 1) {
+        const img = accom.images[0];
+        accomImageHTML = `
+          <div class="accommodation-image-single">
+            <img src="${img.url}" alt="${accom.name}">
+            ${img.title ? `<div class="image-caption">${img.title}</div>` : ''}
+          </div>
+        `;
+      } else {
+        accomImageHTML = `
+          <div class="accommodation-carousel">
+            <div class="carousel-images" id="accomCarousel-${day.day}">
+              ${accom.images.map((img, index) => `
+                <div class="carousel-slide ${index === 0 ? 'active' : ''}">
+                  <img src="${img.url}" alt="${accom.name} ${index + 1}" class="carousel-image">
+                  ${img.title ? `<div class="image-caption">${img.title}</div>` : ''}
+                </div>
+              `).join('')}
+            </div>
+            <button class="carousel-btn prev" onclick="changeAccomImage(${day.day}, -1)">‹</button>
+            <button class="carousel-btn next" onclick="changeAccomImage(${day.day}, 1)">›</button>
+            <div class="carousel-dots">
+              ${accom.images.map((_, index) => `
+                <span class="dot ${index === 0 ? 'active' : ''}" onclick="goToAccomImage(${day.day}, ${index})"></span>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    accommodationHTML = `
+      <div class="accommodation-block">
+        <div class="accommodation-header">
+          <h3>🏨 Where You're Staying</h3>
+          <span class="accommodation-status ${accom.status.includes('Reserved') ? 'status-reserved' : 'status-pending'}">${accom.status}</span>
+        </div>
+
+        ${accomImageHTML}
+
+        <div class="accommodation-details">
+          <h4>${accom.name}</h4>
+          <p class="accommodation-location">📍 ${accom.location}</p>
+          ${accom.address ? `<p class="accommodation-address">${accom.address}</p>` : ''}
+
+          <div class="accommodation-dates">
+            <span>📅 Check-in: ${formatDate(accom.checkIn)}</span>
+            <span>📅 Check-out: ${formatDate(accom.checkOut)}</span>
+            <span>🌙 ${accom.nights} night${accom.nights > 1 ? 's' : ''}</span>
+          </div>
+
+          ${accom.features && accom.features.length > 0 ? `
+            <div class="accommodation-features">
+              ${accom.features.map(feature => `<span class="feature-tag">✓ ${feature}</span>`).join('')}
+            </div>
+          ` : ''}
+
+          <div class="accommodation-cost">
+            <div class="cost-item">
+              <span class="cost-label">Total Cost:</span>
+              <span class="cost-value">€${accom.totalCost}</span>
+            </div>
+            <div class="cost-item">
+              <span class="cost-label">Per Night:</span>
+              <span class="cost-value">€${accom.costPerNight.toFixed(2)}</span>
+            </div>
+          </div>
+
+          ${accom.bookingUrl ? `
+            <a href="${accom.bookingUrl}" target="_blank" class="booking-link">
+              View on Booking.com →
+            </a>
+          ` : ''}
+        </div>
+      </div>
+    `;
+  }
+
   content.innerHTML = `
     <div class="detail-card">
       ${imageHTML}
+
+      ${accommodationHTML}
 
       <div class="detail-header">
         <h2 style="color: ${color};">Day ${day.day}: ${emoji} ${day.city}</h2>
@@ -928,6 +1049,146 @@ function renderBudgetView() {
           <li>Share private longtail boat costs (split 4 ways)</li>
         </ul>
       </div>
+    </div>
+  `;
+}
+
+// Render accommodations view
+function renderAccommodationsView() {
+  const content = document.getElementById('mainContent');
+
+  // Calculate total accommodation costs
+  const totalCost = Object.values(tripData.accommodations)
+    .reduce((sum, accom) => sum + accom.totalCost, 0);
+  const totalNights = Object.values(tripData.accommodations)
+    .reduce((sum, accom) => sum + accom.nights, 0);
+  const avgPerNight = totalCost / totalNights;
+
+  // Count reserved vs pending
+  const reserved = Object.values(tripData.accommodations)
+    .filter(a => a.status.includes('Reserved')).length;
+  const pending = Object.values(tripData.accommodations).length - reserved;
+
+  content.innerHTML = `
+    <div class="detail-card">
+      <div class="detail-header">
+        <h2>🏨 Accommodations Overview</h2>
+        <p style="color: var(--color-text-secondary);">All your stays for the Thailand trip</p>
+      </div>
+
+      <div class="budget-grid">
+        <div class="budget-card">
+          <h4>Total Cost</h4>
+          <div class="amount">€${totalCost.toLocaleString()}</div>
+        </div>
+        <div class="budget-card">
+          <h4>Total Nights</h4>
+          <div class="amount">${totalNights} nights</div>
+        </div>
+        <div class="budget-card">
+          <h4>Avg Per Night</h4>
+          <div class="amount">€${avgPerNight.toFixed(2)}</div>
+        </div>
+        <div class="budget-card">
+          <h4>Status</h4>
+          <div class="amount" style="font-size: 14px;">
+            ${reserved} Reserved<br>${pending} Pending
+          </div>
+        </div>
+      </div>
+
+      ${Object.entries(tripData.accommodations).map(([key, accom]) => {
+        // Generate accommodation image carousel
+        let accomImageHTML = '';
+        if (accom.images && accom.images.length > 0) {
+          if (accom.images.length === 1) {
+            const img = accom.images[0];
+            accomImageHTML = `
+              <div class="accommodation-image-single">
+                <img src="${img.url}" alt="${accom.name}">
+                ${img.title ? `<div class="image-caption">${img.title}</div>` : ''}
+              </div>
+            `;
+          } else {
+            const carouselId = `accom-overview-${key}`;
+            accomImageHTML = `
+              <div class="accommodation-carousel">
+                <div class="carousel-images" id="${carouselId}">
+                  ${accom.images.map((img, index) => `
+                    <div class="carousel-slide ${index === 0 ? 'active' : ''}">
+                      <img src="${img.url}" alt="${accom.name} ${index + 1}" class="carousel-image">
+                      ${img.title ? `<div class="image-caption">${img.title}</div>` : ''}
+                    </div>
+                  `).join('')}
+                </div>
+                <button class="carousel-btn prev" onclick="changeOverviewAccomImage('${key}', -1)">‹</button>
+                <button class="carousel-btn next" onclick="changeOverviewAccomImage('${key}', 1)">›</button>
+                <div class="carousel-dots">
+                  ${accom.images.map((_, index) => `
+                    <span class="dot ${index === 0 ? 'active' : ''}" onclick="goToOverviewAccomImage('${key}', ${index})"></span>
+                  `).join('')}
+                </div>
+              </div>
+            `;
+          }
+        } else if (accom.name === 'TBD' || accom.name.includes('TBD')) {
+          accomImageHTML = `
+            <div class="accommodation-image-single" style="background: var(--color-bg-2); display: flex; align-items: center; justify-content: center; height: 450px; border-radius: 8px;">
+              <p style="color: var(--color-text-secondary); font-size: 18px; font-weight: 500;">📍 ${accom.location} - To Be Determined</p>
+            </div>
+          `;
+        }
+
+        return `
+          <div class="accommodation-block">
+            <div class="accommodation-header">
+              <h3>${accom.name === 'TBD' || accom.name.includes('TBD') ? '📍 ' + accom.location : accom.name}</h3>
+              <span class="accommodation-status ${accom.status.includes('Reserved') ? 'status-reserved' : 'status-pending'}">${accom.status}</span>
+            </div>
+
+            ${accomImageHTML}
+
+            <div class="accommodation-details">
+              ${!(accom.name === 'TBD' || accom.name.includes('TBD')) ? `
+                <h4>${accom.name}</h4>
+                <p class="accommodation-location">📍 ${accom.location}</p>
+              ` : ''}
+              ${accom.address ? `<p class="accommodation-address">${accom.address}</p>` : ''}
+
+              <div class="accommodation-dates">
+                <span>📅 Check-in: ${formatDate(accom.checkIn)}</span>
+                <span>📅 Check-out: ${formatDate(accom.checkOut)}</span>
+                <span>🌙 ${accom.nights} night${accom.nights > 1 ? 's' : ''}</span>
+              </div>
+
+              ${accom.features && accom.features.length > 0 ? `
+                <div class="accommodation-features">
+                  ${accom.features.map(feature => `<span class="feature-tag">✓ ${feature}</span>`).join('')}
+                </div>
+              ` : ''}
+
+              ${accom.totalCost > 0 ? `
+                <div class="accommodation-cost">
+                  <div class="cost-item">
+                    <span class="cost-label">Total Cost:</span>
+                    <span class="cost-value">€${accom.totalCost}</span>
+                  </div>
+                  <div class="cost-item">
+                    <span class="cost-label">Per Night:</span>
+                    <span class="cost-value">€${accom.costPerNight.toFixed(2)}</span>
+                  </div>
+                </div>
+              ` : ''}
+
+              ${accom.bookingUrl ? `
+                <a href="${accom.bookingUrl}" target="_blank" class="booking-link">
+                  View on Booking.com →
+                </a>
+              ` : ''}
+            </div>
+          </div>
+        `;
+      }).join('')}
     </div>
   `;
 }
@@ -1529,6 +1790,72 @@ function goToImage(day, index) {
   // Restart auto-play timer after manual navigation
   stopAutoPlay();
   startAutoPlay(day);
+}
+
+// Accommodation carousel functions (for itinerary view)
+const currentAccomImageIndex = {};
+
+function changeAccomImage(day, direction) {
+  const slides = document.querySelectorAll(`#accomCarousel-${day} .carousel-slide`);
+  const dots = document.querySelectorAll(`#accomCarousel-${day} ~ .carousel-dots .dot`);
+
+  if (!currentAccomImageIndex[day]) currentAccomImageIndex[day] = 0;
+
+  slides[currentAccomImageIndex[day]].classList.remove('active');
+  if (dots.length > 0) dots[currentAccomImageIndex[day]].classList.remove('active');
+
+  currentAccomImageIndex[day] = (currentAccomImageIndex[day] + direction + slides.length) % slides.length;
+
+  slides[currentAccomImageIndex[day]].classList.add('active');
+  if (dots.length > 0) dots[currentAccomImageIndex[day]].classList.add('active');
+}
+
+function goToAccomImage(day, index) {
+  const slides = document.querySelectorAll(`#accomCarousel-${day} .carousel-slide`);
+  const dots = document.querySelectorAll(`#accomCarousel-${day} ~ .carousel-dots .dot`);
+
+  if (!currentAccomImageIndex[day]) currentAccomImageIndex[day] = 0;
+
+  slides[currentAccomImageIndex[day]].classList.remove('active');
+  if (dots.length > 0) dots[currentAccomImageIndex[day]].classList.remove('active');
+
+  currentAccomImageIndex[day] = index;
+
+  slides[currentAccomImageIndex[day]].classList.add('active');
+  if (dots.length > 0) dots[currentAccomImageIndex[day]].classList.add('active');
+}
+
+// Accommodation carousel functions (for accommodations overview view)
+const currentOverviewAccomImageIndex = {};
+
+function changeOverviewAccomImage(accomKey, direction) {
+  const slides = document.querySelectorAll(`#accom-overview-${accomKey} .carousel-slide`);
+  const dots = document.querySelectorAll(`#accom-overview-${accomKey} ~ .carousel-dots .dot`);
+
+  if (!currentOverviewAccomImageIndex[accomKey]) currentOverviewAccomImageIndex[accomKey] = 0;
+
+  slides[currentOverviewAccomImageIndex[accomKey]].classList.remove('active');
+  if (dots.length > 0) dots[currentOverviewAccomImageIndex[accomKey]].classList.remove('active');
+
+  currentOverviewAccomImageIndex[accomKey] = (currentOverviewAccomImageIndex[accomKey] + direction + slides.length) % slides.length;
+
+  slides[currentOverviewAccomImageIndex[accomKey]].classList.add('active');
+  if (dots.length > 0) dots[currentOverviewAccomImageIndex[accomKey]].classList.add('active');
+}
+
+function goToOverviewAccomImage(accomKey, index) {
+  const slides = document.querySelectorAll(`#accom-overview-${accomKey} .carousel-slide`);
+  const dots = document.querySelectorAll(`#accom-overview-${accomKey} ~ .carousel-dots .dot`);
+
+  if (!currentOverviewAccomImageIndex[accomKey]) currentOverviewAccomImageIndex[accomKey] = 0;
+
+  slides[currentOverviewAccomImageIndex[accomKey]].classList.remove('active');
+  if (dots.length > 0) dots[currentOverviewAccomImageIndex[accomKey]].classList.remove('active');
+
+  currentOverviewAccomImageIndex[accomKey] = index;
+
+  slides[currentOverviewAccomImageIndex[accomKey]].classList.add('active');
+  if (dots.length > 0) dots[currentOverviewAccomImageIndex[accomKey]].classList.add('active');
 }
 
 // Initialize app when DOM is ready
