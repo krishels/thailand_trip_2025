@@ -967,81 +967,417 @@ function renderItineraryView() {
 function renderBudgetView() {
   const content = document.getElementById('mainContent');
 
-  const totalMin = 5680;
-  const totalMax = 6560;
-  const perPersonMin = 1420;
-  const perPersonMax = 1640;
+  // Accommodation costs for 4 people (all nights included)
+  const accomCosts = {
+    bangkok1: 283, // €283 for 4 people, 2 nights
+    chiangRai: 419, // €419 for 4 people, 3 nights
+    chiangMai: 792, // €792 for 4 people, 4 nights
+    klongMuang: 500, // €500 for 4 people, 3 nights (TBD)
+    nopparatThara: 1225, // €1,225 for 4 people, 3 nights
+    bangkok2: 100 // €100 for 4 people, 1 night (TBD)
+  };
+
+  const totalAccom = Object.values(accomCosts).reduce((sum, cost) => sum + cost, 0);
+
+  // Flight costs for 4 people (including checked bags)
+  const flights = [
+    { route: 'Bangkok → Chiang Rai', cost: 50, total: 200 },
+    { route: 'Chiang Mai → Krabi (Direct)', cost: 155, total: 620 },
+    { route: 'Krabi → Bangkok', cost: 87.5, total: 350 }
+  ];
+  const totalFlights = flights.reduce((sum, f) => sum + f.total, 0);
+
+  // Food costs for 18 days, 4 people
+  const foodPerDay = 120; // €30/person/day × 4
+  const totalFood = foodPerDay * 18;
+
+  // Activity costs for 4 people
+  const activities = [
+    { name: 'Elephant Nature Park (Chiang Mai)', perPerson: 75, total: 300 },
+    { name: 'Thai Cooking Class', perPerson: 35, total: 140 },
+    { name: 'Phi Phi Islands Tour', perPerson: 55, total: 220 },
+    { name: 'Hong Islands Tour', perPerson: 65, total: 260 },
+    { name: '4 Islands Sunset Tour', perPerson: 35, total: 140 },
+    { name: 'Railay Beach & Viewpoint', perPerson: 25, total: 100 },
+    { name: 'Bor Thor Cave Kayaking', perPerson: 50, total: 200 },
+    { name: 'Grand Palace & Temple Tickets', perPerson: 25, total: 100 },
+    { name: 'White Temple, Blue Temple, Golden Triangle', perPerson: 40, total: 160 },
+    { name: 'Wat Pho entrance', perPerson: 4, total: 16 },
+    { name: 'Wat Arun entrance', perPerson: 1.5, total: 6 },
+    { name: 'Floating Market tour (Damnoen Saduak)', perPerson: 20, total: 80 },
+    { name: 'Doi Suthep transport + entry', perPerson: 30, total: 120 },
+    { name: 'Ao Thalane Mangrove Kayaking', perPerson: 30, total: 120 },
+    { name: 'Private longtail to hidden beaches', perPerson: 20, total: 80 },
+    { name: 'Extra temples & activities', perPerson: 50, total: 200 },
+    { name: 'Evening shows & experiences', perPerson: 37.5, total: 150 }
+  ];
+  const totalActivities = activities.reduce((sum, a) => sum + a.total, 0);
+
+  // Transport costs for 4 people
+  const transport = [
+    { name: 'Green Bus Chiang Rai → Chiang Mai', perPerson: 11, total: 44 },
+    { name: 'Airport transfers, taxis, Grab', perPerson: 125, total: 500 },
+    { name: 'Boat transfers & longtails', perPerson: 100, total: 400 }
+  ];
+  const totalTransport = transport.reduce((sum, t) => sum + t.total, 0);
+
+  // Miscellaneous
+  const misc = 400; // €100/person × 4
+
+  const grandTotal = totalAccom + totalFlights + totalFood + totalActivities + totalTransport + misc;
+  const perPerson = grandTotal / 4;
 
   content.innerHTML = `
     <div class="detail-card">
       <div class="detail-header">
-        <h2>💰 Budget Breakdown</h2>
-        <p style="color: var(--color-text-secondary);">Complete cost overview for 2 people</p>
+        <h2>💰 Complete Budget Breakdown</h2>
+        <p style="color: var(--color-text-secondary);">Detailed costs for 4 people (excluding international flights - already paid)</p>
       </div>
 
       <div class="budget-grid">
         <div class="budget-card">
           <h4>Total Budget</h4>
-          <div class="amount">€${totalMin.toLocaleString()}-${totalMax.toLocaleString()}</div>
+          <div class="amount">€${grandTotal.toLocaleString()}</div>
         </div>
         <div class="budget-card">
           <h4>Per Person</h4>
-          <div class="amount">€${perPersonMin.toLocaleString()}-${perPersonMax.toLocaleString()}</div>
+          <div class="amount">€${perPerson.toLocaleString()}</div>
         </div>
         <div class="budget-card">
           <h4>Daily Average</h4>
-          <div class="amount">€${Math.round(perPersonMin/19)}-${Math.round(perPersonMax/19)}</div>
+          <div class="amount">€${Math.round(perPerson/18)}/day</div>
         </div>
         <div class="budget-card">
           <h4>Trip Duration</h4>
-          <div class="amount">19 Days</div>
+          <div class="amount">18 Days</div>
         </div>
       </div>
 
       <div class="detail-section">
-        <h3>📊 Cost Breakdown</h3>
+        <h3>🏨 Accommodations (16 nights)</h3>
         <table class="budget-table">
           <thead>
             <tr>
-              <th>Category</th>
-              <th>Per Person</th>
+              <th>Hotel</th>
+              <th>Nights</th>
               <th>Total (4 people)</th>
+              <th>Per Person</th>
             </tr>
           </thead>
           <tbody>
-            ${Object.entries(tripData.budgetBreakdown).map(([category, range]) => {
-              if (category.includes('Total')) return '';
-              const [min, max] = range.replace('€', '').split('-');
-              const totalMin = parseInt(min) * 4;
-              const totalMax = parseInt(max) * 4;
-              return `
-                <tr>
-                  <td>${category}</td>
-                  <td>${range}</td>
-                  <td>€${totalMin}-${totalMax}</td>
-                </tr>
-              `;
-            }).join('')}
+            <tr>
+              <td>Baiyoke Sky Hotel (Bangkok)</td>
+              <td>2</td>
+              <td>€${accomCosts.bangkok1}</td>
+              <td>€${(accomCosts.bangkok1/4).toFixed(0)}</td>
+            </tr>
+            <tr>
+              <td>Katiliya Mountain Resort (Chiang Rai)</td>
+              <td>3</td>
+              <td>€${accomCosts.chiangRai}</td>
+              <td>€${(accomCosts.chiangRai/4).toFixed(0)}</td>
+            </tr>
+            <tr>
+              <td>Prince Khum Phaya Resort (Chiang Mai)</td>
+              <td>4</td>
+              <td>€${accomCosts.chiangMai}</td>
+              <td>€${(accomCosts.chiangMai/4).toFixed(0)}</td>
+            </tr>
+            <tr>
+              <td>Klong Muang Beach Hotel (TBD)</td>
+              <td>3</td>
+              <td>€${accomCosts.klongMuang} <em>(estimate)</em></td>
+              <td>€${(accomCosts.klongMuang/4).toFixed(0)}</td>
+            </tr>
+            <tr>
+              <td>Aonang Fiore Resort (Nopparat Thara)</td>
+              <td>3</td>
+              <td>€${accomCosts.nopparatThara}</td>
+              <td>€${(accomCosts.nopparatThara/4).toFixed(0)}</td>
+            </tr>
+            <tr>
+              <td>Bangkok Airport Hotel (TBD)</td>
+              <td>1</td>
+              <td>€${accomCosts.bangkok2} <em>(estimate)</em></td>
+              <td>€${(accomCosts.bangkok2/4).toFixed(0)}</td>
+            </tr>
+            <tr class="total-row">
+              <td><strong>TOTAL ACCOMMODATIONS</strong></td>
+              <td><strong>16</strong></td>
+              <td><strong>€${totalAccom}</strong></td>
+              <td><strong>€${(totalAccom/4).toFixed(0)}</strong></td>
+            </tr>
           </tbody>
         </table>
       </div>
 
       <div class="detail-section">
-        <h3>✈️ Domestic Flights</h3>
-        <p><strong>Total:</strong> 3 domestic flights (€150-200/person)</p>
-        <p>Direct flights minimize travel time and maximize exploration time at each destination.</p>
+        <h3>✈️ Domestic Flights (3 flights)</h3>
+        <table class="budget-table">
+          <thead>
+            <tr>
+              <th>Route</th>
+              <th>Total (4 people)</th>
+              <th>Per Person</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${flights.map(f => `
+              <tr>
+                <td>${f.route}</td>
+                <td>€${f.total}</td>
+                <td>€${f.cost}</td>
+              </tr>
+            `).join('')}
+            <tr class="total-row">
+              <td><strong>TOTAL FLIGHTS</strong></td>
+              <td><strong>€${totalFlights}</strong></td>
+              <td><strong>€${(totalFlights/4).toFixed(0)}</strong></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <div class="detail-section">
-        <h3>💡 Ways to Save Money</h3>
+        <h3>🍜 Food & Dining (18 days)</h3>
+        <table class="budget-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Total (4 people)</th>
+              <th>Per Person</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Meals (18 days × €30/person/day)</td>
+              <td>€${totalFood}</td>
+              <td>€${(totalFood/4).toFixed(0)}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="detail-section">
+        <h3>🎯 Activities & Tours</h3>
+        <table class="budget-table">
+          <thead>
+            <tr>
+              <th>Activity</th>
+              <th>Total (4 people)</th>
+              <th>Per Person</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${activities.map(a => `
+              <tr>
+                <td>${a.name}</td>
+                <td>€${a.total}</td>
+                <td>€${a.perPerson}</td>
+              </tr>
+            `).join('')}
+            <tr class="total-row">
+              <td><strong>TOTAL ACTIVITIES</strong></td>
+              <td><strong>€${totalActivities}</strong></td>
+              <td><strong>€${(totalActivities/4).toFixed(0)}</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="detail-section">
+        <h3>🚗 Local Transport</h3>
+        <table class="budget-table">
+          <thead>
+            <tr>
+              <th>Transport</th>
+              <th>Total (4 people)</th>
+              <th>Per Person</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${transport.map(t => `
+              <tr>
+                <td>${t.name}</td>
+                <td>€${t.total}</td>
+                <td>€${t.perPerson}</td>
+              </tr>
+            `).join('')}
+            <tr class="total-row">
+              <td><strong>TOTAL TRANSPORT</strong></td>
+              <td><strong>€${totalTransport}</strong></td>
+              <td><strong>€${(totalTransport/4).toFixed(0)}</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="detail-section">
+        <h3>🛍️ Miscellaneous</h3>
+        <table class="budget-table">
+          <tbody>
+            <tr>
+              <td>Shopping, tips, extras</td>
+              <td>€${misc}</td>
+              <td>€${(misc/4).toFixed(0)}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="detail-section" style="background: var(--color-bg-3); padding: 20px; border-radius: 8px; margin-top: 20px;">
+        <h3>📊 GRAND TOTAL</h3>
+        <table class="budget-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Total (4 people)</th>
+              <th>Per Person</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Accommodations</td>
+              <td>€${totalAccom}</td>
+              <td>€${(totalAccom/4).toFixed(0)}</td>
+            </tr>
+            <tr>
+              <td>Domestic Flights</td>
+              <td>€${totalFlights}</td>
+              <td>€${(totalFlights/4).toFixed(0)}</td>
+            </tr>
+            <tr>
+              <td>Food & Dining</td>
+              <td>€${totalFood}</td>
+              <td>€${(totalFood/4).toFixed(0)}</td>
+            </tr>
+            <tr>
+              <td>Activities & Tours</td>
+              <td>€${totalActivities}</td>
+              <td>€${(totalActivities/4).toFixed(0)}</td>
+            </tr>
+            <tr>
+              <td>Local Transport</td>
+              <td>€${totalTransport}</td>
+              <td>€${(totalTransport/4).toFixed(0)}</td>
+            </tr>
+            <tr>
+              <td>Miscellaneous</td>
+              <td>€${misc}</td>
+              <td>€${(misc/4).toFixed(0)}</td>
+            </tr>
+            <tr class="total-row" style="font-size: 18px; background: rgba(34, 197, 94, 0.1);">
+              <td><strong>TOTAL (excl. international flights)</strong></td>
+              <td><strong>€${grandTotal.toLocaleString()}</strong></td>
+              <td><strong>€${perPerson.toLocaleString()}</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="detail-section" style="margin-top: 40px;">
+        <h3>📅 Daily Cost Breakdown (Sorted by Date)</h3>
+        <table class="budget-table">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Accommodation</th>
+              <th>Food</th>
+              <th>Activities</th>
+              <th>Transport</th>
+              <th>Daily Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${tripData.itinerary.map(day => {
+              // Calculate accommodation cost per day
+              let accomCost = 0;
+              if (day.accommodation_id) {
+                const accomKey = day.accommodation_id;
+                const accom = tripData.accommodations[accomKey];
+                if (accom && accom.nights > 0) {
+                  if (accomKey === 'bangkok1') accomCost = 283 / 2; // €283 total for 2 nights
+                  else if (accomKey === 'chiangRai') accomCost = 419 / 3; // €419 for 3 nights
+                  else if (accomKey === 'chiangMai') accomCost = 792 / 4; // €792 for 4 nights
+                  else if (accomKey === 'klongMuang') accomCost = 500 / 3; // €500 for 3 nights (TBD)
+                  else if (accomKey === 'nopparatThara') accomCost = 1225 / 3; // €1,225 for 3 nights
+                  else if (accomKey === 'bangkok2') accomCost = 100; // €100 for 1 night (TBD)
+                }
+              }
+
+              // Food cost - €120/day for 4 people (€30/person/day)
+              const foodCost = 120;
+
+              // Activities cost per day
+              let activityCost = 0;
+              if (day.city.includes('Chiang Mai') && day.day === 9) activityCost = 300; // Elephant sanctuary
+              else if (day.city.includes('Chiang Mai') && day.day === 10) activityCost = 140; // Cooking class
+              else if (day.city.includes('Chiang Mai') && day.day === 8) activityCost = 120; // Doi Suthep
+              else if (day.city.includes('Phi Phi')) activityCost = 220; // Phi Phi tour
+              else if (day.city.includes('Hong Islands')) activityCost = 380; // Hong Islands + Mangrove Kayaking
+              else if (day.city.includes('4 Islands')) activityCost = 140; // 4 Islands
+              else if (day.city.includes('Railay')) activityCost = 100; // Railay
+              else if (day.city.includes('Bor Thor')) activityCost = 200; // Bor Thor kayaking
+              else if (day.city === 'Bangkok' && day.day === 3) activityCost = 122; // Grand Palace + Wat Pho + Wat Arun
+              else if (day.city.includes('Bangkok → Chiang Rai') && day.day === 4) activityCost = 80; // Floating Market
+              else if (day.city.includes('Chiang Rai') && day.day === 5) activityCost = 160; // White/Blue Temple tour
+              else if (day.city.includes('Chiang Rai') && day.day === 6) activityCost = 160; // Golden Triangle tour
+              else if (day.city.includes('Bangkok') && day.day === 17) activityCost = 80; // Private longtail
+
+              // Transport cost per day
+              let transportCost = 0;
+              if (day.city.includes('→')) {
+                if (day.city.includes('Chiang Rai')) transportCost = 200; // Flight BKK→CEI
+                else if (day.city.includes('Klong Muang')) transportCost = 620; // Flight CNX→KBV
+                else if (day.city.includes('Bangkok') && day.day === 17) transportCost = 350; // Flight KBV→BKK
+                else if (day.city.includes('Chiang Mai') && day.day === 7) transportCost = 44; // Green Bus
+              } else {
+                // Regular daily transport (taxis, grab, boats)
+                transportCost = 900 / 18; // €900 total (taxis + boats) spread over 18 days ≈ €50/day
+              }
+
+              const dailyTotal = accomCost + foodCost + activityCost + transportCost;
+
+              return `
+                <tr>
+                  <td><strong>Day ${day.day}</strong></td>
+                  <td>${day.date}</td>
+                  <td>${day.city}</td>
+                  <td>€${accomCost.toFixed(0)}</td>
+                  <td>€${foodCost}</td>
+                  <td>€${activityCost}</td>
+                  <td>€${transportCost.toFixed(0)}</td>
+                  <td><strong>€${dailyTotal.toFixed(0)}</strong></td>
+                </tr>
+              `;
+            }).join('')}
+            <tr class="total-row">
+              <td colspan="3"><strong>TOTAL (18 DAYS)</strong></td>
+              <td><strong>€${totalAccom}</strong></td>
+              <td><strong>€${totalFood}</strong></td>
+              <td><strong>€${totalActivities}</strong></td>
+              <td><strong>€${totalFlights + totalTransport}</strong></td>
+              <td><strong>€${(totalAccom + totalFood + totalActivities + totalFlights + totalTransport).toLocaleString()}</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-top: 16px; color: var(--color-text-secondary); font-size: var(--font-size-sm);">
+          <em>Note: Miscellaneous costs (€400) not included in daily breakdown. All costs shown for 4 people.</em>
+        </p>
+      </div>
+
+      <div class="detail-section">
+        <h3>💡 Money Saving Tips</h3>
         <ul>
-          <li>Book all 3 flights NOW - prices increase closer to dates</li>
-          <li>Eat at street food stalls (€2-5) instead of restaurants (€10-20)</li>
-          <li>Use Grab and Green Bus instead of taxis</li>
+          <li>Book all 3 domestic flights NOW - prices increase closer to dates</li>
+          <li>Eat at street food stalls (€2-5) - authentic and delicious</li>
+          <li>Use Grab app for fair taxi pricing</li>
           <li>Book accommodation with free breakfast included</li>
-          <li>Buy water and snacks from 7-Eleven</li>
-          <li>Book boat tours one day in advance (cheaper than same-day)</li>
-          <li>Share private longtail boat costs (split 4 ways)</li>
+          <li>Buy water and snacks from 7-Eleven (very cheap)</li>
+          <li>Book boat tours one day in advance for better rates</li>
+          <li>Share taxi costs between 4 people</li>
         </ul>
       </div>
     </div>

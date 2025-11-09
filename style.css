@@ -1156,6 +1156,32 @@ body {
   color: var(--color-text);
 }
 
+.budget-table .total-row {
+  background: rgba(var(--color-success-rgb), 0.1);
+  font-weight: var(--font-weight-bold);
+  border-top: 2px solid var(--color-border);
+}
+
+.budget-table .total-row td {
+  padding: var(--space-16) var(--space-12);
+}
+
+/* Budget table mobile responsive */
+@media (max-width: 768px) {
+  .budget-table {
+    font-size: var(--font-size-xs);
+  }
+
+  .budget-table th,
+  .budget-table td {
+    padding: var(--space-8);
+  }
+
+  .budget-table thead th {
+    font-size: 10px;
+  }
+}
+
 .packing-category {
   margin-bottom: var(--space-32);
 }
