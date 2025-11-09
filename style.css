@@ -1182,6 +1182,13 @@ body {
   }
 }
 
+/* Chart containers responsive */
+@media (max-width: 1024px) {
+  .detail-section > div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 .packing-category {
   margin-bottom: var(--space-32);
 }

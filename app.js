@@ -1053,6 +1053,26 @@ function renderBudgetView() {
         </div>
       </div>
 
+      <!-- Charts Section -->
+      <div class="detail-section">
+        <h3>📊 Budget Visualizations</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 24px;">
+          <div style="background: var(--color-surface); padding: 24px; border-radius: 12px; box-shadow: var(--shadow-md);">
+            <h4 style="margin-bottom: 16px; text-align: center; color: var(--color-text-primary);">Category breakdown per person</h4>
+            <div style="position: relative; max-width: 450px; max-height: 450px; margin: 0 auto;">
+              <canvas id="categoryDonutChart"></canvas>
+              <div id="donutLegend" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 10px; line-height: 1.4; text-align: left; pointer-events: none;"></div>
+            </div>
+          </div>
+          <div style="background: var(--color-surface); padding: 24px; border-radius: 12px; box-shadow: var(--shadow-md);">
+            <h4 style="margin-bottom: 16px; text-align: center; color: var(--color-text-primary);">Daily cost breakdown per person</h4>
+            <div style="height: 400px;">
+              <canvas id="dailyBarChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="detail-section">
         <h3>🏨 Accommodations (16 nights)</h3>
         <table class="budget-table">
@@ -1382,6 +1402,206 @@ function renderBudgetView() {
       </div>
     </div>
   `;
+
+  // Create Donut Chart for Category Breakdown (Per Person)
+  const ctxDonut = document.getElementById('categoryDonutChart');
+  const donutData = {
+    labels: ['Accommodations', 'Flights', 'Food & Dining', 'Activities', 'Local Transport', 'Miscellaneous'],
+    values: [totalAccom/4, totalFlights/4, totalFood/4, totalActivities/4, totalTransport/4, misc/4],
+    colors: ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#43e97b', '#fa709a']
+  };
+
+  new Chart(ctxDonut, {
+    type: 'doughnut',
+    data: {
+      labels: donutData.labels,
+      datasets: [{
+        data: donutData.values,
+        backgroundColor: donutData.colors,
+        borderWidth: 2,
+        borderColor: '#fff'
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      cutout: '60%',
+      plugins: {
+        legend: {
+          display: false
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              const label = context.label || '';
+              const value = context.parsed || 0;
+              const total = context.dataset.data.reduce((a, b) => a + b, 0);
+              const percentage = Math.round((value / total) * 100);
+              return label + ': €' + value.toLocaleString() + ' (' + percentage + '%)';
+            }
+          }
+        },
+        datalabels: {
+          color: '#000',
+          font: {
+            weight: 'bold',
+            size: 11
+          },
+          formatter: function(value, context) {
+            const total = context.dataset.data.reduce((a, b) => a + b, 0);
+            const percentage = Math.round((value / total) * 100);
+            return '€' + Math.round(value).toLocaleString() + '\n' + percentage + '%';
+          },
+          textAlign: 'center'
+        }
+      }
+    },
+    plugins: [ChartDataLabels]
+  });
+
+  // Populate center legend with just category names and colors
+  const legendHTML = donutData.labels.map((label, i) => {
+    return `<div style="margin-bottom: 6px; display: flex; align-items: center;">
+      <span style="display: inline-block; width: 12px; height: 12px; background: ${donutData.colors[i]}; border-radius: 2px; margin-right: 6px;"></span>
+      <span style="font-size: 11px; font-weight: 500;">${label}</span>
+    </div>`;
+  }).join('');
+
+  document.getElementById('donutLegend').innerHTML = legendHTML;
+
+  // Create Stacked Bar Chart for Daily Breakdown (Per Person)
+  const dailyData = tripData.itinerary.map(day => {
+    // Calculate accommodation cost per day
+    let accomCost = 0;
+    if (day.accommodation_id) {
+      const accomKey = day.accommodation_id;
+      if (accomKey === 'bangkok1') accomCost = 283 / 2 / 4; // divided by 4 for per person
+      else if (accomKey === 'chiangRai') accomCost = 419 / 3 / 4;
+      else if (accomKey === 'chiangMai') accomCost = 792 / 4 / 4;
+      else if (accomKey === 'klongMuang') accomCost = 500 / 3 / 4;
+      else if (accomKey === 'nopparatThara') accomCost = 1225 / 3 / 4;
+      else if (accomKey === 'bangkok2') accomCost = 100 / 4;
+    }
+
+    const foodCost = 120 / 4; // per person
+
+    // Activities cost per day
+    let activityCost = 0;
+    if (day.city.includes('Chiang Mai') && day.day === 9) activityCost = 300 / 4;
+    else if (day.city.includes('Chiang Mai') && day.day === 10) activityCost = 140 / 4;
+    else if (day.city.includes('Chiang Mai') && day.day === 8) activityCost = 120 / 4;
+    else if (day.city.includes('Phi Phi')) activityCost = 220 / 4;
+    else if (day.city.includes('Hong Islands')) activityCost = 380 / 4;
+    else if (day.city.includes('4 Islands')) activityCost = 140 / 4;
+    else if (day.city.includes('Railay')) activityCost = 100 / 4;
+    else if (day.city.includes('Bor Thor')) activityCost = 200 / 4;
+    else if (day.city === 'Bangkok' && day.day === 3) activityCost = 122 / 4;
+    else if (day.city.includes('Bangkok → Chiang Rai') && day.day === 4) activityCost = 80 / 4;
+    else if (day.city.includes('Chiang Rai') && day.day === 5) activityCost = 160 / 4;
+    else if (day.city.includes('Chiang Rai') && day.day === 6) activityCost = 160 / 4;
+    else if (day.city.includes('Bangkok') && day.day === 17) activityCost = 80 / 4;
+
+    // Transport cost per day
+    let transportCost = 0;
+    if (day.city.includes('→')) {
+      if (day.city.includes('Chiang Rai')) transportCost = 200 / 4;
+      else if (day.city.includes('Klong Muang')) transportCost = 620 / 4;
+      else if (day.city.includes('Bangkok') && day.day === 17) transportCost = 350 / 4;
+      else if (day.city.includes('Chiang Mai') && day.day === 7) transportCost = 44 / 4;
+    } else {
+      transportCost = 900 / 18 / 4;
+    }
+
+    return {
+      day: day.day,
+      accom: Math.round(accomCost),
+      food: Math.round(foodCost),
+      activities: Math.round(activityCost),
+      transport: Math.round(transportCost)
+    };
+  });
+
+  const ctxBar = document.getElementById('dailyBarChart');
+  new Chart(ctxBar, {
+    type: 'bar',
+    data: {
+      labels: dailyData.map(d => 'Day ' + d.day),
+      datasets: [
+        {
+          label: 'Accommodation',
+          data: dailyData.map(d => d.accom),
+          backgroundColor: '#667eea'
+        },
+        {
+          label: 'Food',
+          data: dailyData.map(d => d.food),
+          backgroundColor: '#f093fb'
+        },
+        {
+          label: 'Activities',
+          data: dailyData.map(d => d.activities),
+          backgroundColor: '#4facfe'
+        },
+        {
+          label: 'Transport',
+          data: dailyData.map(d => d.transport),
+          backgroundColor: '#43e97b'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          stacked: true,
+          grid: {
+            display: false
+          },
+          ticks: {
+            maxRotation: 90,
+            minRotation: 45,
+            font: {
+              size: 10
+            }
+          }
+        },
+        y: {
+          stacked: true,
+          beginAtZero: true,
+          grid: {
+            display: false
+          },
+          ticks: {
+            callback: function(value) {
+              return '€' + value;
+            }
+          }
+        }
+      },
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: {
+            padding: 10,
+            font: {
+              size: 11
+            }
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return context.dataset.label + ': €' + context.parsed.y;
+            }
+          }
+        },
+        datalabels: {
+          display: false
+        }
+      }
+    }
+  });
 }
 
 // Render accommodations view
