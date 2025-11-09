@@ -478,6 +478,38 @@ const tripData = {
     }
   ],
 
+  // Unified activities list - single source of truth for Budget, Activities, and Map views
+  activities: [
+    // Bangkok activities
+    { name: 'Grand Palace & Temple Tickets', city: 'Bangkok', day: 3, perPerson: 25, total: 100, duration: '3-4 hours', difficulty: 'Easy', description: 'Stunning royal palace complex with intricate Thai architecture. Dress code strictly enforced.', lat: 13.7499, lng: 100.4916 },
+    { name: 'Wat Pho entrance', city: 'Bangkok', day: 3, perPerson: 4, total: 16, duration: '2 hours', difficulty: 'Easy', description: 'Famous temple with the Reclining Buddha', lat: 13.7464, lng: 100.4928 },
+    { name: 'Wat Arun entrance', city: 'Bangkok', day: 3, perPerson: 1.5, total: 6, duration: '1 hour', difficulty: 'Easy', description: 'Temple of Dawn across the river', lat: 13.7439, lng: 100.4884 },
+    { name: 'Floating Market tour (Damnoen Saduak)', city: 'Bangkok', day: 4, perPerson: 20, total: 80, duration: '2-3 hours', difficulty: 'Easy', description: 'Traditional market on boats. Visit early morning (7-10 AM) for best experience.', lat: 13.5202, lng: 99.9586 },
+
+    // Chiang Rai activities
+    { name: 'White Temple, Blue Temple, Golden Triangle', city: 'Chiang Rai', day: 5, perPerson: 40, total: 160, duration: 'Full day', difficulty: 'Easy', description: 'Stunning all-white contemporary temple, vibrant blue temple, and Thailand-Laos-Myanmar border with Mekong boat ride.', lat: 19.8233, lng: 99.7627 },
+
+    // Chiang Mai activities
+    { name: 'Doi Suthep transport + entry', city: 'Chiang Mai', day: 8, perPerson: 30, total: 120, duration: '3 hours', difficulty: 'Medium', description: 'Mountain temple with 306 steps. Stunning city views from the top.', lat: 18.8050, lng: 98.9216 },
+    { name: 'Elephant Nature Park (Chiang Mai)', city: 'Chiang Mai', day: 9, perPerson: 75, total: 300, duration: 'Full day', difficulty: 'Easy', description: 'Ethical elephant experience - feeding, bathing, walking. NO RIDING!', lat: 19.2144, lng: 98.8590 },
+    { name: 'Thai Cooking Class', city: 'Chiang Mai', day: 10, perPerson: 35, total: 140, duration: '5 hours', difficulty: 'Easy', description: 'Market tour and hands-on cooking. Eat what you make!', lat: 18.7883, lng: 98.9853 },
+
+    // Krabi/Klong Muang activities
+    { name: 'Phi Phi Islands Tour', city: 'Krabi', day: 12, perPerson: 55, total: 220, duration: 'Full day', difficulty: 'Easy', description: 'Maya Bay, Pileh Lagoon, Viking Cave, Bamboo Island. Speedboat with lunch.', lat: 7.6767, lng: 98.7664 },
+    { name: 'Hong Islands Tour', city: 'Krabi', day: 13, perPerson: 65, total: 260, duration: 'Half day', difficulty: 'Easy', description: 'Emerald lagoon (tide dependent), white beaches, snorkeling.', lat: 8.1070, lng: 98.7660 },
+    { name: 'Ao Thalane Mangrove Kayaking', city: 'Krabi', day: 13, perPerson: 30, total: 120, duration: '4 hours', difficulty: 'Easy', description: 'Kayak through stunning mangrove forests and lagoons', lat: 8.2775, lng: 98.7993 },
+
+    // Nopparat Thara/Railay activities
+    { name: '4 Islands Sunset Tour', city: 'Krabi', day: 14, perPerson: 35, total: 140, duration: 'Half day', difficulty: 'Easy', description: 'Phra Nang Cave, Chicken Island, Tup sandbar, Poda Island.', lat: 8.0121, lng: 98.8177 },
+    { name: 'Railay Beach & Viewpoint', city: 'Krabi', day: 15, perPerson: 25, total: 100, duration: 'Full day', difficulty: 'Medium', description: 'Boat access only! Viewpoint hike, Phra Nang Cave, rock climbing.', lat: 8.0130, lng: 98.8373 },
+    { name: 'Bor Thor Cave Kayaking', city: 'Krabi', day: 16, perPerson: 50, total: 200, duration: 'Full day', difficulty: 'Medium', description: 'Bor Thor sea caves, 3000-year-old paintings, Tha Pom emerald pools.', lat: 8.1472, lng: 98.7929 },
+    { name: 'Private longtail to hidden beaches', city: 'Bangkok', day: 17, perPerson: 20, total: 80, duration: '4 hours', difficulty: 'Easy', description: 'Explore hidden beaches accessible only by longtail boat', lat: 13.7563, lng: 100.5018 },
+
+    // Miscellaneous
+    { name: 'Extra temples & activities', city: 'Various', day: 0, perPerson: 50, total: 200, duration: 'Varies', difficulty: 'Easy', description: 'Additional temple visits and spontaneous activities throughout the trip', lat: null, lng: null },
+    { name: 'Evening shows & experiences', city: 'Various', day: 0, perPerson: 37.5, total: 150, duration: 'Varies', difficulty: 'Easy', description: 'Cultural shows, night markets, and evening entertainment', lat: null, lng: null }
+  ],
+
   budgetBreakdown: {
     'Domestic Flights (Only 3!)': '€150-200',
     'Accommodation (16 nights)': '€900-1,400',
@@ -1065,26 +1097,8 @@ function renderBudgetView() {
   const foodPerDay = 120; // €30/person/day × 4
   const totalFood = foodPerDay * 18;
 
-  // Activity costs for 4 people
-  const activities = [
-    { name: 'Elephant Nature Park (Chiang Mai)', perPerson: 75, total: 300 },
-    { name: 'Thai Cooking Class', perPerson: 35, total: 140 },
-    { name: 'Phi Phi Islands Tour', perPerson: 55, total: 220 },
-    { name: 'Hong Islands Tour', perPerson: 65, total: 260 },
-    { name: '4 Islands Sunset Tour', perPerson: 35, total: 140 },
-    { name: 'Railay Beach & Viewpoint', perPerson: 25, total: 100 },
-    { name: 'Bor Thor Cave Kayaking', perPerson: 50, total: 200 },
-    { name: 'Grand Palace & Temple Tickets', perPerson: 25, total: 100 },
-    { name: 'White Temple, Blue Temple, Golden Triangle', perPerson: 40, total: 160 },
-    { name: 'Wat Pho entrance', perPerson: 4, total: 16 },
-    { name: 'Wat Arun entrance', perPerson: 1.5, total: 6 },
-    { name: 'Floating Market tour (Damnoen Saduak)', perPerson: 20, total: 80 },
-    { name: 'Doi Suthep transport + entry', perPerson: 30, total: 120 },
-    { name: 'Ao Thalane Mangrove Kayaking', perPerson: 30, total: 120 },
-    { name: 'Private longtail to hidden beaches', perPerson: 20, total: 80 },
-    { name: 'Extra temples & activities', perPerson: 50, total: 200 },
-    { name: 'Evening shows & experiences', perPerson: 37.5, total: 150 }
-  ];
+  // Use unified activities list from tripData
+  const activities = tripData.activities;
   const totalActivities = activities.reduce((sum, a) => sum + a.total, 0);
 
   // Transport costs for 4 people
@@ -1869,50 +1883,33 @@ function renderPackingView() {
 function renderActivitiesView() {
   const content = document.getElementById('mainContent');
 
+  // Group activities by city from unified tripData.activities
   const citiesWithActivities = [
     {
       name: 'Bangkok',
       emoji: '🏛️',
       color: '#667eea',
-      activities: [
-        { name: 'Grand Palace', duration: '3-4 hours', budget: '€10-15', difficulty: 'Easy', description: 'Stunning royal palace complex with intricate Thai architecture. Dress code strictly enforced.' },
-        { name: 'Wat Pho & Wat Arun', duration: '2-3 hours', budget: '€5-10', difficulty: 'Easy', description: 'Famous temples with the Reclining Buddha and Temple of Dawn across the river.' },
-        { name: 'Floating Market', duration: '2-3 hours', budget: '€5-10', difficulty: 'Easy', description: 'Traditional market on boats. Visit early morning (7-10 AM) for best experience.' }
-      ]
+      activities: tripData.activities.filter(a => a.city === 'Bangkok')
     },
     {
       name: 'Chiang Rai',
       emoji: '⛰️',
       color: '#f093fb',
-      activities: [
-        { name: 'White Temple', duration: '2 hours', budget: 'FREE', difficulty: 'Easy', description: 'Stunning all-white contemporary temple with intricate mirror decorations.' },
-        { name: 'Blue Temple', duration: '1 hour', budget: 'FREE', difficulty: 'Easy', description: 'Vibrant blue temple with golden decorations inside and out.' },
-        { name: 'Golden Triangle', duration: 'Full day', budget: '€30-40', difficulty: 'Easy', description: 'Thailand-Laos-Myanmar border, Mekong boat ride, and Hall of Opium museum.' }
-      ]
+      activities: tripData.activities.filter(a => a.city === 'Chiang Rai')
     },
     {
       name: 'Chiang Mai',
       emoji: '🌳',
       color: '#764ba2',
-      activities: [
-        { name: 'Doi Suthep Temple', duration: '3 hours', budget: '€5-10', difficulty: 'Medium', description: 'Mountain temple with 306 steps. Stunning city views from the top.' },
-        { name: 'Elephant Sanctuary', duration: 'Full day', budget: '€75', difficulty: 'Easy', description: 'Ethical elephant experience - feeding, bathing, walking. NO RIDING!' },
-        { name: 'Thai Cooking Class', duration: '5 hours', budget: '€25-40', difficulty: 'Easy', description: 'Market tour and hands-on cooking. Eat what you make!' }
-      ]
+      activities: tripData.activities.filter(a => a.city === 'Chiang Mai')
     },
     {
       name: 'Krabi Area',
       emoji: '🏖️',
       color: '#4facfe',
-      activities: [
-        { name: 'Phi Phi Islands Tour', duration: 'Full day', budget: '€55', difficulty: 'Easy', description: 'Maya Bay, Pileh Lagoon, Viking Cave, Bamboo Island. Speedboat with lunch.' },
-        { name: 'Hong Islands Tour', duration: 'Half day', budget: '€28-33', difficulty: 'Easy', description: 'Emerald lagoon (tide dependent), white beaches, snorkeling.' },
-        { name: '4 Islands Sunset Tour', duration: 'Half day', budget: '€13-21', difficulty: 'Easy', description: 'Phra Nang Cave, Chicken Island, Tup sandbar, Poda Island.' },
-        { name: 'Railay Beach', duration: 'Full day', budget: '€25', difficulty: 'Medium', description: 'Boat access only! Viewpoint hike, Phra Nang Cave, rock climbing.' },
-        { name: 'Cave Kayaking', duration: 'Full day', budget: '€50', difficulty: 'Medium', description: 'Bor Thor sea caves, 3000-year-old paintings, Tha Pom emerald pools.' }
-      ]
+      activities: tripData.activities.filter(a => a.city === 'Krabi')
     }
-  ];
+  ].filter(city => city.activities.length > 0);
 
   content.innerHTML = `
     <div class="detail-card">
@@ -1930,7 +1927,7 @@ function renderActivitiesView() {
                 <div style="font-weight: var(--font-weight-semibold); margin-bottom: 4px;">${activity.name}</div>
                 <div class="activity-details">
                   <span class="badge badge-info">⏱️ ${activity.duration}</span>
-                  <span class="badge badge-success">💰 ${activity.budget}</span>
+                  <span class="badge badge-success">💰 €${activity.perPerson}</span>
                   <span class="badge badge-${activity.difficulty === 'Hard' ? 'warning' : 'info'}">📊 ${activity.difficulty}</span>
                 </div>
                 <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); margin-top: 8px;">${activity.description}</p>
@@ -2053,6 +2050,15 @@ function renderMapView() {
 }
 
 function initializeMap() {
+  // Helper function to get activities summary for each city
+  const getActivitiesSummary = (cityName) => {
+    const cityActivities = tripData.activities
+      .filter(a => a.city === cityName)
+      .map(a => a.name.split(' (')[0].split(' entrance')[0].split(' transport')[0]) // Clean up names
+      .slice(0, 4); // Limit to first 4
+    return cityActivities.join(', ');
+  };
+
   // Define stops with accurate coordinates for optimized route
   const stops = [
     {
@@ -2062,7 +2068,7 @@ function initializeMap() {
       days: "2 nights",
       lat: 13.7563,
       lng: 100.5018,
-      activities: "Grand Palace, Wat Pho, Wat Arun, Floating Market",
+      activities: getActivitiesSummary('Bangkok') || "Grand Palace, Wat Pho, Wat Arun, Floating Market",
       icon: "🏛️"
     },
     {
@@ -2072,7 +2078,7 @@ function initializeMap() {
       days: "3 nights",
       lat: 19.9105,
       lng: 99.8328,
-      activities: "White Temple, Blue Temple, Golden Triangle",
+      activities: getActivitiesSummary('Chiang Rai') || "White Temple, Blue Temple, Golden Triangle",
       icon: "⛰️"
     },
     {
@@ -2082,7 +2088,7 @@ function initializeMap() {
       days: "4 nights",
       lat: 18.7883,
       lng: 98.9853,
-      activities: "Doi Suthep, Elephant Sanctuary, Cooking Class",
+      activities: getActivitiesSummary('Chiang Mai') || "Doi Suthep, Elephant Sanctuary, Cooking Class",
       icon: "🌳"
     },
     {
@@ -2092,7 +2098,7 @@ function initializeMap() {
       days: "3 nights",
       lat: 8.0501,
       lng: 98.7593,
-      activities: "Phi Phi tour, Hong Islands",
+      activities: tripData.activities.filter(a => a.city === 'Krabi' && a.day >= 12 && a.day <= 13).map(a => a.name.split(' Tour')[0]).join(', ') || "Phi Phi tour, Hong Islands",
       icon: "🏖️"
     },
     {
@@ -2102,7 +2108,7 @@ function initializeMap() {
       days: "3 nights",
       lat: 8.0437,
       lng: 98.7968,
-      activities: "Railay Beach, 4 Islands, Cave kayaking",
+      activities: tripData.activities.filter(a => a.city === 'Krabi' && a.day >= 14 && a.day <= 16).map(a => a.name.split(' Tour')[0].split(' &')[0]).join(', ') || "Railay Beach, 4 Islands, Cave kayaking",
       icon: "🏝️"
     },
     {
