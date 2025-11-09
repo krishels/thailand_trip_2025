@@ -1,3 +1,77 @@
+// Circular Countdown Timer to Trip Start
+function createCircularProgress(value, max, label, size = 100, color = '#667eea') {
+  const radius = (size - 12) / 2;
+  const circumference = 2 * Math.PI * radius;
+  const progress = ((max - value) / max) * circumference;
+  const center = size / 2;
+
+  // Convert hex to rgba for background
+  const r = parseInt(color.slice(1, 3), 16);
+  const g = parseInt(color.slice(3, 5), 16);
+  const b = parseInt(color.slice(5, 7), 16);
+
+  return `
+    <div class="circular-time-unit">
+      <svg width="${size}" height="${size}" style="transform: rotate(-90deg);">
+        <circle
+          cx="${center}"
+          cy="${center}"
+          r="${radius}"
+          stroke="rgba(${r}, ${g}, ${b}, 0.15)"
+          stroke-width="6"
+          fill="none"
+        />
+        <circle
+          cx="${center}"
+          cy="${center}"
+          r="${radius}"
+          stroke="${color}"
+          stroke-width="6"
+          fill="none"
+          stroke-dasharray="${circumference}"
+          stroke-dashoffset="${progress}"
+          stroke-linecap="round"
+          style="transition: stroke-dashoffset 1s linear;"
+        />
+      </svg>
+      <div class="circular-value" style="width: ${size}px; height: ${size}px;">
+        <span class="circular-number" style="color: ${color};">${value}</span>
+      </div>
+      <div class="circular-label">${label}</div>
+    </div>
+  `;
+}
+
+function updateCountdown() {
+  const tripStart = new Date('February 5, 2026 00:00:00').getTime();
+  const now = new Date().getTime();
+  const distance = tripStart - now;
+
+  if (distance < 0) {
+    document.getElementById('countdown').innerHTML = '<div style="text-align: center; font-size: var(--font-size-xl); font-weight: bold;">🎉 Trip in Progress! 🎉</div>';
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  const isMobile = window.innerWidth < 768;
+  const size = isMobile ? 70 : 100;
+
+  document.getElementById('countdown').innerHTML = `
+    ${createCircularProgress(days, 90, 'Days', size, '#667eea')}
+    ${createCircularProgress(hours, 24, 'Hours', size, '#764ba2')}
+    ${createCircularProgress(minutes, 60, 'Minutes', size, '#4facfe')}
+    ${createCircularProgress(seconds, 60, 'Seconds', size, '#43e97b')}
+  `;
+}
+
+// Update countdown every second
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
 // Thailand Trip Data - Feb 5-22, 2026
 // Only 3 domestic flights
 const tripData = {
