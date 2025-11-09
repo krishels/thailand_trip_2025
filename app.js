@@ -139,18 +139,22 @@ const tripData = {
       ]
     },
     klongMuang: {
-      name: 'TBD', // USER TO PROVIDE
-      location: 'Klong Muang Beach',
-      address: '',
+      name: 'Venice Krabi Villa Resort',
+      location: 'Klong Muang Beach (Ao Nam Mao)',
+      address: '478 Moo 5, Sai Thai Muang, 81000 Ao Nam Mao, Thailand',
       nights: 3,
       checkIn: '2026-02-15',
       checkOut: '2026-02-18',
-      totalCost: 0,
-      costPerNight: 0,
-      status: 'Not yet booked',
-      bookingUrl: '',
-      features: [],
-      images: []
+      totalCost: 1225,
+      costPerNight: 408.33,
+      status: 'Reserved (Free Cancellation)',
+      bookingUrl: 'https://www.booking.com/hotel/th/venice-krabi-villa-resort.en-us.html',
+      features: ['Beach location', 'Pool', 'Villa resort', 'Klong Muang Beach area'],
+      images: [
+        { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/679700235.jpg?k=d1845e8fd7bf6bea98e3888e4bcf9704f165c9e215470923cf136dc57b1fc163&o=', title: 'Venice Krabi Villa Resort', credit: 'Booking.com' },
+        { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/278092812.jpg?k=eacb37028dbe79e3f5e5c22bf625b05bdfa6c0993ce0f7b446a7a9328856723f&o=', title: 'Venice Krabi Pool', credit: 'Booking.com' },
+        { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/679742092.jpg?k=8e27b255f537fa15933c3c04104c8b4c21374c73300705108c3bfbb4f9e434f3&o=', title: 'Venice Krabi Room', credit: 'Booking.com' }
+      ]
     },
     nopparatThara: {
       name: 'Aonang Fiore Resort',
@@ -1078,7 +1082,7 @@ function renderBudgetView() {
     bangkok1: 283, // €283 for 4 people, 2 nights
     chiangRai: 419, // €419 for 4 people, 3 nights
     chiangMai: 792, // €792 for 4 people, 4 nights
-    klongMuang: 500, // €500 for 4 people, 3 nights (TBD)
+    klongMuang: 1225, // €1,225 for 4 people, 3 nights - Venice Krabi Villa Resort
     nopparatThara: 1225, // €1,225 for 4 people, 3 nights
     bangkok2: 100 // €100 for 4 people, 1 night (TBD)
   };
@@ -1192,9 +1196,9 @@ function renderBudgetView() {
               <td>€${(accomCosts.chiangMai/4).toFixed(0)}</td>
             </tr>
             <tr>
-              <td>Klong Muang Beach Hotel (TBD)</td>
+              <td>Venice Krabi Villa Resort (Klong Muang)</td>
               <td>3</td>
-              <td>€${accomCosts.klongMuang} <em>(estimate)</em></td>
+              <td>€${accomCosts.klongMuang}</td>
               <td>€${(accomCosts.klongMuang/4).toFixed(0)}</td>
             </tr>
             <tr>
@@ -1409,7 +1413,7 @@ function renderBudgetView() {
                   if (accomKey === 'bangkok1') accomCost = 283 / 2; // €283 total for 2 nights
                   else if (accomKey === 'chiangRai') accomCost = 419 / 3; // €419 for 3 nights
                   else if (accomKey === 'chiangMai') accomCost = 792 / 4; // €792 for 4 nights
-                  else if (accomKey === 'klongMuang') accomCost = 500 / 3; // €500 for 3 nights (TBD)
+                  else if (accomKey === 'klongMuang') accomCost = 1225 / 3; // €1,225 for 3 nights
                   else if (accomKey === 'nopparatThara') accomCost = 1225 / 3; // €1,225 for 3 nights
                   else if (accomKey === 'bangkok2') accomCost = 100; // €100 for 1 night (TBD)
                 }
@@ -1566,7 +1570,7 @@ function renderBudgetView() {
       if (accomKey === 'bangkok1') accomCost = 283 / 2 / 4; // divided by 4 for per person
       else if (accomKey === 'chiangRai') accomCost = 419 / 3 / 4;
       else if (accomKey === 'chiangMai') accomCost = 792 / 4 / 4;
-      else if (accomKey === 'klongMuang') accomCost = 500 / 3 / 4;
+      else if (accomKey === 'klongMuang') accomCost = 1225 / 3 / 4;
       else if (accomKey === 'nopparatThara') accomCost = 1225 / 3 / 4;
       else if (accomKey === 'bangkok2') accomCost = 100 / 4;
     }
