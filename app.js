@@ -109,8 +109,8 @@ const tripData = {
       nights: 3,
       checkIn: '2026-02-08',
       checkOut: '2026-02-11',
-      totalCost: 419,
-      costPerNight: 139.67,
+      totalCost: 530,
+      costPerNight: 176.67,
       status: 'Reserved (Paid)',
       bookingUrl: 'https://www.booking.com/hotel/th/katiliya-mountain-resort-and-spa.lv.html',
       features: ['Mountain views', 'Spa', 'Resort setting', 'Pool', 'Tea plantations'],
@@ -1084,7 +1084,7 @@ function renderBudgetView() {
   // Accommodation costs for 4 people (all nights included)
   const accomCosts = {
     bangkok1: 283, // €283 for 4 people, 2 nights
-    chiangRai: 419, // €419 for 4 people, 3 nights
+    chiangRai: 530, // €530 for 4 people, 3 nights - Katiliya Mountain Resort
     chiangMai: 792, // €792 for 4 people, 4 nights
     klongMuang: 1225, // €1,225 for 4 people, 3 nights - Venice Krabi Villa Resort
     nopparatThara: 1225, // €1,225 for 4 people, 3 nights
@@ -1415,7 +1415,7 @@ function renderBudgetView() {
                 const accom = tripData.accommodations[accomKey];
                 if (accom && accom.nights > 0) {
                   if (accomKey === 'bangkok1') accomCost = 283 / 2; // €283 total for 2 nights
-                  else if (accomKey === 'chiangRai') accomCost = 419 / 3; // €419 for 3 nights
+                  else if (accomKey === 'chiangRai') accomCost = 530 / 3; // €530 for 3 nights
                   else if (accomKey === 'chiangMai') accomCost = 792 / 4; // €792 for 4 nights
                   else if (accomKey === 'klongMuang') accomCost = 1225 / 3; // €1,225 for 3 nights
                   else if (accomKey === 'nopparatThara') accomCost = 1225 / 3; // €1,225 for 3 nights
@@ -1572,7 +1572,7 @@ function renderBudgetView() {
     if (day.accommodation_id) {
       const accomKey = day.accommodation_id;
       if (accomKey === 'bangkok1') accomCost = 283 / 2 / 4; // divided by 4 for per person
-      else if (accomKey === 'chiangRai') accomCost = 419 / 3 / 4;
+      else if (accomKey === 'chiangRai') accomCost = 530 / 3 / 4;
       else if (accomKey === 'chiangMai') accomCost = 792 / 4 / 4;
       else if (accomKey === 'klongMuang') accomCost = 1225 / 3 / 4;
       else if (accomKey === 'nopparatThara') accomCost = 1225 / 3 / 4;
