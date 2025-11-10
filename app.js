@@ -79,7 +79,7 @@ const tripData = {
     { name: 'Bangkok', emoji: '🏛️', color: '#667eea', nights: 2, region: 'Central' },
     { name: 'Chiang Rai', emoji: '⛰️', color: '#f093fb', nights: 3, region: 'North' },
     { name: 'Chiang Mai', emoji: '🌳', color: '#764ba2', nights: 4, region: 'North' },
-    { name: 'Klong Muang', emoji: '🏖️', color: '#4facfe', nights: 3, region: 'South' },
+    { name: 'Ao Nam Mao Beach', emoji: '🏖️', color: '#4facfe', nights: 3, region: 'South' },
     { name: 'Nopparat Thara', emoji: '🏝️', color: '#43e97b', nights: 3, region: 'South' },
     { name: 'Bangkok Airport', emoji: '✈️', color: '#667eea', nights: 1, region: 'Central' }
   ],
@@ -140,7 +140,7 @@ const tripData = {
     },
     klongMuang: {
       name: 'Venice Krabi Villa Resort',
-      location: 'Klong Muang Beach (Ao Nam Mao)',
+      location: 'Ao Nam Mao Beach',
       address: '478 Moo 5, Sai Thai Muang, 81000 Ao Nam Mao, Thailand',
       nights: 3,
       checkIn: '2026-02-15',
@@ -149,7 +149,7 @@ const tripData = {
       costPerNight: 408.33,
       status: 'Reserved (Free Cancellation)',
       bookingUrl: 'https://www.booking.com/hotel/th/venice-krabi-villa-resort.en-us.html',
-      features: ['Beach location', 'Pool', 'Villa resort', 'Klong Muang Beach area'],
+      features: ['Beach location', 'Pool', 'Villa resort', 'Ao Nam Mao Beach area'],
       images: [
         { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/679700235.jpg?k=d1845e8fd7bf6bea98e3888e4bcf9704f165c9e215470923cf136dc57b1fc163&o=', title: 'Venice Krabi Villa Resort', credit: 'Booking.com' },
         { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/278092812.jpg?k=eacb37028dbe79e3f5e5c22bf625b05bdfa6c0993ce0f7b446a7a9328856723f&o=', title: 'Venice Krabi Pool', credit: 'Booking.com' },
@@ -352,10 +352,10 @@ const tripData = {
       ]
     },
     {
-      day: 11, date: '2026-02-15', city: 'Chiang Mai → Klong Muang Beach',
+      day: 11, date: '2026-02-15', city: 'Chiang Mai → Ao Nam Mao Beach',
       accommodation_id: 'klongMuang',
       morning: 'FLIGHT 2: CNX→KBV DIRECT (Thai AirAsia, €73-102/person) - NO connection!',
-      afternoon: 'Arrive Krabi, transfer to Klong Muang Beach (45 min), check-in',
+      afternoon: 'Arrive Krabi, transfer to Ao Nam Mao Beach (45 min), check-in',
       evening: 'Beach walk, sunset, beachfront dinner at hotel',
       activities: ['Flight to beaches', 'Beach arrival', 'Sunset viewing'],
       transport: 'Direct flight + airport transfer (800-1000 THB)',
@@ -363,16 +363,16 @@ const tripData = {
       tips: 'Book DIRECT flight only! Pre-arrange airport transfer with hotel',
       packing: ['Beach clothes', 'Swimwear', 'Sunscreen'],
       images: [
-        { url: 'https://images.unsplash.com/photo-1552320892-2059c02de233?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Klong Muang Beach', credit: 'Mike Swigunski' },
+        { url: 'https://images.unsplash.com/photo-1552320892-2059c02de233?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Ao Nam Mao Beach', credit: 'Mike Swigunski' },
         { url: 'https://images.unsplash.com/photo-1500018208634-e633087e3bb1?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85', title: 'Krabi Beach Sunset', credit: 'Taweeroj Eawpanich' }
       ]
     },
     {
-      day: 12, date: '2026-02-16', city: 'Klong Muang - Phi Phi Islands',
+      day: 12, date: '2026-02-16', city: 'Ao Nam Mao - Phi Phi Islands',
       accommodation_id: 'klongMuang',
       morning: 'Early bird Phi Phi tour pickup 6:00-7:00 AM (beat crowds!)',
       afternoon: 'Maya Bay, Pileh Lagoon, Viking Cave, Monkey Bay, lunch at Phi Phi Don',
-      evening: 'Bamboo Island, return to Klong Muang 3-4 PM, rest, casual dinner',
+      evening: 'Bamboo Island, return to Ao Nam Mao 3-4 PM, rest, casual dinner',
       activities: ['Maya Bay', 'Pileh Lagoon', 'Viking Cave', 'Bamboo Island', 'Snorkeling'],
       transport: 'Speedboat tour with hotel pickup',
       budget_eur: '55', accommodation_eur: '60-100',
@@ -385,7 +385,7 @@ const tripData = {
       ]
     },
     {
-      day: 13, date: '2026-02-17', city: 'Klong Muang - Hong Islands',
+      day: 13, date: '2026-02-17', city: 'Ao Nam Mao - Hong Islands',
       accommodation_id: 'klongMuang',
       morning: 'Hong Islands speedboat tour 8:00 AM - famous emerald lagoon',
       afternoon: 'Ao Thalane mangrove kayaking tour (1:30 PM pickup)',
@@ -402,9 +402,9 @@ const tripData = {
       ]
     },
     {
-      day: 14, date: '2026-02-18', city: 'Klong Muang → Nopparat Thara',
+      day: 14, date: '2026-02-18', city: 'Ao Nam Mao → Nopparat Thara',
       accommodation_id: 'nopparatThara',
-      morning: 'Check out Klong Muang, transfer to Nopparat Thara (20 min)',
+      morning: 'Check out Ao Nam Mao, transfer to Nopparat Thara (20 min)',
       afternoon: '4 Islands sunset tour: Phra Nang Cave, Chicken Island, Tup Island, Poda Island',
       evening: 'Walk sandbar at low tide, sunset at Railay, Ao Nang Night Market dinner',
       activities: ['Hotel transfer', '4 Islands tour', 'Sandbar walk', 'Cave shrine', 'Night market'],
@@ -498,7 +498,7 @@ const tripData = {
     { name: 'Elephant Nature Park (Chiang Mai)', city: 'Chiang Mai', day: 9, perPerson: 75, total: 300, duration: 'Full day', difficulty: 'Easy', description: 'Ethical elephant experience - feeding, bathing, walking. NO RIDING!', lat: 19.2144, lng: 98.8590 },
     { name: 'Thai Cooking Class', city: 'Chiang Mai', day: 10, perPerson: 35, total: 140, duration: '5 hours', difficulty: 'Easy', description: 'Market tour and hands-on cooking. Eat what you make!', lat: 18.7883, lng: 98.9853 },
 
-    // Krabi/Klong Muang activities
+    // Krabi/Ao Nam Mao activities
     { name: 'Phi Phi Islands Tour', city: 'Krabi', day: 12, perPerson: 55, total: 220, duration: 'Full day', difficulty: 'Easy', description: 'Maya Bay, Pileh Lagoon, Viking Cave, Bamboo Island. Speedboat with lunch.', lat: 7.6767, lng: 98.7664 },
     { name: 'Hong Islands Tour', city: 'Krabi', day: 13, perPerson: 65, total: 260, duration: 'Half day', difficulty: 'Easy', description: 'Emerald lagoon (tide dependent), white beaches, snorkeling.', lat: 8.1070, lng: 98.7660 },
     { name: 'Ao Thalane Mangrove Kayaking', city: 'Krabi', day: 13, perPerson: 30, total: 120, duration: '4 hours', difficulty: 'Easy', description: 'Kayak through stunning mangrove forests and lagoons', lat: 8.2775, lng: 98.7993 },
@@ -788,7 +788,7 @@ function renderMainView() {
             </div>
             <div class="destination-card">
               <div class="destination-emoji">🏖️</div>
-              <h4>Klong Muang</h4>
+              <h4>Ao Nam Mao</h4>
               <p>Phi Phi tours, Hong Islands & beach bliss</p>
             </div>
             <div class="destination-card">
@@ -1196,7 +1196,7 @@ function renderBudgetView() {
               <td>€${(accomCosts.chiangMai/4).toFixed(0)}</td>
             </tr>
             <tr>
-              <td>Venice Krabi Villa Resort (Klong Muang)</td>
+              <td>Venice Krabi Villa Resort (Ao Nam Mao)</td>
               <td>3</td>
               <td>€${accomCosts.klongMuang}</td>
               <td>€${(accomCosts.klongMuang/4).toFixed(0)}</td>
@@ -1442,7 +1442,7 @@ function renderBudgetView() {
               let transportCost = 0;
               if (day.city.includes('→')) {
                 if (day.city.includes('Chiang Rai')) transportCost = 200; // Flight BKK→CEI
-                else if (day.city.includes('Klong Muang')) transportCost = 620; // Flight CNX→KBV
+                else if (day.city.includes('Ao Nam Mao')) transportCost = 620; // Flight CNX→KBV
                 else if (day.city.includes('Bangkok') && day.day === 17) transportCost = 350; // Flight KBV→BKK
                 else if (day.city.includes('Chiang Mai') && day.day === 7) transportCost = 44; // Green Bus
               } else {
@@ -1597,7 +1597,7 @@ function renderBudgetView() {
     let transportCost = 0;
     if (day.city.includes('→')) {
       if (day.city.includes('Chiang Rai')) transportCost = 200 / 4;
-      else if (day.city.includes('Klong Muang')) transportCost = 620 / 4;
+      else if (day.city.includes('Ao Nam Mao')) transportCost = 620 / 4;
       else if (day.city.includes('Bangkok') && day.day === 17) transportCost = 350 / 4;
       else if (day.city.includes('Chiang Mai') && day.day === 7) transportCost = 44 / 4;
     } else {
@@ -2097,11 +2097,11 @@ function initializeMap() {
     },
     {
       num: 4,
-      name: "Klong Muang Beach",
+      name: "Ao Nam Mao Beach",
       dates: "Feb 15-18",
       days: "3 nights",
-      lat: 8.0501,
-      lng: 98.7593,
+      lat: 8.0295643,
+      lng: 98.8621932,
       activities: tripData.activities.filter(a => a.city === 'Krabi' && a.day >= 12 && a.day <= 13).map(a => a.name.split(' Tour')[0]).join(', ') || "Phi Phi tour, Hong Islands",
       icon: "🏖️"
     },
@@ -2159,7 +2159,7 @@ function initializeMap() {
     { name: "Nimman Road", lat: 18.7958, lng: 98.9657, icon: "🍜", city: "Chiang Mai", day: "8-10" },
     { name: "Warorot Market", lat: 18.7898, lng: 99.0010, icon: "🛍️", city: "Chiang Mai", day: "10" },
 
-    // Phi Phi Islands (Day trip from Klong Muang - Day 12) (6 attractions)
+    // Phi Phi Islands (Day trip from Ao Nam Mao - Day 12) (6 attractions)
     { name: "Maya Bay", lat: 7.6767, lng: 98.7664, icon: "🏝️", city: "Phi Phi", day: "12" },
     { name: "Pileh Lagoon", lat: 7.6834, lng: 98.7675, icon: "💎", city: "Phi Phi", day: "12" },
     { name: "Viking Cave", lat: 7.6911, lng: 98.7668, icon: "⛰️", city: "Phi Phi", day: "12" },
@@ -2167,7 +2167,7 @@ function initializeMap() {
     { name: "Monkey Bay", lat: 7.7214, lng: 98.7697, icon: "🐒", city: "Phi Phi", day: "12" },
     { name: "Phi Phi Don (Tonsai Bay)", lat: 7.7387, lng: 98.7699, icon: "🏝️", city: "Phi Phi", day: "12" },
 
-    // Hong Islands (Day trip from Klong Muang - Day 13) (3 attractions)
+    // Hong Islands (Day trip from Ao Nam Mao - Day 13) (3 attractions)
     { name: "Hong Islands (Koh Hong)", lat: 8.0781, lng: 98.6783, icon: "💚", city: "Hong Islands", day: "13" },
     { name: "Hong Lagoon (Emerald)", lat: 8.0793, lng: 98.6809, icon: "💎", city: "Hong Islands", day: "13" },
     { name: "Lading Island", lat: 8.0450, lng: 98.6980, icon: "🏝️", city: "Hong Islands", day: "13" },
@@ -2291,7 +2291,7 @@ function initializeMap() {
         // Add transport icons
         let transportIcon = '✈️';
         if (stop.num === 2) transportIcon = '🚌'; // Chiang Rai to Chiang Mai by bus
-        if (stop.num === 4) transportIcon = '🚕'; // Klong Muang to Nopparat Thara by taxi
+        if (stop.num === 4) transportIcon = '🚕'; // Ao Nam Mao to Nopparat Thara by taxi
         html += `<div class="map-route-info">${transportIcon} → ${nextStop.name}</div>`;
       }
 
