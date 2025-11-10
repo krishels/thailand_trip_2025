@@ -80,7 +80,7 @@ const tripData = {
     { name: 'Chiang Rai', emoji: '⛰️', color: '#f093fb', nights: 3, region: 'North' },
     { name: 'Chiang Mai', emoji: '🌳', color: '#764ba2', nights: 4, region: 'North' },
     { name: 'Ao Nam Mao Beach', emoji: '🏖️', color: '#4facfe', nights: 3, region: 'South' },
-    { name: 'Nopparat Thara', emoji: '🏝️', color: '#43e97b', nights: 3, region: 'South' },
+    { name: 'Ao Nang Beach', emoji: '🏝️', color: '#43e97b', nights: 3, region: 'South' },
     { name: 'Bangkok Airport', emoji: '✈️', color: '#667eea', nights: 1, region: 'Central' }
   ],
 
@@ -158,7 +158,7 @@ const tripData = {
     },
     nopparatThara: {
       name: 'Aonang Fiore Resort',
-      location: 'Ao Nang Beach (Nopparat Thara)',
+      location: 'Ao Nang Beach',
       address: '764 Moo 2, T. Aonang A. Muang Krabi, 81180 Ao Nang Beach, Thailand',
       nights: 3,
       checkIn: '2026-02-18',
@@ -402,9 +402,9 @@ const tripData = {
       ]
     },
     {
-      day: 14, date: '2026-02-18', city: 'Ao Nam Mao → Nopparat Thara',
+      day: 14, date: '2026-02-18', city: 'Ao Nam Mao → Ao Nang Beach',
       accommodation_id: 'nopparatThara',
-      morning: 'Check out Ao Nam Mao, transfer to Nopparat Thara (20 min)',
+      morning: 'Check out Ao Nam Mao, transfer to Ao Nang Beach (20 min)',
       afternoon: '4 Islands sunset tour: Phra Nang Cave, Chicken Island, Tup Island, Poda Island',
       evening: 'Walk sandbar at low tide, sunset at Railay, Ao Nang Night Market dinner',
       activities: ['Hotel transfer', '4 Islands tour', 'Sandbar walk', 'Cave shrine', 'Night market'],
@@ -418,11 +418,11 @@ const tripData = {
       ]
     },
     {
-      day: 15, date: '2026-02-19', city: 'Nopparat Thara - Railay Beach',
+      day: 15, date: '2026-02-19', city: 'Ao Nang Beach - Railay Beach',
       accommodation_id: 'nopparatThara',
       morning: 'Longtail boat to Railay West (100 THB), explore peninsula',
       afternoon: 'Phra Nang Cave Beach, Railay Viewpoint hike (45 min), rock climbing',
-      evening: 'Sunset from beach, longtail back to Nopparat Thara, local dinner',
+      evening: 'Sunset from beach, longtail back to Ao Nang Beach, local dinner',
       activities: ['Railay exploration', 'Viewpoint hike', 'Cave beach', 'Rock climbing option'],
       transport: 'Longtail boats (200 THB return)',
       budget_eur: '25', accommodation_eur: '70-110',
@@ -435,7 +435,7 @@ const tripData = {
       ]
     },
     {
-      day: 16, date: '2026-02-20', city: 'Nopparat Thara - Bor Thor Caves',
+      day: 16, date: '2026-02-20', city: 'Ao Nang Beach - Bor Thor Caves',
       accommodation_id: 'nopparatThara',
       morning: 'Bor Thor sea cave kayaking tour - paddle through tunnel caves',
       afternoon: '3000-year-old cave paintings, Tha Pom emerald pools swimming',
@@ -451,7 +451,7 @@ const tripData = {
       ]
     },
     {
-      day: 17, date: '2026-02-21', city: 'Nopparat Thara → Bangkok',
+      day: 17, date: '2026-02-21', city: 'Ao Nang Beach → Bangkok',
       accommodation_id: 'bangkok2',
       morning: 'Private longtail to hidden beaches: Koh Poda back side, Koh Ya Wa Sam',
       afternoon: 'Check out, airport transfer, FLIGHT 3: KBV→BKK (afternoon)',
@@ -503,7 +503,7 @@ const tripData = {
     { name: 'Hong Islands Tour', city: 'Krabi', day: 13, perPerson: 65, total: 260, duration: 'Half day', difficulty: 'Easy', description: 'Emerald lagoon (tide dependent), white beaches, snorkeling.', lat: 8.1070, lng: 98.7660 },
     { name: 'Ao Thalane Mangrove Kayaking', city: 'Krabi', day: 13, perPerson: 30, total: 120, duration: '4 hours', difficulty: 'Easy', description: 'Kayak through stunning mangrove forests and lagoons', lat: 8.2775, lng: 98.7993 },
 
-    // Nopparat Thara/Railay activities
+    // Ao Nang Beach/Railay activities
     { name: '4 Islands Sunset Tour', city: 'Krabi', day: 14, perPerson: 35, total: 140, duration: 'Half day', difficulty: 'Easy', description: 'Phra Nang Cave, Chicken Island, Tup sandbar, Poda Island.', lat: 8.0121, lng: 98.8177 },
     { name: 'Railay Beach & Viewpoint', city: 'Krabi', day: 15, perPerson: 25, total: 100, duration: 'Full day', difficulty: 'Medium', description: 'Boat access only! Viewpoint hike, Phra Nang Cave, rock climbing.', lat: 8.0130, lng: 98.8373 },
     { name: 'Bor Thor Cave Kayaking', city: 'Krabi', day: 16, perPerson: 50, total: 200, duration: 'Full day', difficulty: 'Medium', description: 'Bor Thor sea caves, 3000-year-old paintings, Tha Pom emerald pools.', lat: 8.1472, lng: 98.7929 },
@@ -793,7 +793,7 @@ function renderMainView() {
             </div>
             <div class="destination-card">
               <div class="destination-emoji">🏝️</div>
-              <h4>Nopparat Thara</h4>
+              <h4>Ao Nang Beach</h4>
               <p>Railay Beach, cave kayaking & boat adventures</p>
             </div>
           </div>
@@ -1202,7 +1202,7 @@ function renderBudgetView() {
               <td>€${(accomCosts.klongMuang/4).toFixed(0)}</td>
             </tr>
             <tr>
-              <td>Aonang Fiore Resort (Nopparat Thara)</td>
+              <td>Aonang Fiore Resort (Ao Nang Beach)</td>
               <td>3</td>
               <td>€${accomCosts.nopparatThara}</td>
               <td>€${(accomCosts.nopparatThara/4).toFixed(0)}</td>
@@ -2107,11 +2107,11 @@ function initializeMap() {
     },
     {
       num: 5,
-      name: "Nopparat Thara",
+      name: "Ao Nang Beach",
       dates: "Feb 18-21",
       days: "3 nights",
-      lat: 8.0437,
-      lng: 98.7968,
+      lat: 8.0314669,
+      lng: 98.8218458,
       activities: tripData.activities.filter(a => a.city === 'Krabi' && a.day >= 14 && a.day <= 16).map(a => a.name.split(' Tour')[0].split(' &')[0]).join(', ') || "Railay Beach, 4 Islands, Cave kayaking",
       icon: "🏝️"
     },
@@ -2175,7 +2175,7 @@ function initializeMap() {
     // Ao Thalane Mangroves (Day 13) (1 attraction)
     { name: "Ao Thalane Mangroves", lat: 8.1432, lng: 98.7469, icon: "🌴", city: "Krabi", day: "13" },
 
-    // 4 Islands Tour (Day trip from Nopparat Thara - Day 14) (5 attractions)
+    // 4 Islands Tour (Day trip from Ao Nang Beach - Day 14) (5 attractions)
     { name: "Phra Nang Cave Beach", lat: 8.0059, lng: 98.8375, icon: "⛰️", city: "Krabi", day: "14-15" },
     { name: "Chicken Island (Koh Kai)", lat: 7.9533, lng: 98.8064, icon: "🐓", city: "Krabi", day: "14" },
     { name: "Tup Island (Koh Tup)", lat: 7.9608, lng: 98.8121, icon: "🏝️", city: "Krabi", day: "14" },
@@ -2291,7 +2291,7 @@ function initializeMap() {
         // Add transport icons
         let transportIcon = '✈️';
         if (stop.num === 2) transportIcon = '🚌'; // Chiang Rai to Chiang Mai by bus
-        if (stop.num === 4) transportIcon = '🚕'; // Ao Nam Mao to Nopparat Thara by taxi
+        if (stop.num === 4) transportIcon = '🚕'; // Ao Nam Mao to Ao Nang Beach by taxi
         html += `<div class="map-route-info">${transportIcon} → ${nextStop.name}</div>`;
       }
 
