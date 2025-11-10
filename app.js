@@ -109,9 +109,9 @@ const tripData = {
       nights: 3,
       checkIn: '2026-02-08',
       checkOut: '2026-02-11',
-      totalCost: 584,
-      costPerNight: 194.67,
-      status: 'Not Reserved (No Cancellation)',
+      totalCost: 419,
+      costPerNight: 139.67,
+      status: 'Reserved (Paid)',
       bookingUrl: 'https://www.booking.com/hotel/th/katiliya-mountain-resort-and-spa.lv.html',
       features: ['Mountain views', 'Spa', 'Resort setting', 'Pool', 'Tea plantations'],
       images: [
