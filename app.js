@@ -175,18 +175,22 @@ const tripData = {
       ]
     },
     bangkok2: {
-      name: 'TBD (Airport Hotel)', // USER TO PROVIDE - suggest Novotel Suvarnabhumi
-      location: 'Bangkok Suvarnabhumi Airport',
-      address: '',
+      name: 'Arte Hotel - SHA Extra Plus',
+      location: 'Bangkok Sukhumvit',
+      address: '29 Sukhumvit Soi 19, Sukhumvit Road, Wattana, 10110 Bangkok, Thailand',
       nights: 1,
       checkIn: '2026-02-21',
       checkOut: '2026-02-22',
-      totalCost: 0,
-      costPerNight: 0,
-      status: 'Not yet booked',
-      bookingUrl: '',
-      features: ['Airport shuttle', 'Early check-out', '24h reception'],
-      images: []
+      totalCost: 152,
+      costPerNight: 152,
+      status: 'Reserved',
+      bookingUrl: 'https://www.booking.com/hotel/th/arte-bangkok.en-us.html',
+      features: ['SHA Extra Plus certified', 'Sukhumvit location', 'Modern design', 'Close to BTS'],
+      images: [
+        { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/80520735.jpg?k=3b451b23e1cf3463d4fc042f473af721dbe1c1e4dae1b3ec82584a26881661c5&o=', title: 'Arte Hotel Bangkok', credit: 'Booking.com' },
+        { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/80520857.jpg?k=81c8473623d0af87a21b2cf4d6ec27d3d4576948cffbf7d4830ec438f1fe7425&o=', title: 'Arte Hotel Room', credit: 'Booking.com' },
+        { url: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/86895286.jpg?k=12238b491e18ea041e7fdb002ca5da539d6cf95bb87e1b71e30db66c7c9055fd&o=', title: 'Arte Hotel Lobby', credit: 'Booking.com' }
+      ]
     }
   },
 
@@ -1084,7 +1088,7 @@ function renderBudgetView() {
     chiangMai: 792, // €792 for 4 people, 4 nights
     klongMuang: 1225, // €1,225 for 4 people, 3 nights - Venice Krabi Villa Resort
     nopparatThara: 1225, // €1,225 for 4 people, 3 nights
-    bangkok2: 100 // €100 for 4 people, 1 night (TBD)
+    bangkok2: 152 // €152 for 4 people, 1 night - Arte Hotel
   };
 
   const totalAccom = Object.values(accomCosts).reduce((sum, cost) => sum + cost, 0);
@@ -1415,7 +1419,7 @@ function renderBudgetView() {
                   else if (accomKey === 'chiangMai') accomCost = 792 / 4; // €792 for 4 nights
                   else if (accomKey === 'klongMuang') accomCost = 1225 / 3; // €1,225 for 3 nights
                   else if (accomKey === 'nopparatThara') accomCost = 1225 / 3; // €1,225 for 3 nights
-                  else if (accomKey === 'bangkok2') accomCost = 100; // €100 for 1 night (TBD)
+                  else if (accomKey === 'bangkok2') accomCost = 152; // €152 for 1 night - Arte Hotel
                 }
               }
 
@@ -1572,7 +1576,7 @@ function renderBudgetView() {
       else if (accomKey === 'chiangMai') accomCost = 792 / 4 / 4;
       else if (accomKey === 'klongMuang') accomCost = 1225 / 3 / 4;
       else if (accomKey === 'nopparatThara') accomCost = 1225 / 3 / 4;
-      else if (accomKey === 'bangkok2') accomCost = 100 / 4;
+      else if (accomKey === 'bangkok2') accomCost = 152 / 4;
     }
 
     const foodCost = 120 / 4; // per person
