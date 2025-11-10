@@ -1212,9 +1212,9 @@ function renderBudgetView() {
               <td>€${(accomCosts.nopparatThara/4).toFixed(0)}</td>
             </tr>
             <tr>
-              <td>Bangkok Airport Hotel (TBD)</td>
+              <td>Arte Hotel - SHA Extra Plus (Bangkok)</td>
               <td>1</td>
-              <td>€${accomCosts.bangkok2} <em>(estimate)</em></td>
+              <td>€${accomCosts.bangkok2}</td>
               <td>€${(accomCosts.bangkok2/4).toFixed(0)}</td>
             </tr>
             <tr class="total-row">
