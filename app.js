@@ -246,7 +246,7 @@ const tripData = {
       day: 4, date: '2026-02-08', city: 'Bangkok → Chiang Rai',
       accommodation_id: 'chiangRai',
       morning: 'Early floating market tour (Damnoen Saduak), return to city',
-      afternoon: 'FLIGHT 1: BKK→CEI 12:00-13:20 (Thai AirAsia/Vietjet, €25-55/person)',
+      afternoon: 'FLIGHT 1: BKK→CEI 12:00-13:20 (Thai AirAsia/Vietjet, €36/person)',
       evening: 'Arrive Chiang Rai, check in, Clock Tower light show, Night Bazaar',
       activities: ['Floating market', 'Flight to north', 'Clock Tower', 'Night Bazaar'],
       transport: 'Tour bus + domestic flight',
@@ -358,9 +358,9 @@ const tripData = {
     {
       day: 11, date: '2026-02-15', city: 'Chiang Mai → Ao Nam Mao Beach',
       accommodation_id: 'klongMuang',
-      morning: 'FLIGHT 2: CNX→KBV DIRECT (Thai AirAsia, €73-102/person) - NO connection!',
-      afternoon: 'Arrive Krabi, transfer to Ao Nam Mao Beach (45 min), check-in',
-      evening: 'Beach walk, sunset, beachfront dinner at hotel',
+      morning: 'Free time, pack for beach, checkout from hotel',
+      afternoon: 'FLIGHT 2: CNX→KBV DIRECT 17:05 (Thai AirAsia, €115/person) - NO connection!',
+      evening: 'Arrive Krabi ~19:00, transfer to Ao Nam Mao Beach (45 min), check-in, dinner',
       activities: ['Flight to beaches', 'Beach arrival', 'Sunset viewing'],
       transport: 'Direct flight + airport transfer (800-1000 THB)',
       budget_eur: '100', accommodation_eur: '60-100',
@@ -457,11 +457,11 @@ const tripData = {
     {
       day: 17, date: '2026-02-21', city: 'Ao Nang Beach → Bangkok',
       accommodation_id: 'bangkok2',
-      morning: 'Private longtail to hidden beaches: Koh Poda back side, Koh Ya Wa Sam',
-      afternoon: 'Check out, airport transfer, FLIGHT 3: KBV→BKK (afternoon)',
-      evening: 'Arrive Bangkok, check into airport hotel, pack for early departure',
-      activities: ['Private boat tour', 'Flight to Bangkok', 'Airport hotel check-in'],
-      transport: 'Private longtail + airport taxi + domestic flight',
+      morning: 'Check out, airport transfer, FLIGHT 3: KBV→BKK 08:50 (€45/person)',
+      afternoon: 'Arrive Bangkok ~10:20, transfer to airport hotel, last-minute shopping',
+      evening: 'Dinner near hotel, final packing for early 05:50 departure tomorrow',
+      activities: ['Flight to Bangkok', 'Airport hotel check-in', 'Last shopping'],
+      transport: 'Airport taxi + domestic flight',
       budget_eur: '50', accommodation_eur: '40',
       tips: 'Book hotel VERY close to airport for 05:50 flight - suggest Novotel Suvarnabhumi',
       packing: ['Pack all luggage', 'Keep travel docs accessible', 'Set multiple alarms'],
@@ -519,7 +519,7 @@ const tripData = {
   ],
 
   budgetBreakdown: {
-    'Domestic Flights (Only 3!)': '€150-200',
+    'Domestic Flights (Only 3!)': '€196',
     'Accommodation (16 nights)': '€900-1,400',
     'Food & Dining (18 days)': '€300-380',
     'Activities & Tours': '€250-350',
@@ -1095,9 +1095,9 @@ function renderBudgetView() {
 
   // Flight costs for 4 people (including checked bags)
   const flights = [
-    { route: 'Bangkok → Chiang Rai', cost: 50, total: 200 },
-    { route: 'Chiang Mai → Krabi (Direct)', cost: 155, total: 620 },
-    { route: 'Krabi → Bangkok', cost: 87.5, total: 350 }
+    { route: 'Bangkok → Chiang Rai', cost: 36, total: 144 },
+    { route: 'Chiang Mai → Krabi (Direct)', cost: 115, total: 460 },
+    { route: 'Krabi → Bangkok', cost: 45, total: 180 }
   ];
   const totalFlights = flights.reduce((sum, f) => sum + f.total, 0);
 
