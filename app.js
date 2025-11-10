@@ -744,8 +744,8 @@ function renderContent() {
 function renderMainView() {
   const content = document.getElementById('mainContent');
 
-  // Google Drive video ID - Thailand_v2_2026.mp4
-  const googleDriveFileId = '1cQXlwcG4qRJ2wUpXoulZxWj65EympSQt';
+  // Google Drive video ID - Thailand_v2_2026.mp4 (updated version)
+  const googleDriveFileId = '1UpQIRYxPwLQAYITwECzN0NE3LKXMsuvg';
 
   content.innerHTML = `
     <div class="main-view">
